@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS TestTable CASCADE;
+
+CREATE TABLE TestTable (
+    TestId BIGINT NOT NULL,
+    FirstName VARCHAR(255)
+)
