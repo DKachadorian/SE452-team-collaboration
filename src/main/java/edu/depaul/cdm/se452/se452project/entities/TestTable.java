@@ -17,7 +17,7 @@ public class TestTable {
     @Id
     @Column(name = "TestId")
     private long testId;
-
+    
     @Column(name = "FirstName")
     private String firstName;
 }
