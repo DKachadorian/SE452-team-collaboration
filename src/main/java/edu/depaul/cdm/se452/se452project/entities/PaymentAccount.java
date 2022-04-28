@@ -17,10 +17,22 @@ public class PaymentAccount {
     @Column(name="CustomerID")
     private int customerID;
 
-    @Column(name="d_license")
-    private String driverLicense;
+    @Column(name="FirstName")
+    private String firstName;
 
-    @Column(name="carrier")
-    private String insuranceCarrier;
+    @Column(name="LastName")
+    private String lastName;
+
+    @Column(name="PaymentOptions")
+    private String paymentOptions;
+
+    @Column(name="CardType")
+    private String cardType; // debit, credit
+
+    @Column(name="CardNumber")
+    private String cardNumber;
+
+    @Column(name="SecurityCode")
+    private String securityCode;
     
 }

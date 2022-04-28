@@ -12,27 +12,21 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table(name = "Registrations")
-public class Registration {
+@Table(name = "Registration_Guest")
+public class Registration_Guest {
     
     @Id
     @Column(name="ID")
     private int automated_ID;
-    
-    @Column(name="UserName")
-    private String userName;
 
-    @Column(name="FirstName")
-    private String firstName;
+    @Column(name="GuestFirstName")
+    private String guestFirstName;
 
-    @Column(name="LastName")
-    private String lastName;
+    @Column(name="GuestLastName")
+    private String guestLastName;
 
     @Column(name="Address")
     private String address;
-
-    @Column(name="PaymentOptions")
-    private String paymentOptions;
 
     @Column(name="InsuranceCarrier")
     private String insuranceCarrier;
@@ -40,8 +34,7 @@ public class Registration {
     @Column(name="DriversLicense")
     private String driversLicense;
     
-    @Column(name="Password")
-    private String password;
+   
 
 
     

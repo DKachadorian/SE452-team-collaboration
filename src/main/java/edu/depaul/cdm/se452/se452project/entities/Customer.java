@@ -29,6 +29,12 @@ public class Customer {
     @Column(name="Address")
     private String address;
 
+    @Column(name="InsuranceCarrier")
+    private String insuranceCarrier;
+
+    @Column(name="DriversLicense")
+    private String driversLicense;
+
 
 
     
