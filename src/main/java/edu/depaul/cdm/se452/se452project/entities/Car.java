@@ -12,33 +12,38 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table(name = "Cars")
+@Table(name = "Car")
 public class Car {
     
     @Id
     @GeneratedValue
-    private long carID;
+    @Column(name = "CarId")
+    private long carId;
 
-    @Column(name = "car_make")
+    @Column(name = "CarVinId")
+    private String carVinId;
+
+    @Column(name = "CarManufacturer")
     private String carMake;
 
-    @Column(name = "car_model")
+    @Column(name = "CarModel")
     private String carModel;
 
-    @Column(name = "car_class")
+    @Column(name = "CarClass")
     private String carClass;
 
-    @Column(name = "car_price")
+    @Column(name = "CarPrice")
     private Double carPrice;
 
-    @Column(name = "car_vin_id")
-    private String carVINid;
-
-    @Column(name = "car_seat")
+    @Column(name = "CarSeat") //Booster Seat
     private boolean carSeat;
 
-    @Column(name = "car_sunroof")
+    @Column(name = "CarSunroof")
     private boolean carSunroof;
+
+    //Flag for In/Out of Dealership
+
+    //Needs DealershipId for Current Location Tracking
 
 
 }

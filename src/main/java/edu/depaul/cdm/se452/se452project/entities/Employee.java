@@ -11,12 +11,12 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table(name = "EmployeeTable")
-public class EmployeeTable {
+@Table(name = "Employee")
+public class Employee {
 
     @Id
-    @Column(name = "EmployeeID")
-    private long employeeID;
+    @Column(name = "EmployeeId")
+    private long employeeId;
 
     @Column(name = "FirstName")
     private String firstName;
@@ -28,5 +28,5 @@ public class EmployeeTable {
     private String role;
 
     @Column(name = "DealershipId")
-    private long dealershipID; // NEEDS FOREIGN KEY LINK TO LOCATION TABLE
+    private long dealershipId; // NEEDS FOREIGN KEY LINK TO LOCATION TABLE
 }

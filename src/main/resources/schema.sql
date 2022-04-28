@@ -1,28 +1,36 @@
-DROP TABLE IF EXISTS TestTable, Cars, Reservations CASCADE;
+DROP TABLE IF EXISTS Car, Customer, Reservation CASCADE;
 
-CREATE TABLE TestTable (
-    TestId BIGINT NOT NULL,
-    FirstName VARCHAR(255)
+CREATE TABLE Car (
+     CarId INT AUTO_INCREMENT,
+     CarMake VARCHAR(50),
+     CarModel VARCHAR(50),
+     CarClass VARCHAR(50),
+     CarPrice FLOAT,
+     CarVinId VARCHAR(50),
+     CarSeat BOOLEAN,
+     CarSunroof BOOLEAN,
+     PRIMARY KEY(CarId)
 );
 
-CREATE TABLE Cars (
-  carID INT AUTO_INCREMENT,    
-    car_make CHARACTER (20),
-    car_model CHARACTER(20),
-    car_class ENUM('SEDAN','COUPE', 'SPORTS_CAR','STATION_WAGON','HATCHBACK','CONVERTIBLE','SUV','MINIVAN','PICKUP_TRUCK'),
-    car_price FLOAT,
-    car_vin_id VARCHAR(20),
-    car_seat BOOLEAN,
-    car_sunroof BOOLEAN,
-    primary key(carID)   
+CREATE TABLE Customer (
+    CustomerId INT AUTO_INCREMENT,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Address VARCHAR(100),
+    PhoneNumber VARCHAR(20),
+    PRIMARY KEY(CustomerId)
 );
 
-CREATE TABLE Reservations (
-  orderID INT AUTO_INCREMENT,    
-    order_date DATE,
-    return_to_origin BOOLEAN,
-    reservation_start_date DATE,
-    reservation_end_date DATE,
-    num_days_reserved INT,
-    primary key(orderID)   
+CREATE TABLE Reservation (
+     ReservationId INT AUTO_INCREMENT NOT NULL,
+     ReservationDate DATE,
+     ReturnToOrigin BOOLEAN,
+     StartDate DATE,
+     EndDate DATE,
+     DaysReserved INT,
+     CustomerId INT,
+     PRIMARY KEY(ReservationId),
+     FOREIGN KEY(CustomerId) REFERENCES Customer(CustomerId)
 );
+
+

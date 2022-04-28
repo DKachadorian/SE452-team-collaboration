@@ -11,12 +11,12 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table(name = "DealershipTable")
-public class DealershipTable {
+@Table(name = "Dealership")
+public class Dealership {
 
     @Id
     @Column(name = "DealershipId")
-    private long dealershipID; // this will be referenced by car table, employee table
+    private long dealershipId; // this will be referenced by car table, employee table
 
     @Column(name = "Address")
     private String address;
@@ -25,5 +25,7 @@ public class DealershipTable {
     private String state;
 
     @Column(name = "ZipCode")
-    private String zipcode;
+    private String zipCode;
+
+    // Collection of CarIDs for this DealershipId
 }

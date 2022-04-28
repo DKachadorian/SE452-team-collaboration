@@ -1,54 +1,41 @@
 package edu.depaul.cdm.se452.se452project.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+import javax.persistence.*;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "Reservations")
+@Table(name = "Reservation")
 public class Reservation {
-    
+
     @Id
     @GeneratedValue
-    private long orderID;
+    @Column(name = "ReservationId")
+    private Long reservationId;
 
-    @Column(name = "order_date")
-    private Date orderDate;
+    @Column(name = "ReservationDate")
+    private Date reservationDate;
 
-    @Column(name = "return_to_origin")
-    private boolean returnToOrigin;
+    @Column(name = "StartDate")
+    private Date startDate;
 
-    @Column(name = "reservation_start_date")
-    private Date reservationStartDate;
+    @Column(name = "EndDate")
+    private Date endDate;
 
-    @Column(name = "reservation_end_date")
-    private Date reservationEndDate;
+    @Column(name = "DaysReserved")
+    private int daysReserved;
 
-    @Column(name = "num_days_reserved")
-    private int numberDaysReserved;
-    
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "CustomerId")
+    private Customer customer;
 
-    public void bookReservation (){
-        
-    }
-
-    public void pickUpCar(){
-        
-    }
-
-    public void returnCar(){
-        
-    }
-
+    // CarId Column
 
 }

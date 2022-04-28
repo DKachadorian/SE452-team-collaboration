@@ -11,24 +11,26 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table(name = "CarReturnTable")
-public class CarReturnTable {
+@Table(name = "CarReturn")
+public class CarReturn {
 
     @Id
-    @Column(name = "ReturnID")
-    private long returnID;
+    @Column(name = "ReturnId")
+    private long returnId;
 
-    @Column(name = "RentalID")
-    private long rentalID; // ?? LINK TO RENTAL ID???
+    // Most likely CustomerId
 
-    @Column(name = "CarID")
-    private long carID; //  ADD FOREIGN KEY LINK TO CAR ID 
+    @Column(name = "RentalId")
+    private long rentalId; // ?? LINK TO RENTAL ID???
 
-    @Column(name = "EmployeeID")
-    private long employeeID; // ADD FOREIGN KEY LINK TO EMPLOYEE ID (for employee processing the return)
+    @Column(name = "CarId")
+    private long carId; //  ADD FOREIGN KEY LINK TO CAR ID
 
-    @Column(name = "DealershipID")
-    private long dealershipID; // ADD FOREIGN KEY LINK TO DEALERSHIP ID (for physical location of car when returned)??
+    @Column(name = "EmployeeId")
+    private long employeeId; // ADD FOREIGN KEY LINK TO EMPLOYEE ID (for employee processing the return)
+
+    @Column(name = "DealershipId")
+    private long dealershipId; // ADD FOREIGN KEY LINK TO DEALERSHIP ID (for physical location of car when returned)??
 
     //=====FEES AND ALL THAT JAZZ =====
 
@@ -44,7 +46,7 @@ public class CarReturnTable {
     @Column(name = "InteriorDamage")
     private boolean interiorDamage;
 
-    @Column(name = "interiorNotes")
+    @Column(name = "InteriorNotes")
     private String interiorNotes;
 
     @Column(name = "InteriorFee")
