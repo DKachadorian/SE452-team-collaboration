@@ -2,6 +2,7 @@ package edu.depaul.cdm.se452.se452project.services;
 
 import edu.depaul.cdm.se452.se452project.entities.Reservation;
 import edu.depaul.cdm.se452.se452project.repositories.CustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -13,6 +14,7 @@ public class TableConstraintService {
     CustomerRepository customerRepository;
     EntityManager entityManager;
 
+    @Autowired
     TableConstraintService(CustomerRepository customerRepository, EntityManager entityManager) {
         this.customerRepository = customerRepository;
         this.entityManager = entityManager;
