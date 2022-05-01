@@ -1,0 +1,1001 @@
+carId,carVinId,carMake,carModel,carClass,carPrice,carSeat,carSunroof
+1,1G6AZ5S37F0097112,Lincoln,Town Car,1,267.67,true,false
+2,5UXFE435X9L910047,Subaru,Leone,2,473.94,true,false
+3,WAUKFBFL2CN009985,Acura,Integra,1,125.74,true,true
+4,WBABS33411J155961,Chevrolet,Corvette,2,56.36,false,true
+5,WBSWD9C58AP931681,Buick,Somerset,3,110.6,true,false
+6,KL4CJCSBXEB541704,Buick,LeSabre,3,208.08,false,true
+7,1D7RE3GK7AS917952,Toyota,Yaris,2,111.4,true,true
+8,WAUKH94F86N887926,Chevrolet,Suburban 2500,3,107.46,false,false
+9,JN1CV6EL6FM150591,Toyota,Celica,3,327.06,false,false
+10,3D73M4EL4BG305517,Mazda,Mazda6,2,160.66,false,true
+11,JN8AZ2KR8AT361322,Toyota,Celica,2,385.33,true,true
+12,SCBLE47K28C116293,Nissan,Quest,2,264.21,false,false
+13,WAUFFAFL1DN786557,Cadillac,Escalade ESV,3,349.22,false,false
+14,WUARL48H55K194894,Ford,Taurus,3,57.91,false,false
+15,1FTEX1EW3AF123615,Nissan,GT-R,2,402.79,true,true
+16,WAUEFAFL6CN348501,Mazda,MPV,1,285.73,false,false
+17,WAUBFAFL9EA307986,Mercury,Cougar,2,165.98,true,false
+18,1D4PU5GK6AW919249,Kia,Sportage,3,151.24,true,true
+19,WA1VKBFP3AA333394,Toyota,Solara,1,153.69,true,true
+20,WAUSFAFL5AA885870,Dodge,Intrepid,3,429.57,true,true
+21,W04GP5EC5B1305740,Pontiac,Sunbird,1,325.59,true,false
+22,JTEBU4BFXAK965536,Mitsubishi,Mirage,3,158.48,true,false
+23,1G6AP5SX8F0386184,Lincoln,Mark VIII,2,214.25,false,true
+24,1G6AB5RX8D0106992,Mitsubishi,Eclipse,1,271.61,true,false
+25,SCFEBBDL3EG896715,Mercury,Grand Marquis,2,136.94,true,false
+26,5J6TF2H56EL441963,Ford,F150,2,95.44,false,false
+27,JN1CV6EK3FM423381,Volkswagen,rio,1,172.08,true,true
+28,1FTEX1C86AK692258,Mazda,Mazda5,3,365.3,true,false
+29,WAUBFAFL8CN606195,Bentley,Continental,3,384.72,false,true
+30,TRUTC28N131188063,GMC,Savana 1500,3,98.9,false,false
+31,1G4CW54K824834500,Suzuki,XL-7,2,170.39,true,true
+32,2C3CDXJGXCH119250,Mazda,CX-7,1,283.13,true,false
+33,2CTALMEC0B6994508,Chrysler,Sebring,1,135.33,true,false
+34,1G6DW67V780422561,Mitsubishi,Expo LRV,2,469.01,false,false
+35,2D4RN1AG5BR512827,Dodge,Ram 3500,1,465.19,false,false
+36,ZHWGU5AU3CL085315,Land Rover,LR3,2,461.02,false,true
+37,KMHTC6AD9EU791889,Mitsubishi,Lancer Evolution,3,434.48,true,false
+38,SALVP2BG7FH338800,Ford,Mustang,3,456.34,false,true
+39,3C6TD5HT0CG687100,Plymouth,Grand Voyager,1,275.22,false,false
+40,WA1CGAFE2DD019000,Mercedes-Benz,S-Class,3,279.42,false,true
+41,JH4NA12651T250617,Volkswagen,Passat,3,485.15,false,true
+42,5GADV23WX7D153827,Mercury,Lynx,3,336.33,true,false
+43,WDDLJ6HB4FA666063,Pontiac,Grand Prix,3,132.77,true,true
+44,WAUWFAFR3AA447127,Pontiac,G6,1,314.96,true,true
+45,WAUEH64B01N545081,Lamborghini,Diablo,1,445.35,true,true
+46,3GYFNFE30ES603235,Toyota,Venza,1,410.87,false,false
+47,KMHCM3AC5AU077108,Nissan,GT-R,1,376.58,true,true
+48,1GD11ZCG2BF491391,Mazda,Millenia,1,429.59,true,false
+49,1D7RV1CP5BS113155,Hyundai,Accent,2,414.69,false,true
+50,SCBFT7ZA9FC039802,Audi,A5,3,319.19,true,false
+51,WDDHF5KBXFB986606,Volkswagen,Golf,1,395.83,true,true
+52,WBAFB33521L884386,Lexus,SC,2,460.51,false,true
+53,WAUKH98E07A801499,Ford,Flex,2,362.57,true,false
+54,WDCYC3HF8DX273702,GMC,1500 Club Coupe,1,294.26,false,false
+55,3VWF17AT5FM072095,Toyota,MR2,2,467.88,true,true
+56,WBA3C3C58EK042079,Chrysler,PT Cruiser,3,68.29,false,true
+57,1FTEW1CM0BF649271,Chevrolet,Avalanche,1,300.74,false,false
+58,YV4852CT1B1519543,Nissan,Sentra,3,145.52,false,true
+59,3VWKX7AJ0BM399459,Lamborghini,Gallardo,1,421.42,false,true
+60,SCFFDAAM0DG557365,GMC,Savana 3500,2,109.64,false,false
+61,SAJWA1CB6CL793559,Dodge,Grand Caravan,3,452.63,false,true
+62,1GYS3AEF4DR411190,Ford,Country,3,459.73,false,true
+63,1GD21ZCG0BZ493451,Lincoln,Navigator,3,103.95,true,true
+64,ML32A3HJ5EH069315,Volvo,V50,1,207.76,true,true
+65,WBAKG1C57BE492983,Mitsubishi,L300,1,213.99,true,false
+66,WAUAF68E55A693944,GMC,Jimmy,1,431.48,false,true
+67,KMHTC6AD7EU768157,Buick,Coachbuilder,2,170.45,true,true
+68,WAUKH94F77N792419,BMW,M,2,226.53,false,false
+69,WAUZL54B71N262672,Mazda,Millenia,1,166.59,false,true
+70,1G6EL12Y42B092763,Audi,S8,2,226.52,false,true
+71,WAUBF48H57K903264,Honda,Civic,2,341.21,false,false
+72,19UUA96279A218926,Hyundai,Tiburon,1,444.24,false,false
+73,WA1LMAFE0AD339243,Porsche,944,2,198.01,false,true
+74,3C3CFFJH2DT660346,Mitsubishi,Galant,1,239.31,true,false
+75,1D7CW2GK5AS081779,Acura,TSX,3,362.2,false,true
+76,WBAPK7C51AA524923,Chevrolet,Tahoe,2,280.37,true,true
+77,5TDDK3DC4FS442447,Mercedes-Benz,C-Class,2,129.99,false,true
+78,3N1AB6AP5BL992710,Ferrari,599 GTB Fiorano,3,282.98,true,false
+79,JTDZN3EU9E3030562,Ford,Econoline E250,2,172.82,false,true
+80,3C6TD5PT6CG443422,Mercedes-Benz,E-Class,2,252.55,false,false
+81,WBADT43413G970298,Volkswagen,GTI,3,420.84,false,true
+82,WBAEP334X5P185204,Dodge,D150 Club,3,398.36,true,true
+83,WAUXL68E84A977554,Ford,F-Series,3,105.8,true,false
+84,WAUUL78E06A094818,Mazda,626,1,111.23,false,false
+85,WBAWB73508P425772,Nissan,Altima,3,357.02,true,true
+86,WAUVT68E55A542516,Volvo,S60,1,187.1,true,true
+87,2T1BURHE0EC976326,Toyota,Camry Hybrid,2,217.24,false,true
+88,WAUBH78E06A821786,Infiniti,FX,1,349.73,false,false
+89,1FTMF1EW6AF598383,GMC,2500,1,146.99,false,false
+90,1GYFC13229R604415,Hyundai,Sonata,3,352.88,false,true
+91,WA1LFBFP6CA598955,Mitsubishi,Lancer Evolution,3,133.15,false,true
+92,WBAXG5C51DD098725,Chevrolet,Express 2500,2,446.23,true,true
+93,SAJWA0F77F8435394,BMW,745,2,378.98,false,true
+94,2G4GV5GV9D9092845,GMC,Sierra 2500,1,65.86,false,false
+95,1G6DN57S440937496,Bentley,Continental GTC,3,257.79,true,true
+96,JHMZF1C44BS069189,Dodge,Dakota,3,268.92,true,false
+97,1B3CC4FB2AN425083,Buick,Coachbuilder,2,351.87,false,false
+98,WAUMGAFL4BA153320,Dodge,D150,3,352.98,false,true
+99,1LNHL9DK7FG583382,Ford,E350,1,57.26,true,true
+100,2G4WC562651838757,Ford,F150,2,51.08,false,true
+101,1B3CB5HA0AD988717,Lamborghini,Gallardo,3,134.19,false,false
+102,3VWKX7AJ4DM972480,Chrysler,200,2,220.66,true,false
+103,2D4RN4DE6AR814489,Lexus,LX,1,132.65,true,true
+104,WP1AA2AP6AL145726,Mercedes-Benz,SLK-Class,2,150.21,true,true
+105,WBA1M1C57FV450694,Mercedes-Benz,C-Class,2,412.02,false,false
+106,1G4GD5GGXAF822866,Cadillac,Escalade ESV,1,122.52,false,true
+107,WBSPM93509E705646,Audi,A8,1,94.66,false,false
+108,WAUVVAFR7CA506200,Cadillac,Seville,3,339.5,false,true
+109,WBALM7C51EJ118848,Subaru,Legacy,2,315.01,false,true
+110,JTDKDTB34E1723583,Nissan,Titan,3,249.04,false,false
+111,JN8AZ1MU5EW068364,Isuzu,Axiom,1,57.52,true,false
+112,5UXFE43568L459469,Mitsubishi,Lancer,3,57.93,true,true
+113,3VW467AT7DM275401,Chrysler,LHS,2,64.43,true,true
+114,JTJBM7FX3F5412366,GMC,Yukon,1,303.96,true,false
+115,KL4CJGSBXFB382322,Audi,A4,3,116.84,true,true
+116,3GTU2YEJ4BG990712,BMW,M5,2,396.9,true,false
+117,WAUET48H15K010267,Eagle,Vision,3,264.96,true,true
+118,4JGDA2EB6EA390412,Hyundai,Sonata,1,333.88,false,false
+119,19UUA96209A300920,BMW,Z8,1,169.3,false,true
+120,3C4PDDBG4DT766925,Chevrolet,Express 2500,1,489.9,false,false
+121,3N1AB6AP7BL630622,Spyker,C8 Spyder Wide Body,2,355.0,true,false
+122,WA1VMAFP7FA620037,Toyota,Tacoma Xtra,3,396.6,true,true
+123,3N6CM0KN8EK071745,Nissan,Quest,2,201.59,true,true
+124,WBALL5C53DJ043690,Toyota,Land Cruiser,1,361.86,true,true
+125,3GYFNGE31FS333021,Dodge,Viper RT/10,2,408.06,true,false
+126,5GADT13S142579457,Dodge,Ram,2,301.08,true,true
+127,WAUBVBFB6BN658620,Honda,Pilot,3,335.86,false,false
+128,WAUUL98E26A457115,Mercury,Villager,3,125.58,true,false
+129,2FMGK5B88DB773465,Ferrari,F430,1,80.37,true,false
+130,JM1GJ1T63E1487598,Lexus,ES,3,459.81,false,true
+131,JTHBL1EF7E5336403,Jeep,Liberty,3,483.44,false,false
+132,5UXFA935X5L259201,Mercedes-Benz,SLS-Class,2,400.42,true,true
+133,WAU3VAFR7AA648762,Pontiac,Fiero,3,353.06,false,false
+134,WAULFAFR0AA280180,Mitsubishi,Tredia,1,337.96,true,false
+135,WA1DKBFP4CA472688,Hyundai,Tiburon,3,272.78,false,false
+136,3VW467AT1DM662395,Suzuki,Aerio,1,339.62,true,false
+137,1FTEX1CV7AF374356,Nissan,Pathfinder,2,283.36,true,false
+138,1G6AL1R36F0730781,Chevrolet,Malibu,1,118.74,false,false
+139,KMHTC6AD8FU324190,Ford,Escort,3,386.41,false,false
+140,WBALL5C53CJ617199,Mercedes-Benz,M-Class,1,329.59,false,true
+141,WUARL48H59K509537,Mercedes-Benz,G-Class,2,430.92,false,false
+142,1N4AL2AP1BC557154,GMC,Sierra 3500,1,106.34,false,true
+143,5FRYD3H68EB536140,Ford,Five Hundred,2,229.04,true,true
+144,WUARL48H79K891621,Volvo,S60,1,87.22,false,false
+145,WAUML44D42N989288,Audi,A6,2,458.66,true,false
+146,3VW507ATXFM053797,Mitsubishi,Eclipse,2,71.54,true,false
+147,1FTWW3B50AE098340,Ford,Windstar,2,355.7,true,true
+148,3VW507ATXFM556469,GMC,Suburban 1500,1,310.53,true,true
+149,WA1AY74L89D370672,Mercedes-Benz,S-Class,2,410.31,false,false
+150,2HNYD18604H271352,Ford,Probe,2,497.42,false,true
+151,1FMEU5DE9AU802272,BMW,760,2,420.04,false,true
+152,5BZBF0AA1FN349579,Ford,F350,3,175.17,true,true
+153,19XFB4F25DE966880,Chevrolet,1500,1,244.5,true,true
+154,JTDZN3EU9E3713653,Ford,E350,2,377.45,true,true
+155,WBA3D5C59FK959008,Chrysler,Cirrus,1,319.79,true,false
+156,1G6AA5RX6D0506844,Ford,Fairlane,3,51.14,false,true
+157,WDDUG7JB8EA602867,Cadillac,Allante,1,81.77,true,true
+158,1FTWX3A53AE603057,Mazda,Miata MX-5,2,155.18,false,true
+159,WBA3A9G52CN817474,Oldsmobile,Silhouette,1,364.72,true,true
+160,1G4CW54K734661599,Acura,RL,2,211.03,true,false
+161,3C6LD4AT8CG269565,Buick,LaCrosse,1,243.79,true,false
+162,JTDBT4K35B1822739,Suzuki,Equator,3,203.28,false,true
+163,WDDEJ7GB4DA332533,Audi,S6,2,218.42,true,true
+164,WAUDT48H96K240653,Chrysler,Concorde,3,475.91,true,false
+165,3C4PDCAB0CT626594,Ford,F-Series,2,202.8,true,true
+166,1G4PR5SK2C4515249,Ford,Contour,3,409.88,false,true
+167,WUARL48H84K274902,Geo,Metro,1,287.04,true,true
+168,WAUGGBFC8CN537050,Kia,Sportage,1,383.99,false,true
+169,WUADNAFG6BN070317,Dodge,Sprinter,3,398.74,false,true
+170,1VWAH7A35DC890902,Chevrolet,Corvette,2,479.17,true,false
+171,WAUDF98E97A712271,Subaru,XT,3,322.71,true,true
+172,SAJWA4EC8FM415586,Studebaker,Avanti,1,245.64,true,true
+173,WAUVFAFR9CA097324,Dodge,Caravan,2,322.11,true,false
+174,1C3CDFCB0FD079614,Saab,9-3,1,312.1,true,true
+175,1N4AL2AP0AC675341,Chevrolet,Lumina APV,1,253.0,false,false
+176,3VW507AT9FM991984,Chevrolet,Tahoe,3,261.96,false,false
+177,WBASP4C58BC640183,Honda,CR-V,3,296.98,false,true
+178,1B3AZ6EZ7AV383185,Lexus,GX,3,297.08,true,false
+179,1HGCR2F31DA892891,GMC,Envoy XL,2,417.07,true,true
+180,1GYUCJEF1AR874389,Lotus,Exige,1,291.76,true,true
+181,TRUVD38JX91138733,Ford,F150,2,461.51,true,false
+182,5NPEB4AC7EH950303,Volkswagen,Golf,2,418.08,false,true
+183,5GADV33WX7D620959,Honda,S2000,3,324.14,true,false
+184,3C63DRHL0CG055267,GMC,Savana 1500,1,175.98,false,true
+185,5NPDH4AE9DH292994,Chevrolet,Monte Carlo,1,236.51,false,false
+186,5GAKVDKD2DJ640648,Mercedes-Benz,C-Class,1,354.89,false,false
+187,5N1AN0NU4FN449335,Toyota,Sienna,2,104.13,false,false
+188,WBABD33495P971734,Suzuki,Aerio,1,324.28,false,true
+189,1G6DK1E34D0665660,Nissan,Titan,3,205.43,true,false
+190,WAUHF98P77A154763,Honda,del Sol,2,178.97,true,true
+191,5UXKR2C59F0711463,Chevrolet,Suburban 2500,3,442.47,true,false
+192,WBADT534X1C614989,Porsche,928,2,465.93,true,true
+193,WAUHGAFC1CN721373,Dodge,D150 Club,3,343.95,true,true
+194,5GADV23187D122662,Oldsmobile,Silhouette,1,172.0,false,false
+195,1GYS4KEF0ER393548,Pontiac,Sunbird,2,88.14,true,false
+196,WAUGGBFC9DN978297,Suzuki,SJ 410,1,142.78,true,true
+197,WBADT63423C294267,Mazda,Miata MX-5,3,159.17,true,false
+198,4USBU33597L787006,Saab,9-3,2,364.32,true,false
+199,WBAVB73587K306990,GMC,1500 Club Coupe,3,159.67,true,false
+200,SAJWA1CBXCL157596,Honda,Prelude,1,245.41,true,true
+201,WBAVC73568A462434,Pontiac,Grand Prix,3,327.17,true,true
+202,1C4SDHCT8DC331656,GMC,Rally Wagon 3500,1,402.9,true,true
+203,SALAF2D49AA512775,Audi,TT,3,291.95,false,false
+204,5NPDH4AE2CH382714,Land Rover,Defender Ice Edition,3,243.44,true,true
+205,TRUXD38J991776741,Aston Martin,Vantage,1,455.63,true,true
+206,4T1BD1FK6EU550648,Ferrari,458 Italia,2,98.8,false,true
+207,SAJWA1CB3BL226613,Cadillac,XLR-V,3,486.36,true,true
+208,KNDJN2A28F7887753,Volkswagen,Beetle,2,226.68,true,true
+209,1C4RDJEG3FC795026,Mitsubishi,Eclipse,2,309.61,true,false
+210,WAUJC58EX4A048479,Maybach,57,2,175.61,true,true
+211,WAUDH94FX8N757089,Nissan,Altima,2,246.13,true,false
+212,WAURFAFR3DA757473,Ford,Econoline E150,1,152.13,false,true
+213,5TFBM5F16AX756824,Nissan,Armada,1,234.83,true,true
+214,SCBLF34F34C004577,GMC,Sierra 1500,3,159.25,false,false
+215,5LMJJ2HT1FE154068,Pontiac,Firefly,3,423.89,true,false
+216,1G6DX67D080396230,Chevrolet,Malibu,3,222.49,true,true
+217,JM1CR2W39A0222568,Cadillac,CTS-V,1,197.77,false,false
+218,WAU4FBFL6CA233650,Lexus,LS Hybrid,2,76.2,true,false
+219,1N6AA0CCXBN013316,BMW,7 Series,3,490.5,true,true
+220,WVGAV7AX5CW496131,Mercedes-Benz,600SEL,1,140.97,false,false
+221,5N1AL0MM1DC948884,Bentley,Azure,3,124.03,false,true
+222,WBASP4C55CC637176,Toyota,Tercel,2,266.4,true,true
+223,5GAKRCKD4DJ789724,Ford,E250,1,330.58,true,true
+224,WDDLJ7DB4CA626038,Lexus,SC,3,282.14,false,true
+225,1N4AA5APXDC608077,Land Rover,LR2,3,96.13,true,true
+226,5FPYK1F42CB583858,Infiniti,IPL G,1,95.23,false,false
+227,JN8AF5MR5CT891497,Dodge,Sprinter,1,251.19,false,true
+228,1FTEW1CF1FK266292,Mercury,Topaz,2,159.52,true,true
+229,WAUAFAFL0AA481421,Hyundai,Equus,3,136.41,false,true
+230,1G6YV36A485011204,Ford,E150,3,143.19,false,false
+231,KNADN5A33F6517174,Ford,Mustang,2,125.35,false,true
+232,1C4PJLAB1EW333017,Mercedes-Benz,CL-Class,3,141.49,false,true
+233,KMHCT4AE1DU496653,Porsche,911,1,410.79,true,false
+234,5UXFG8C53DL950660,Pontiac,Vibe,2,177.92,false,false
+235,WAUBC48H06K613523,Land Rover,Range Rover,2,117.58,false,true
+236,1ZVBP8AM6B5633125,Mazda,626,1,253.53,false,false
+237,1G6KD57Y27U668698,Volvo,V40,2,96.9,true,true
+238,JA32X2HU4DU473274,Nissan,Quest,1,398.1,true,false
+239,WAULT68E65A451178,Buick,LeSabre,3,70.98,true,false
+240,WAUKG98E16A845643,Acura,TSX,1,351.12,false,true
+241,2G4WS52J921183571,BMW,8 Series,2,370.79,false,true
+242,19UUA9F74CA679861,Chrysler,PT Cruiser,3,190.5,false,false
+243,1G6DV8EP2E0186271,Nissan,Altima,1,175.72,false,true
+244,5GADV23L76D378596,Mercury,Mystique,3,235.01,false,false
+245,WVWGU7AN2CE935470,Chevrolet,Corvette,2,313.14,false,true
+246,WAULT68EX4A568485,Dodge,Ram 1500 Club,1,437.46,false,false
+247,SCFEDCAD4CG807602,Chevrolet,Silverado 2500,2,114.18,true,true
+248,1FA6P0G78E5275334,Mitsubishi,Lancer Evolution,3,161.36,true,false
+249,JM1NC2SF9F0861227,Buick,Electra,2,98.67,true,true
+250,SCFEDCAD2CG311214,Jaguar,S-Type,2,375.11,false,false
+251,WVGAV3AX4DW393728,Buick,LeSabre,3,475.82,true,false
+252,5UXFG2C58CL655954,Volkswagen,Golf,3,323.09,true,false
+253,1FTEW1C88FK013410,Shelby,GT500,2,356.61,false,false
+254,WAUZL54B41N300729,Bentley,Continental GTC,1,264.66,true,false
+255,3C3CFFJH8ET074185,Mercury,Topaz,3,104.86,false,true
+256,WBSBR93411E383400,Scion,tC,1,232.92,false,false
+257,JTHFF2C29E2989427,Mazda,Navajo,3,271.8,false,false
+258,JTDJTUD39ED778627,Lotus,Elise,2,356.09,true,true
+259,SAJWA0E75D8726054,Chrysler,LHS,1,400.6,true,true
+260,1G6DZ67A390984429,Ferrari,458 Italia,1,87.42,false,false
+261,1GYS4AEF0BR164342,Chevrolet,Vega,2,134.55,true,true
+262,WAUAFAFL6EN315449,Pontiac,Grand Prix,2,416.13,true,false
+263,WP0AA2A97FS068481,Lamborghini,Diablo,1,311.16,false,false
+264,1G6DK1E39D0207029,Mazda,MX-5,2,489.51,true,false
+265,3G5DA03L47S244734,Jeep,Wrangler,3,174.43,true,true
+266,1FTEW1E87AF260481,Toyota,Camry,1,163.36,false,true
+267,JN8AE2KP2C9384072,Saturn,Ion,2,197.1,true,true
+268,1GTG5AE35F1947756,Volvo,S80,1,80.55,false,false
+269,WP1AA2A2XCL215722,Chevrolet,Silverado,3,493.62,true,true
+270,1G6AK5SX5E0368383,GMC,Sierra,1,121.86,true,true
+271,WAUSF78K39N072927,GMC,Savana 1500,3,323.36,false,true
+272,1FADP5AU0DL547646,Toyota,Tacoma,1,350.27,true,true
+273,WBA3A9C58CF370987,Honda,Accord,1,421.64,false,false
+274,WAUAFAFH0EN703806,Infiniti,G,1,74.02,false,true
+275,3C6TD5ET0CG217704,BMW,Z4 M,1,108.22,false,true
+276,1FTNF2A51AE095406,Ford,E-Series,2,64.72,true,true
+277,1G4GC5EC3BF261866,Chevrolet,Silverado 1500,2,445.35,false,true
+278,WA1CMAFP5FA605981,Chevrolet,2500,2,175.41,true,false
+279,WBAFV3C53FD521359,Toyota,Previa,3,346.49,true,false
+280,WA1VMBFE2DD170314,Lexus,GS,2,157.12,false,true
+281,1G6AT5S30E0803336,Subaru,Brat,1,213.55,true,false
+282,KMHTC6AD6DU041560,Ford,Econoline E250,1,103.6,false,true
+283,WA1EY94L78D470435,Mercury,Milan,1,436.98,false,true
+284,1GKS1KE05DR366813,Audi,Quattro,1,385.19,true,false
+285,SCFAD06D19G201818,Subaru,Outback,3,143.67,true,false
+286,KNADM4A38E6031469,Chevrolet,Suburban 1500,1,286.77,true,true
+287,SCFFDCCD8BG604082,Porsche,Cayman,3,310.0,false,false
+288,5N1AA0NC0BN438135,Infiniti,QX56,2,440.93,false,true
+289,JM1BL1K38B1270331,GMC,Savana 3500,3,208.38,true,true
+290,WBAGG83471D990174,BMW,6 Series,1,288.56,true,true
+291,JN8AF5MR6CT926466,Maybach,Landaulet,1,238.69,true,true
+292,1G4GF5G39EF014621,Toyota,T100,1,108.86,true,true
+293,JM1DE1HY9B0179161,Nissan,Quest,1,242.03,false,false
+294,WBS3U9C51FP318733,Volvo,940,3,438.74,false,true
+295,KL4CJGSBXDB462877,Nissan,Pathfinder,2,216.32,true,true
+296,3C63D3HL1CG048549,Honda,del Sol,2,277.53,false,true
+297,WVWGU7AN4AE360172,Pontiac,Grand Am,1,380.5,false,true
+298,2T1BURHE2EC752202,Pontiac,Grand Prix,3,462.79,false,true
+299,JN8AF5MRXCT908584,Toyota,Tundra,3,254.68,true,false
+300,WDDLJ7GB2FA480920,Hyundai,Elantra,3,460.89,false,false
+301,WVWAP7AN9EE689338,Toyota,Prius,2,445.2,false,false
+302,1G6KS54Y83U638562,Mercedes-Benz,SL-Class,2,91.38,true,true
+303,SCFAB42372K832036,Ford,Escort,1,488.96,false,false
+304,3D7LT2ET6AG047913,Lamborghini,Diablo,2,117.46,false,true
+305,JH4CU2F40CC997722,Mercedes-Benz,SLR McLaren,2,124.63,false,false
+306,JTDZN3EU5E3942086,Saab,9-3,1,439.94,true,true
+307,5NPDH4AE8DH585883,Lexus,IS-F,1,105.75,true,true
+308,WBA3D3C57FK454086,Toyota,Corolla,2,293.63,true,true
+309,2C4RDGBG0FR563630,Pontiac,Bonneville,1,344.27,false,false
+310,KMHHU6KJ0FU196468,Toyota,Corolla,1,407.35,false,true
+311,1GD020CG4CF865621,BMW,545,2,193.15,false,false
+312,KM8JT3AF7EU306382,Mazda,MX-5,1,205.39,false,true
+313,1G4HG5EM5AU520837,Mitsubishi,Pajero,3,254.95,false,false
+314,1D7CE3BK8AS741572,Audi,S8,2,227.54,true,true
+315,WBAUP9C57CV792872,Ford,Thunderbird,3,233.28,true,true
+316,2C3CDXCTXDH183123,Honda,Element,1,123.49,false,false
+317,1FTSW2A56AE539799,Volkswagen,GTI,1,168.87,false,true
+318,3G5DB03L76S205017,Ford,Contour,2,427.21,true,true
+319,1N4AB7AP0EN986326,Isuzu,Hombre,1,125.67,true,true
+320,JN1CV6AP9CM461369,Toyota,Land Cruiser,2,351.3,true,false
+321,1G6KD57Y19U887543,Audi,A8,1,252.26,true,true
+322,JHMFA3F23BS121175,Volvo,S80,3,438.29,false,false
+323,WBAPM77579N978750,Ford,Ranger,3,498.87,false,false
+324,JN8AF5MR5ET224366,Chevrolet,Blazer,3,171.64,true,false
+325,5FPYK1F51EB414751,Chevrolet,Aveo,3,304.64,true,false
+326,4T3BA3BB6FU780225,Land Rover,Range Rover,2,468.73,true,false
+327,5J8TB18557A072055,Oldsmobile,Intrigue,1,469.05,false,true
+328,5LMJJ2HT9FE779804,Mercury,Cougar,2,442.97,true,true
+329,3D7JB1EK4BG392189,Mazda,929,3,156.99,true,false
+330,1D4PT7GX7BW458610,Hyundai,Elantra,2,84.22,true,false
+331,1FTEW1CM8CF188497,GMC,Sonoma Club,2,347.27,true,true
+332,1G6DW677170380596,Chevrolet,Silverado 1500,1,151.53,false,false
+333,1G4CU541314243759,Lincoln,Continental,3,327.13,true,true
+334,JM3TB2BAXC0208262,Chevrolet,HHR,3,332.63,true,true
+335,1G6DH5EY7B0378294,Saab,9000,3,262.29,false,false
+336,19UUA56842A434591,Jaguar,XJ Series,3,77.48,true,false
+337,3D4PG3FG6BT271265,Ford,Windstar,2,374.98,false,true
+338,JTHBL5EF9C5179655,Plymouth,Colt,3,80.63,false,false
+339,WAUWGAFC6FN099610,Dodge,Grand Caravan,2,120.97,false,false
+340,JTJBARBZ1F2284478,Isuzu,Axiom,1,474.69,false,false
+341,WVGEF9BP8ED539299,Mercedes-Benz,W201,3,468.67,false,false
+342,5TFBY5F14DX904977,Lamborghini,Diablo,2,70.28,false,true
+343,WAUKF98E45A807163,Toyota,Prius c,1,387.67,false,true
+344,JTEBC3EH0B2141430,GMC,Yukon XL 2500,3,204.33,true,false
+345,WAUAF98E06A000264,Mazda,Tribute,3,482.85,true,true
+346,WAUAFAFL0AA335777,Chevrolet,Corvette,2,316.9,true,true
+347,WVWAP7ANXEE344416,GMC,Canyon,3,477.19,false,true
+348,WAULT54B22N922284,Chrysler,Sebring,1,163.54,false,true
+349,WAUSH98E16A798871,Dodge,Ram 1500,1,125.08,true,false
+350,3GYFNEE36CS228149,Mercury,Cougar,1,448.17,true,true
+351,1GD02ZCG9DF059201,Pontiac,Grand Prix,3,73.46,false,true
+352,WAUSH98E47A432954,Hyundai,Tiburon,3,188.29,true,true
+353,1C6RD7GP9CS376610,Ford,E-350 Super Duty,2,152.04,false,false
+354,1GYS4BEF0CR209013,Mitsubishi,Starion,2,68.39,false,false
+355,1D7RW2BK0AS543537,Volkswagen,Touareg,1,270.34,true,true
+356,WDBSK7AA4BF125309,Volvo,960,1,162.21,true,false
+357,SCFEBBDLXEG711740,Cadillac,Seville,1,64.51,false,true
+358,1GYFK16219R698463,Toyota,Tundra,1,425.95,false,false
+359,1G6DK8EG7A0803229,Plymouth,Prowler,2,103.1,true,false
+360,1C4RJEAG3DC474591,Volkswagen,R32,1,432.82,false,false
+361,SCFAD02A18G704145,Lincoln,MKS,3,315.0,true,false
+362,3C3CFFDR3CT312588,Kia,Sedona,1,330.43,false,false
+363,WAUJC58E55A393775,Nissan,Titan,2,61.62,false,false
+364,WBAFR9C57BD824484,Chrysler,PT Cruiser,1,369.9,false,true
+365,WBAEW53474P257070,Ford,F350,2,474.64,true,true
+366,1N6AA0CA3AN584370,Mazda,Miata MX-5,2,60.5,true,true
+367,1FTEX1E84AK589983,Infiniti,FX,3,211.24,false,true
+368,1GYFK53229R684700,Chevrolet,Silverado 1500,3,370.88,true,false
+369,1N6AA0EJ1FN142420,Suzuki,Aerio,2,424.29,false,true
+370,1G4GH5E38DF863747,Mitsubishi,3000GT,2,275.49,true,false
+371,JH4DC54833S462730,Ford,Expedition,2,212.1,true,true
+372,1GYS4BEFXDR798167,Lexus,RX Hybrid,3,53.88,true,true
+373,JH4KC1F34EC686393,Ford,Aerostar,1,322.35,true,false
+374,3VWAL7AJ4AM631762,Rolls-Royce,Phantom,1,278.97,true,false
+375,WAUDL64F45N963632,Suzuki,XL-7,2,159.15,true,true
+376,3GYFNFE35CS016011,Buick,Regal,3,476.33,false,true
+377,1N6AF0KY8EN771058,Mazda,B-Series,2,371.44,true,true
+378,WBABN33481J583307,Mercedes-Benz,GLK-Class,2,429.98,true,true
+379,WA1YD64B25N795885,Mazda,Mazda3,2,157.97,false,true
+380,1G6DE8E5XC0633909,Toyota,4Runner,3,321.39,true,true
+381,WDDLJ6HB9FA331493,Mitsubishi,Outlander Sport,2,189.43,true,true
+382,JTDKDTB39F1823390,Buick,Skyhawk,3,277.12,true,false
+383,5N1AN0NW0FN427897,GMC,Jimmy,2,355.35,true,false
+384,JN8AZ2KR3AT952934,Ford,Taurus,1,101.0,false,false
+385,JHMGE8G30CC121188,Pontiac,Firefly,3,59.63,false,false
+386,1N6AA0CC0DN419639,Toyota,4Runner,1,499.39,false,true
+387,3GYFNAE35CS972575,Audi,TT,1,411.89,true,false
+388,WAUFL44D22N670058,Ford,Thunderbird,3,349.52,false,false
+389,JN1AZ4EH0EM230589,Mitsubishi,Lancer,3,277.81,false,false
+390,1D4PT7GX5AW903621,Mercedes-Benz,CLK-Class,3,452.42,false,false
+391,WBAKF9C53DE509637,Ford,Focus ST,3,74.38,false,false
+392,WBA3C1C55FP068289,Buick,Skylark,3,289.48,false,false
+393,WUAAU34238N464505,Infiniti,QX,3,213.99,true,true
+394,SCFEBBBK1BG653331,Volkswagen,Beetle,2,442.88,true,false
+395,KNAFT4A25D5218630,Toyota,Tacoma Xtra,3,276.94,false,true
+396,WBABS53402E148280,Honda,Civic,3,106.45,false,true
+397,1FTSF3A55AE752202,Dodge,Caravan,2,176.02,false,false
+398,1NXBE4EE3AZ976284,Saab,9000,1,66.17,false,false
+399,1FT7W2A62EE369655,Ford,Tempo,3,477.95,true,true
+400,1FTWF3A54AE803464,Chevrolet,Cavalier,2,287.47,false,false
+401,1C3CDWBA1CD369526,Volvo,V70,1,211.89,false,true
+402,SCBGC3ZA2EC532474,Mitsubishi,Pajero,2,310.22,false,true
+403,2G4GS5ERXD9483579,Bentley,Continental Flying Spur,3,106.64,false,true
+404,1D4PT4GX6BW255366,Mercedes-Benz,300D,3,96.82,false,false
+405,JH4KA96694C001950,Audi,V8,1,376.87,true,true
+406,1FMEU5DE5AU760375,Toyota,T100 Xtra,3,470.16,false,false
+407,WBAAX13454P830178,Mercedes-Benz,W126,3,272.11,false,true
+408,WA1DMAFP1FA691133,Ford,Explorer,3,182.62,true,false
+409,JTDKN3DP5C3267656,Daewoo,Leganza,1,444.08,true,false
+410,JH4CW2H59CC673426,Mercury,Grand Marquis,1,286.81,true,true
+411,1G6DL5E36D0257701,Maserati,Karif,2,411.98,true,true
+412,KL4CJHSB5EB830258,Chrysler,300M,3,77.97,true,false
+413,1HGCR2F31EA556806,Nissan,Maxima,1,408.56,false,false
+414,SALFP2BG5FH285809,Subaru,Legacy,1,85.43,false,true
+415,WAULFAFH7DN573093,Austin,Mini,2,310.89,true,true
+416,5N1AN0NUXBC711543,Ford,E-Series,1,345.73,false,true
+417,1FAHP2DW2BG012627,Dodge,Caravan,1,82.0,true,true
+418,5J8TB4H34GL196094,Saab,9000,1,187.92,true,true
+419,JA32U2FU4DU142075,Plymouth,Grand Voyager,3,144.17,true,true
+420,3GYFNFE37ES564210,Lexus,SC,2,216.24,true,true
+421,1FTEW1C88AK621968,BMW,3 Series,3,129.12,false,false
+422,WBA4A7C56FG617026,Mazda,Mazdaspeed 3,1,173.31,true,false
+423,JA4AP3AU7BZ286344,Volkswagen,Cabriolet,2,270.14,false,false
+424,JH4CU26699C774265,Oldsmobile,Silhouette,2,268.19,false,true
+425,3D4PH1FG3BT277106,Dodge,Viper RT/10,1,381.82,false,true
+426,WVWAP7AN2EE893494,Maybach,62,2,412.23,false,true
+427,WAUSF78KX9N773058,Lincoln,Town Car,2,408.89,true,true
+428,3C3CFFCR3DT100258,Chevrolet,Malibu,3,114.58,false,false
+429,1G6DA5EG2A0943142,Kia,Amanti,1,353.39,true,true
+430,1G6DF8EY4B0347835,Panoz,Esperante,1,72.73,false,false
+431,WVGFF9BP3BD910997,Cadillac,Seville,1,205.66,false,true
+432,SAJWA0FA8AH468084,Volkswagen,Jetta,2,127.59,false,true
+433,2C4RDGCG0FR320155,Audi,Cabriolet,1,142.62,true,true
+434,1D7RW2BK8BS243424,Chevrolet,G-Series 1500,3,470.61,true,false
+435,SAJWJ0FF8F8704378,Lexus,SC,1,488.18,false,true
+436,5N1AN0NW9FN549948,Lincoln,Mark LT,1,259.83,true,false
+437,WAULK78KX9A327676,Dodge,Dakota,1,426.93,true,true
+438,WDDHF7GB9EA172861,Pontiac,Aztek,3,186.42,false,true
+439,1GD02ZCG0DF097528,Lotus,Elise,3,380.62,false,false
+440,3C63DRAL9CG750082,Lamborghini,Gallardo,3,259.48,false,true
+441,W04GV5EV8B1898081,BMW,760,1,307.06,false,false
+442,3D7TP2CT9AG906225,Toyota,Sienna,2,70.7,true,false
+443,WBAVC73527K894351,Acura,NSX,2,399.65,false,true
+444,5J6TF2H5XFL914670,Renault,Alliance,3,295.55,false,true
+445,1C4RDJAG5CC539116,Isuzu,Oasis,2,107.72,false,false
+446,WA1BY74L07D949737,Dodge,Grand Caravan,3,245.06,false,true
+447,YV126MFJ9F1033509,Honda,Odyssey,2,402.91,true,false
+448,WA1CGAFP5EA283509,Saturn,VUE,2,191.22,false,false
+449,1G4HP57266U397777,Jaguar,XK Series,2,192.42,true,false
+450,WAURVAFD9BN885729,Chevrolet,Camaro,3,484.64,false,false
+451,WAUSH98E36A866863,Chevrolet,Caprice,1,321.74,false,true
+452,WBAVD53538A156485,Infiniti,G25,1,211.99,false,false
+453,19UUA8F28DA834377,Volkswagen,Golf,3,165.15,false,false
+454,1FTEX1EWXAF973161,Buick,Enclave,2,210.11,false,true
+455,KL4CJDSB0FB083288,Lotus,Exige,1,454.78,true,true
+456,19XFA1F24AE329797,Toyota,Tacoma,2,161.13,false,true
+457,WAUEFBFL5DN928166,Lexus,IS-F,3,329.8,true,true
+458,1YVHZ8BH2A5634547,Chevrolet,Express 3500,1,183.58,false,false
+459,JA4AP3AU7CZ269092,Buick,Skyhawk,1,99.81,false,false
+460,WA1YD64B32N229083,Mercedes-Benz,500SEL,2,345.27,true,true
+461,1D7RE2BK0BS761935,Chevrolet,2500,3,79.91,false,true
+462,4A4AP3AU9DE352479,Toyota,Corolla,3,401.98,true,false
+463,2D4RN3DG9BR786054,GMC,Suburban 2500,2,221.62,true,false
+464,1N4AL2AP3BN801665,Dodge,Stratus,2,90.88,true,false
+465,WAUGFAFR1AA847840,Mitsubishi,Galant,2,183.94,false,false
+466,WBALW3C55EC083321,Audi,Allroad,2,271.29,false,true
+467,1G6DA5E52C0194618,BMW,Z4 M,3,232.34,false,false
+468,3C6JD6DT9CG038365,Chevrolet,Suburban,2,346.7,true,false
+469,1G4HP52K634149712,Volkswagen,Jetta,1,458.75,false,true
+470,3C6JD6CT1CG106563,Maybach,57,3,494.93,false,true
+471,1GYFC56249R418586,Pontiac,1000,3,267.3,true,false
+472,19UUA8F56DA603035,Buick,Rainier,2,404.42,false,true
+473,WVGAV7AX9BW073714,Chevrolet,2500,2,113.55,false,true
+474,KL4CJASB2EB426406,Mitsubishi,Montero Sport,3,277.03,true,false
+475,SCBBR93W57C441170,Honda,Civic,3,456.58,true,false
+476,WAUVC68E35A061440,Mitsubishi,Pajero,2,265.5,true,false
+477,JM1NC2LF0E0322346,GMC,Sierra 1500,2,439.78,false,true
+478,WAULC58E44A238187,Volvo,C70,1,365.31,false,false
+479,KNAFU5A29D5120722,Volkswagen,GTI,2,178.58,true,true
+480,WBAPK7C51BA382834,Volkswagen,Jetta,3,177.44,true,true
+481,WAUDK78T39A730489,Volvo,S70,2,208.51,true,false
+482,YV1672MK9C2104700,Lotus,Esprit,1,307.75,true,false
+483,WBAEB5C59AC237832,Hyundai,Elantra,3,191.88,false,false
+484,YV1902FH0D2743665,Subaru,Legacy,2,415.88,false,true
+485,1G6DP5ED7B0322551,Chevrolet,Caprice Classic,1,210.65,false,true
+486,1FMJK1H52BE267529,BMW,X3,2,222.1,true,false
+487,1FMJK1G5XDE032798,GMC,3500 Club Coupe,2,245.98,true,false
+488,WVWAP7AN8EE705075,Pontiac,Grand Am,3,323.36,false,false
+489,WBALW7C54CC124218,Pontiac,Solstice,2,193.93,false,true
+490,1G4GJ5E38DF354505,Pontiac,Bonneville,3,277.84,true,true
+491,1FADP5CU1FL110884,Acura,Integra,1,369.4,true,true
+492,1G4HE57Y66U101392,Honda,Civic,2,397.81,true,true
+493,SAJWA4DB2DL347801,Lincoln,Navigator,3,304.17,true,true
+494,WAU2GBFC5CN009203,Ford,F350,2,183.46,false,false
+495,1C6RD7MT9CS495145,GMC,Acadia,1,380.94,false,true
+496,3D73M3CL4AG025723,Mercedes-Benz,M-Class,2,187.81,true,false
+497,1G6AH5RX9F0347414,Volkswagen,GTI,2,153.8,true,false
+498,1LNHL9DK0EG006594,Suzuki,Grand Vitara,3,147.71,false,false
+499,WAUMFAFL1AN019486,Nissan,Frontier,2,470.08,true,true
+500,2C4RDGDG9FR687456,Suzuki,Esteem,1,243.94,true,false
+501,JN8AF5MR7ET752605,Geo,Tracker,1,451.5,false,false
+502,JH4KA96693C653319,Mercedes-Benz,G55 AMG,3,260.73,true,true
+503,2B3CM5CT3BH288861,Lincoln,LS,3,388.37,true,true
+504,1GD01ZCG4DF609732,Ford,Edge,2,152.38,true,true
+505,JN1AZ4EH2FM433887,Cadillac,Seville,1,110.95,true,false
+506,YV1902FH8D2694621,Dodge,Caravan,3,117.96,true,false
+507,KNDPB3A27D7814380,Lincoln,MKZ,2,295.6,false,false
+508,2FMGK5BC9AB926807,Ford,Fiesta,1,186.71,false,true
+509,WDDLJ7DB4EA911504,GMC,Savana 1500,1,374.88,true,true
+510,WBADW3C51BE166393,BMW,545,2,418.53,true,false
+511,WBA3V5C59EP410309,Fairthorpe,Rockette,1,449.09,false,false
+512,3C63D3NL3CG374728,Pontiac,LeMans,3,352.49,true,false
+513,JTDZN3EU3FJ217504,Saab,9000,3,442.29,false,false
+514,WAUSFAFL3AA152376,Kia,Spectra,2,277.4,false,false
+515,3D4PG6FV1AT698206,Volkswagen,CC,1,406.86,true,false
+516,WAUDN74F78N845398,Audi,Coupe Quattro,3,242.33,true,true
+517,3D7TP2CT6BG446166,Mazda,Mazda3,2,77.04,true,true
+518,WBAPH7C59AA130097,Volvo,V70,3,332.28,false,false
+519,3C6TD4HT1CG345519,BMW,5 Series,2,352.75,true,false
+520,3D7LP2ET8BG269486,Kia,Sephia,1,256.36,false,false
+521,WAUPEAFM0BA383254,Ford,F250,3,104.91,true,false
+522,WA1VGAFP8EA493207,Volkswagen,Eurovan,3,261.59,false,true
+523,1C3BCBEB9DN967435,Chevrolet,Impala,1,114.24,true,false
+524,4T1BF1FK7EU950504,Chevrolet,Silverado 3500HD,2,431.66,true,false
+525,WAUDH94F97N136098,Oldsmobile,88,2,197.21,true,false
+526,SCBBB7ZHXEC018602,Suzuki,Swift,2,82.09,true,false
+527,KL4CJESB1DB098417,Hyundai,Sonata,1,224.44,true,false
+528,WAU4FBFL8CA806659,BMW,X5,2,263.59,true,false
+529,4T1BF1FK3FU791420,Chevrolet,Colorado,3,462.19,false,true
+530,WBAYE8C57ED019782,GMC,Yukon XL 2500,2,182.14,false,true
+531,1G6KE57Y33U268012,Ford,Bronco,2,431.49,false,true
+532,W04GT5GC6B1544044,Chevrolet,Camaro,2,384.08,true,false
+533,JM3TB2CA5F0916406,Subaru,Forester,2,59.1,false,false
+534,WBAEH13466C671678,Chevrolet,Lumina,1,381.89,false,true
+535,3VWC17AU5FM867286,Hummer,H2,2,188.97,false,false
+536,3C63D3KLXCG210977,Volkswagen,Golf,1,273.63,false,false
+537,1G6DF5EY8B0067673,Mazda,MPV,3,346.76,false,false
+538,1VWAH7A35EC703367,Pontiac,Grand Prix Turbo,3,367.92,false,false
+539,WAUJT58E12A426010,Jeep,Cherokee,1,206.8,false,true
+540,3GYEK63N93G927132,BMW,3 Series,2,478.87,true,false
+541,WAUNF78P08A806910,Mazda,RX-7,2,174.51,false,true
+542,1B3BD2FB2BN769415,Ram,2500,2,427.83,false,false
+543,JH4DB85911S173421,MINI,Clubman,3,98.14,true,false
+544,KNALN4D78F5668473,Jaguar,X-Type,1,161.47,false,true
+545,KNDPB3AC5F7866666,Ford,Explorer,1,242.1,false,false
+546,3GYFNDEY9AS427473,Nissan,Murano,2,410.86,true,false
+547,1G4GD5GG2AF848667,Chevrolet,Corvette,2,335.27,true,true
+548,WAUJT64B23N502524,Nissan,JUKE,3,222.39,false,true
+549,WDDEJ7KB7DA940828,Mercedes-Benz,E-Class,1,106.0,false,true
+550,1G6DF8E53D0932401,Mercedes-Benz,SLS-Class,3,152.95,true,false
+551,WBAWL13597P298495,GMC,Canyon,3,174.72,false,false
+552,JTEBU4BF1EK462094,Dodge,Colt,1,57.16,false,true
+553,JTHBW1GG6E1828540,Lexus,GS,2,124.06,true,true
+554,WBAEU33454P264691,Porsche,Boxster,3,190.64,false,true
+555,KMHTC6AD3CU586372,Audi,riolet,2,86.88,true,true
+556,3C3CFFDR2CT522924,Chevrolet,Express 1500,2,163.21,false,false
+557,1FTEW1C88FK938222,Mazda,B-Series Plus,3,130.52,true,true
+558,1G6AZ5S34F0472258,Kia,Sedona,2,440.55,true,false
+559,1D7CE2GK8AS287228,GMC,Canyon,1,489.42,true,false
+560,3C6TD5GT3CG898633,Honda,Odyssey,1,99.35,false,true
+561,1FTMF1EW9AF401996,Infiniti,FX,2,404.31,false,false
+562,JM1CW2BL0D0174400,Audi,A6,2,338.58,false,true
+563,1YVHZ8BH4C5804846,Land Rover,Freelander,1,396.45,true,false
+564,WBA5A7C50ED544031,Lotus,Exige,1,499.09,false,false
+565,WAUEG78E06A829628,Audi,Q5,1,430.92,false,false
+566,JM1NC2JFXC0036049,Toyota,Camry,1,66.89,false,false
+567,1G4GC5ER7DF191537,Chrysler,Cirrus,1,464.68,false,true
+568,SCBDR3ZA9BC176697,MINI,Cooper Clubman,2,214.93,true,false
+569,1FTEW1CF2FK847316,Toyota,Camry,2,275.16,false,true
+570,1C6RD7LP4CS413844,Subaru,Loyale,3,129.24,true,true
+571,1N6AF0KY1FN793744,Mitsubishi,Outlander,3,77.22,false,true
+572,2C3CDXGJXDH079403,Saab,900,1,111.64,false,false
+573,2G4GT5GVXC9565964,Toyota,Sequoia,3,197.19,false,false
+574,JTJBM7FX5B5344646,Toyota,Paseo,3,65.68,true,true
+575,WBAKG7C5XDJ713862,Ford,EXP,3,328.93,true,true
+576,2C3CDYAG0EH919774,Ford,Thunderbird,1,253.8,true,true
+577,2B3CJ5DT3AH347431,Mercedes-Benz,M-Class,1,321.88,true,false
+578,19UUA8F38DA353747,Kia,Forte,1,148.0,true,true
+579,1GD01ZCG4BF926701,Hyundai,Elantra,3,431.25,false,true
+580,5UXKR6C58F0767269,Aston Martin,DB9,3,370.73,true,false
+581,WAULL44E65N727619,Audi,Q7,3,442.04,true,false
+582,3D7TT2CT6BG847311,Pontiac,Bonneville,1,184.17,false,false
+583,1D7CE5GK3AS190892,GMC,Savana 1500,3,230.66,true,false
+584,WAUBF98E98A457419,Isuzu,Trooper,3,308.01,true,true
+585,2T1BURHE2FC534388,Audi,4000s,2,71.05,true,true
+586,3C6JR6CTXDG071976,Pontiac,Grand Prix,1,294.58,true,true
+587,WVGEF9BP9DD070075,Aston Martin,Rapide,2,176.86,false,false
+588,1G6KY54961U668745,Cadillac,Eldorado,3,130.81,true,false
+589,19XFB4F35EE969451,Mercedes-Benz,SL-Class,3,318.75,true,true
+590,2T1BU4EE1CC757301,Infiniti,G35,3,292.51,true,true
+591,WBAGN83473D701755,Porsche,911,1,258.79,false,false
+592,WAU2GBFC8EN452660,Chevrolet,Tahoe,3,64.21,false,false
+593,4JGBF2FE0BA631166,Maserati,Quattroporte,1,56.39,true,false
+594,WAUEL94F56N026859,Suzuki,Vitara,1,484.11,true,false
+595,3D73Y3CL8AG584762,Morgan,Aero 8,1,169.52,true,true
+596,KMHGH4JH5EU080135,Pontiac,Montana,3,488.7,true,false
+597,1GYUCHEF1AR062843,Chevrolet,Avalanche 1500,2,142.77,false,true
+598,WDDGF4HB0DG863829,Honda,Element,3,391.05,false,true
+599,WUAUUAFG2EN013071,Hyundai,Accent,3,83.79,false,false
+600,WBAKF5C57DE004760,Subaru,Legacy,3,113.47,true,true
+601,3C3CFFHH2FT539650,Lexus,LX,3,187.43,false,true
+602,WVWDB7AJ5EW276318,Mazda,Mazda6,2,321.4,true,false
+603,1G6AR5S32F0858631,Lexus,GS,1,235.55,false,true
+604,1GYFK46828R302223,Jeep,Wrangler,3,198.83,true,false
+605,KNADH5A37B6086811,Suzuki,Swift,3,81.42,false,true
+606,WP0CA2A83EK928259,Suzuki,SJ,1,130.74,false,false
+607,WAUNF68P06A198538,Ferrari,599 GTB Fiorano,1,492.35,false,true
+608,WBAYA8C5XDC955556,Toyota,Land Cruiser,3,153.15,false,true
+609,1G4HP54K23U331677,Ford,Thunderbird,3,211.93,false,false
+610,WAUFMBFC1EN653794,Audi,TT,2,60.83,true,true
+611,SAJWA0ESXEP217282,Honda,Accord,2,72.59,true,true
+612,JH4KB2F68CC674991,Bentley,Continental GT,3,469.31,false,false
+613,WBAEA53548C801061,Hyundai,Accent,3,489.46,true,true
+614,1N6AF0LX1EN408056,Dodge,Dakota,3,108.03,false,true
+615,WVWED7AJ0DW012033,Honda,Accord,1,148.04,true,true
+616,1GYS4DEF1CR085586,Saab,9-7X,3,440.29,false,true
+617,3C3CFFDR5CT715486,Audi,TT,3,68.26,true,true
+618,1GKLRKED6AJ249008,Kia,Sedona,2,64.95,true,true
+619,1C3CDZBG5CN689478,Chevrolet,Lumina,2,354.87,false,false
+620,WBADR634X2G221380,Mercury,Mystique,2,324.52,true,true
+621,4USCK73432L217925,Holden,VS Commodore,2,115.57,false,true
+622,WAUKF78E06A213868,Lincoln,MKT,3,379.42,false,true
+623,JN8CS1MW7FM955363,Toyota,Sienna,1,375.78,true,true
+624,WAUEH74F38N941959,Dodge,Avenger,1,174.92,true,true
+625,2C3CDYAG6EH574816,Nissan,Altima,3,203.62,false,true
+626,1N4AL2AP1BC194953,Nissan,Sentra,1,462.22,true,false
+627,1HGCR6F59EA644141,Hyundai,Azera,3,458.42,false,false
+628,SCBLC47J17C542438,Isuzu,Oasis,2,406.45,true,true
+629,WAUNF78P76A243075,Suzuki,Reno,2,195.46,true,true
+630,1N6BF0KM1FN770093,Plymouth,Grand Voyager,3,375.36,true,true
+631,19XFB2F27CE840619,Chevrolet,G-Series G10,2,287.89,false,false
+632,1G6KF54934U196529,Audi,S6,1,58.72,true,true
+633,3C3CFFAR2ET778259,Chevrolet,G-Series G20,2,236.71,false,false
+634,1G6AL5SX0D0504236,Pontiac,Montana,2,179.1,true,false
+635,WAUFFAFC8DN648708,Cadillac,Escalade EXT,3,173.72,true,true
+636,JN1CV6FE8EM253526,Saturn,L-Series,2,58.94,false,true
+637,3D7TP2HT1AG896640,Oldsmobile,88,2,154.59,false,false
+638,SCFLDCFP8EG854872,Ford,Thunderbird,1,366.96,true,true
+639,WAUBGAFB0BN279357,Chevrolet,Corvette,2,129.14,true,false
+640,4T1BK1EB9FU103403,Lexus,IS,1,439.8,false,true
+641,3GYFK62898G170529,Buick,Riviera,2,329.78,true,true
+642,3D73M4HL3BG630896,Chevrolet,Express 2500,3,343.66,true,true
+643,JTHBE5C27C5632309,Mercury,Grand Marquis,3,349.27,false,false
+644,WAUDF48H79K443973,GMC,1500 Club Coupe,1,176.95,true,false
+645,WBA3V9C55FP980798,Lincoln,MKX,3,332.12,true,false
+646,1GYS4NKJ2FR113558,Mercury,Sable,1,380.79,false,false
+647,WAUWGAFC8FN155000,Chevrolet,Suburban 2500,1,287.2,true,false
+648,3C3CFFCR8ET715101,Ford,Ranger,3,327.6,false,false
+649,SCFFDCCD3AG316257,Ford,F250,1,133.0,false,false
+650,JN1CV6FE3AM483582,Volkswagen,Fox,3,343.04,true,false
+651,3VW467AT8DM395238,Mitsubishi,Truck,2,411.44,true,true
+652,WAUJT64B74N826909,Mercury,Sable,2,233.42,true,false
+653,3D73M3CL8AG406412,Cadillac,SRX,3,357.22,false,true
+654,3N1AB7AP3FY466350,Bentley,Continental GTC,2,394.27,false,false
+655,WAUHGBFC7EN291020,Lamborghini,Diablo,2,422.72,true,false
+656,3D7JV1EP0BG599469,Lincoln,Continental Mark VII,1,138.53,false,true
+657,3N1BC1AP4AL403441,Suzuki,Aerio,3,402.94,false,false
+658,4T1BF1FK2CU549567,Mazda,MX-3,2,288.89,false,false
+659,3GTU1YEJ1DG263534,Buick,Regal,2,207.2,true,true
+660,KMHHU6KJ1FU879537,Volkswagen,Jetta,2,327.29,false,true
+661,KNADH4A35A6215539,Toyota,Corolla,1,361.22,true,false
+662,1G6KS54Y94U609167,Nissan,Altima,3,402.82,false,true
+663,WAUAF48HX8K199950,Chrysler,Imperial,2,73.71,false,false
+664,4T1BF1FK0EU047594,Toyota,MR2,2,324.84,true,false
+665,2FMDK4GC5AB989201,Mazda,Mazda3,2,64.58,false,false
+666,1FTWW3CYXAE754035,Volvo,C70,3,214.77,false,true
+667,3VW217AU8FM222384,Rolls-Royce,Phantom,1,483.63,false,false
+668,5UXXW3C51F0888528,Mitsubishi,Endeavor,1,221.02,true,true
+669,1N4AL3AP3DC533527,Chevrolet,Corvette,3,182.28,true,false
+670,5UXFH0C5XAL885543,Plymouth,Breeze,3,82.78,true,true
+671,KNAFT4A24D5296896,Ford,LTD,1,391.13,false,false
+672,3C3CFFCR5DT902410,Maserati,Gran Sport,1,204.04,true,true
+673,2HKRM3H30FH069665,GMC,Savana 2500,2,87.8,false,false
+674,KL4CJHSB9DB091748,BMW,3 Series,2,362.8,false,true
+675,WAURV78T29A609028,Infiniti,Q,2,225.08,true,false
+676,1N6AF0LX9FN855929,Cadillac,STS,3,212.8,false,false
+677,JTDKN3DUXB0962589,Lexus,ES,2,69.61,true,false
+678,WDDNG7DB0CA253183,Ford,Explorer Sport Trac,2,149.22,false,false
+679,JM1GJ1T54F1310597,Saab,9-5,1,371.69,false,false
+680,1FTEW1CF2FK125683,Chrysler,Aspen,1,270.66,true,false
+681,KL4CJFSB3EB913398,Dodge,Caravan,3,362.15,false,true
+682,WAUNF68P36A120741,Honda,Insight,2,296.9,true,false
+683,1G4HB5EM9AU319425,GMC,Envoy XL,3,92.2,true,false
+684,1FTSX2A58AE046624,Jeep,Wrangler,2,491.89,true,true
+685,WA1WKBFP9AA959200,GMC,Sonoma Club Coupe,3,474.44,false,true
+686,2T1KE4EE8BC258295,Lincoln,Town Car,3,459.51,false,true
+687,1N6AA0CC4AN954968,Volkswagen,Corrado,1,458.84,false,false
+688,19UUA65525A838507,Acura,Legend,3,464.59,false,true
+689,1N4AB7AP1EN731474,Hyundai,Elantra,3,300.15,false,false
+690,JTHBE5C22D5363041,Chevrolet,Express 2500,2,436.82,true,true
+691,WBAFU9C58DD990689,Lincoln,MKS,3,181.86,true,true
+692,WAULT68E85A526155,Oldsmobile,Aurora,3,446.47,false,false
+693,4T3BA3BB1AU670529,Lamborghini,Diablo,3,261.66,true,true
+694,WBA3C3G50EN470446,Chevrolet,Beretta,3,182.52,false,false
+695,1GYS3BEF6ER100366,Mitsubishi,Pajero,1,368.21,true,true
+696,1FTEW1CF7FF231653,Isuzu,VehiCROSS,3,151.23,false,true
+697,JN8AZ1MU2CW635885,Volvo,S60,1,282.64,true,true
+698,WA1DGBFE1FD948155,Ford,Econoline E350,3,362.15,true,false
+699,WBAVM1C54FV534215,Ford,Econoline E150,2,452.67,true,true
+700,WAUNF98P17A665386,Chevrolet,Silverado 1500,3,393.06,true,true
+701,WP0AA2A97AS147335,Lotus,Elan,2,78.58,false,false
+702,19XFB4F24EE226125,Ford,Bronco,2,286.32,true,false
+703,WAUEFBFL5BN388301,Dodge,Dakota,1,295.63,false,false
+704,WAUEV94F18N931371,Audi,A6,3,347.27,false,true
+705,WBAXA5C54ED834933,Chevrolet,3500,2,346.05,false,true
+706,YV4902DZ3E2025690,Dodge,Ram 3500,1,181.09,true,false
+707,1G4PT5SV7E4299400,Mazda,MX-5,3,166.64,true,true
+708,WA1EY94L99D182952,Mercury,Villager,2,72.14,false,true
+709,1D7CW2GK7AS231701,Chevrolet,K5 Blazer,3,173.0,false,true
+710,WAU4FBFL8AA838783,Toyota,Prius,3,318.39,false,false
+711,WAU4FBFL9CA378455,Toyota,RAV4,1,425.28,true,true
+712,2T1BPRHE9FC652980,Acura,MDX,2,65.84,true,true
+713,1GKS2GEJ8CR887056,Oldsmobile,Achieva,1,278.58,false,false
+714,YV126MFCXF2045275,Subaru,Impreza,1,404.59,false,true
+715,KMHEC4A48DA374051,Audi,Coupe GT,2,285.64,true,false
+716,JH4DC54833C835064,Lexus,LS,1,264.18,true,true
+717,TRUVD38JX91669544,Volkswagen,Golf,3,204.6,true,false
+718,1GT01ZCG2CF807843,Hummer,H1,1,193.34,false,true
+719,JM1DE1KY8C0255494,Hyundai,Santa Fe,2,230.03,true,false
+720,WAUVT58E34A833704,Toyota,Highlander,2,377.02,false,true
+721,3C3CFFFH9ET983674,Chevrolet,Silverado 3500,1,479.63,true,true
+722,1GKKRNED9FJ192033,Ford,F150,3,208.75,true,false
+723,WAUFFAFL1FN927517,Saturn,VUE,2,289.96,false,true
+724,WBAEW53434P837304,Mitsubishi,Lancer Evolution,1,108.8,true,true
+725,1N6AD0CU1AC824755,Mazda,RX-8,2,174.38,false,true
+726,WAUFFAFC4EN697776,Lexus,RX,2,157.85,false,false
+727,1G6DL8EG3A0378718,Volkswagen,Golf,2,94.07,true,true
+728,WAUKF78E57A708942,Infiniti,J,1,422.52,false,false
+729,JM3TB2BA0F0885132,Nissan,Frontier,1,475.34,false,true
+730,JN8AZ1MU3EW688128,Chevrolet,Aveo,3,146.05,false,true
+731,1D7RW7GP2AS501016,Volkswagen,Touareg,2,324.44,true,true
+732,TRUUT28N611959425,Audi,A8,1,196.21,true,true
+733,WDDPK4HA8EF261741,Audi,A3,2,414.84,true,false
+734,2T1KU4EE3DC640918,Lincoln,Mark VIII,1,347.77,true,true
+735,2B3CA5CT7AH901264,Honda,Insight,1,211.08,false,false
+736,JHMGE8G29AC521500,GMC,Savana 1500,1,445.32,true,false
+737,KMHCT4AE5CU519706,Oldsmobile,Cutlass,3,353.32,true,true
+738,1ZVBP8JZ2D5317378,Kia,Borrego,2,157.41,false,false
+739,5J6TF2H52FL715709,BMW,745,1,358.46,false,false
+740,5J8TB3H55GL184256,Smart,Fortwo,3,338.07,true,true
+741,5LMJJ3H55DE349871,Oldsmobile,Achieva,2,73.99,true,false
+742,WVGAV7AXXFW494914,Lincoln,Town Car,3,114.23,true,true
+743,2C3CDXBG9CH540343,Subaru,Justy,1,160.45,true,true
+744,1GYS4AEF5CR181686,Audi,A8,1,420.46,true,false
+745,5GAKVBKD5DJ037312,GMC,2500,2,177.03,true,false
+746,KMHHU6KJ8FU603906,Jaguar,XF,2,353.39,true,true
+747,1FMJU1G51AE101237,Ford,Laser,1,214.02,false,false
+748,JTHBW1GG8E2872775,Mercedes-Benz,S-Class,1,291.34,false,false
+749,SCFLDCFP6EG328546,Mercedes-Benz,SLR McLaren,3,288.49,false,false
+750,137ZA84351E236268,Lincoln,MKZ,1,466.86,true,true
+751,JHMZF1C44CS478973,BMW,8 Series,1,229.75,false,true
+752,JTHBE1BL1D5905569,Volkswagen,R32,2,292.79,true,false
+753,19UUA8F54EA560106,Ford,Five Hundred,1,174.25,false,false
+754,KNALN4D73F5860478,Chevrolet,Impala,2,354.28,true,true
+755,WBA3C3C51EK531374,Lexus,LS Hybrid,1,457.64,false,false
+756,2HNYD186X6H968725,Pontiac,Sunbird,3,147.87,true,false
+757,2G4GK5EX5E9567440,Porsche,911,2,460.82,false,true
+758,5TFBY5F16AX251919,Mazda,Mazda5,2,193.69,true,true
+759,WBABD33496P700075,Ford,F-Series,2,374.71,false,false
+760,WUAW2BFC2FN245799,Acura,NSX,1,212.06,true,true
+761,1B3CB8HB7AD971844,Cadillac,Escalade EXT,3,291.83,true,false
+762,1GYS3JEF4CR906732,GMC,Yukon XL 2500,1,382.61,false,true
+763,WAULC58E25A365909,Ford,Econoline E350,1,134.21,true,true
+764,1C6RD6JT3CS802985,Lexus,LX,2,456.43,false,true
+765,1C4RDHDG6CC642050,Mazda,Mazda6,2,165.65,false,false
+766,JN8AF5MR6ET240737,Mercedes-Benz,R-Class,1,67.12,false,true
+767,KNDMG4C31A6977396,Jeep,Grand Cherokee,1,309.81,true,true
+768,WA1VFBFL1DA511762,Chevrolet,Suburban 1500,3,340.11,false,true
+769,3N6CM0KN8DK690876,Nissan,200SX,3,282.71,false,true
+770,JH4DC53045S278069,Mitsubishi,Lancer,2,402.74,false,false
+771,WAUCFAFR6CA133851,GMC,Savana 1500,2,429.21,false,false
+772,1G6DL5E34D0666652,Hummer,H3T,1,441.76,true,true
+773,JM1NC2LF5D0795979,Nissan,Titan,2,206.17,true,true
+774,4T1BF1FK2FU521238,Land Rover,Discovery Series II,2,166.95,true,false
+775,WDDDJ7CB0AA801503,Mitsubishi,Diamante,3,412.57,true,true
+776,3D7TT2CT1AG124125,Ford,Mustang,2,128.49,false,true
+777,1N4AL2AP1AC737992,Jeep,Compass,2,71.72,true,true
+778,WA1LMBFE5AD487040,Isuzu,Space,3,245.16,true,true
+779,WAUMR44E96N915345,Jeep,Liberty,1,93.8,true,false
+780,1FTEX1C82AF896032,Lexus,LX,3,317.4,false,false
+781,3GYVKMEF5AG303366,Ford,Falcon,2,183.94,true,false
+782,5XXGM4A7XDG036157,Maserati,Quattroporte,2,97.6,true,false
+783,2FMDK4AC9AB080225,Ford,Taurus,3,218.72,false,false
+784,WAUDV94F27N104036,BMW,Z4 M,1,250.48,true,false
+785,5TDDK3DC6FS301279,Acura,RDX,1,373.65,true,false
+786,WVGAV7AX1AW731394,Mercedes-Benz,300SL,2,180.08,false,true
+787,WA1VFBFL9EA285861,Chevrolet,S10 Blazer,3,120.62,true,true
+788,5N1AR1NB5AC973977,Volkswagen,Corrado,2,216.87,true,false
+789,1N6AD0CU7EN245053,Nissan,NV2500,2,125.46,false,true
+790,WAUWFAFH4BN525934,Nissan,Sentra,2,456.21,true,true
+791,1G6DC67A880445692,Volvo,XC90,1,156.8,false,false
+792,WBALM7C50AE176615,Saab,9000,2,200.9,true,true
+793,1FTEX1E84AK181418,Audi,Cabriolet,1,238.75,true,false
+794,WAUMGAFL0BA531469,GMC,Savana,2,143.01,true,true
+795,WAUK2AFDXFN664172,BMW,3 Series,1,241.15,true,false
+796,2HNYD28588H065621,Toyota,Highlander,1,260.4,false,true
+797,WAUFFBFL9AN281321,Pontiac,Grand Prix,3,123.97,false,false
+798,5LMJJ2H53BE726625,Audi,A6,2,223.8,true,false
+799,WP1AE2A22DL107018,Lotus,Evora,3,315.46,true,false
+800,WBAEU33433P609005,Ford,Econoline E150,2,211.21,true,true
+801,1HGCP2F30AA654810,Chrysler,Town & Country,1,163.42,true,false
+802,4F2CY0C71AK195594,Scion,FR-S,1,140.85,true,false
+803,SAJWA0F76F8219729,Ford,Mustang,1,175.5,true,true
+804,1G6DG8E57C0423973,GMC,Savana 3500,3,434.65,false,true
+805,JN1CV6AP2BM345171,Honda,Accord,2,348.72,false,true
+806,1FMCU0C72AK638128,Audi,A4,3,431.07,false,true
+807,KM8NU4CC5BU410646,Nissan,Murano,2,344.24,false,true
+808,5N1AN0NUXAC145771,Audi,80,2,319.77,false,false
+809,JN1BJ0HR1EM528187,Audi,A8,1,141.91,false,false
+810,19VDE3F73EE699270,Mazda,Protege,1,184.13,true,true
+811,JM1NC2LF7C0704564,Pontiac,Firefly,3,168.9,true,true
+812,1FTEX1CM6DK656751,Nissan,Altima,2,493.5,true,true
+813,KMHHT6KD0DU626817,Mitsubishi,Chariot,1,231.4,true,false
+814,KMHEC4A41EA933425,Lexus,RX Hybrid,1,447.58,false,true
+815,KNAFU5A25D5622031,Mazda,B-Series,2,215.6,false,false
+816,1GD322CG0EF090441,Cadillac,Escalade EXT,3,230.91,false,false
+817,2FMGK5B84EB621409,Porsche,911,3,376.6,false,true
+818,5BZAF0AA5FN917487,Kia,Sportage,3,253.29,false,true
+819,1FAHP3FN3AW305032,Dodge,Ram Van 3500,2,187.13,true,true
+820,1GKS1FFJ5BR095215,Dodge,Ram Wagon B250,2,141.85,false,false
+821,WBAUP935X9V025123,Ford,Tempo,2,220.49,false,false
+822,3D73M3CLXAG717579,Ford,F350,1,232.58,false,true
+823,3VWPG3AGXAM455828,Chevrolet,Camaro,1,405.21,false,true
+824,WAUSF98E68A094299,GMC,1500,2,232.08,true,false
+825,WA1VMAFE1FD057743,Lexus,SC,3,415.38,false,false
+826,KNAFX6A81F5599464,Mitsubishi,Mirage,1,436.22,true,false
+827,JN8AE2KP7D9393044,Jaguar,XF,1,248.77,false,true
+828,2T1BURHE4EC942812,Hyundai,Genesis,3,274.73,false,true
+829,WBA3C1C55DK637197,Buick,Century,1,447.15,false,false
+830,WBAUU3C57BA196429,Lexus,GS,3,164.99,true,true
+831,1GYS3KEF1BR575158,Nissan,350Z Roadster,1,159.03,false,false
+832,1G6DH5E5XC0962521,Dodge,Durango,2,253.03,true,true
+833,3D7TP2CT3AG760694,Suzuki,Daewoo Magnus,2,371.5,false,true
+834,WAUEFAFL1EA554349,Aston Martin,V8 Vantage,1,342.2,true,true
+835,WA1WMBFEXDD736871,Dodge,Ram,1,114.08,false,false
+836,1GYFK36289R809215,Ford,Festiva,1,271.35,false,true
+837,WBABN33472J863365,GMC,Canyon,1,149.34,true,false
+838,SCFEFBACXAG131780,Pontiac,Vibe,1,205.46,true,true
+839,JN8AZ1MU5DW044371,GMC,Rally Wagon G3500,2,202.92,true,false
+840,SAJWA4EC3EM868643,BMW,3 Series,1,255.14,false,false
+841,4T1BK1EBXFU271003,Nissan,NV2500,2,442.67,false,true
+842,WBANB33575B587721,Ford,E-350 Super Duty,1,210.78,true,false
+843,WAU4FAFRXCA315802,Jeep,Wrangler,1,479.1,false,false
+844,3VWML7AJXEM753559,Ford,Bronco,2,324.12,true,false
+845,WAUDF98E58A359707,Jaguar,XJ Series,3,138.96,true,true
+846,WAULH64B01N776523,Toyota,RAV4,2,499.66,true,true
+847,3VW4A7ATXCM953538,Hyundai,Equus,2,101.67,false,true
+848,WA1VMBFEXAD341273,Hyundai,Entourage,1,345.45,true,true
+849,JM1DE1KY6C0189477,Saab,900,2,462.27,false,true
+850,3N1AB7AP5FL289233,Maserati,Quattroporte,2,403.55,false,false
+851,WVWED7AJ5BW807673,GMC,Yukon XL 2500,1,380.38,false,true
+852,19XFA1E86BE116292,Chevrolet,Corvette,2,139.65,false,false
+853,WAUEFAFL8BN542168,Cadillac,SRX,1,436.62,false,false
+854,3D4PH1FGXBT339200,Lexus,ES,2,204.19,true,false
+855,KMHCM3ACXBU624391,Toyota,Sequoia,3,221.14,false,true
+856,WAUUL98E18A370423,Subaru,Loyale,2,67.53,false,true
+857,5FRYD4H46FB560622,GMC,Sierra 2500,2,320.79,true,true
+858,1GYFK33279R154839,Oldsmobile,Cutlass,1,400.65,true,true
+859,1D7RW3BK2AS830402,Chevrolet,Suburban 2500,2,219.86,false,true
+860,JTJBM7FX4A5000384,Lexus,GS,2,272.0,true,false
+861,WBAFU9C55CD862215,Honda,Accord,1,178.46,true,false
+862,WBAPK5C58BF508212,Toyota,Camry Solara,2,442.21,true,true
+863,1GD020CG7DZ419673,Dodge,Dakota Club,2,467.07,false,false
+864,1YVHZ8BHXA5208671,Mercedes-Benz,CLK-Class,1,174.81,false,false
+865,WAUKFAFL0DN293628,Audi,A4,2,95.69,false,true
+866,JN1CV6EKXDM929464,Ford,F350,3,130.67,true,true
+867,1YVHZ8BA8A5609266,Lotus,Elise,2,487.81,true,true
+868,WAUSF98K99A326465,Saab,9000,2,90.31,true,true
+869,5UXFA13555L687985,Ford,Escort,3,351.2,false,true
+870,5NPDH4AE2DH651991,Hyundai,Elantra,3,274.08,false,false
+871,1G6AA1RX5F0709929,Chrysler,Cirrus,1,138.83,false,false
+872,1N4AL3AP0DC471178,Honda,S2000,2,58.4,true,false
+873,19XFB2E57DE243483,Cadillac,Escalade EXT,2,93.55,false,true
+874,WBA6B2C52ED308016,Honda,Ridgeline,3,322.29,false,true
+875,WBA3B1C55FP453760,Aston Martin,DB9,3,474.81,false,true
+876,KL4CJCSB0FB289186,Dodge,Neon,1,427.24,false,false
+877,WVWAP7AN1EE267337,Mercury,Mountaineer,1,64.7,false,true
+878,1N6BF0KM1FN423332,Volvo,C30,1,336.43,false,true
+879,3C63DRJL2CG293258,Toyota,Sequoia,1,421.34,false,false
+880,5GAEV23D39J925611,Volvo,C30,1,407.8,true,true
+881,2HNYD28858H843285,Cadillac,Escalade ESV,1,73.4,false,false
+882,1D7RB1CT5BS304757,Isuzu,Rodeo Sport,1,70.49,true,false
+883,19UUA9E55CA756558,Oldsmobile,Achieva,3,442.0,true,false
+884,JN8AE2KP4F9354737,Hyundai,XG350,3,323.92,true,true
+885,WBA3B5C54FF377316,Mercury,Grand Marquis,1,234.42,false,true
+886,1G6DK5EG3A0239870,Buick,Electra,2,228.43,true,true
+887,WBANU5C53AB024908,Dodge,Charger,3,126.08,true,true
+888,1FAHP2DW2BG456543,Mitsubishi,Endeavor,2,360.75,false,true
+889,WAUDH74F87N405762,Volvo,S60,1,126.76,true,false
+890,JHMZF1D41DS049872,Mitsubishi,Diamante,3,58.89,false,false
+891,JHMGE8G37CS784280,Hyundai,Azera,2,384.74,true,false
+892,3N1CN7AP0DL298497,Chrysler,New Yorker,1,409.54,true,false
+893,3D7TT2HT8BG444455,Ford,F150,1,336.2,false,false
+894,3FA6P0D97DR312939,Lincoln,MKT,2,342.58,true,true
+895,3N1CE2CP3EL705911,Ford,E-Series,3,334.7,false,false
+896,5UXFA93584L467477,Buick,Regal,2,57.66,true,true
+897,WBA3B1C52EF023558,Toyota,Sequoia,3,498.35,true,false
+898,2C3CK6CT9BH690365,Mercedes-Benz,CL-Class,1,333.93,true,false
+899,1GYFK26259R763272,Eagle,Summit,2,206.34,false,true
+900,2C3CDYCJ7CH974325,Dodge,Dakota,1,95.17,false,true
+901,2HNYD28807H193926,Pontiac,Bonneville,1,266.33,false,false
+902,WAUUL98E76A092771,Dodge,Ram 3500,3,311.74,false,true
+903,WA1CMAFE2DD132728,Mercedes-Benz,M-Class,3,232.48,true,true
+904,JH4NA21662T205789,Suzuki,Grand Vitara,3,52.66,false,false
+905,JA32U2FU6EU618523,Honda,Accord,2,223.42,false,false
+906,2C3CDZAT2FH698599,Audi,TT,1,89.31,false,true
+907,WAU2GAFC7EN557281,Isuzu,Amigo,3,239.62,false,false
+908,WBAPN7C50BA529457,Nissan,Armada,2,108.25,false,false
+909,4T1BK3DB2BU063964,Buick,LeSabre,2,396.03,false,true
+910,3C4PDDBG5ET278021,GMC,1500,3,180.07,true,true
+911,1FADP3E22DL483977,Chevrolet,G-Series 2500,1,490.72,true,true
+912,JN8AF5MR3FT101134,GMC,Yukon,1,455.0,false,false
+913,WAUMFAFLXCA081611,Ford,Expedition EL,3,246.64,false,false
+914,2D4RN3DG5BR900230,Kia,Optima,1,477.46,true,true
+915,JTEBU5JR8B5248988,Dodge,Charger,3,106.45,true,true
+916,3VW467AT5DM528229,Honda,Civic GX,1,268.03,true,true
+917,3D7JB1EK4AG176017,Mitsubishi,Pajero,3,326.74,false,false
+918,1N6AA0CH6EN966850,Cadillac,Escalade EXT,3,74.47,true,true
+919,WAUGU54D41N362461,Volkswagen,Passat,2,190.79,false,false
+920,WAUML54B72N866279,Lotus,Esprit,3,496.95,true,false
+921,3VWJP7AT5CM951813,Ford,Escort,3,413.04,false,false
+922,WAULFAFR4CA054064,Infiniti,Q,3,206.3,false,true
+923,WBAET37453N059878,Lincoln,MKS,1,257.95,false,true
+924,JM1NC2MF8E0679353,Ford,Taurus,3,52.97,true,true
+925,KMHHT6KD8DU983615,Buick,Regal,2,128.73,true,true
+926,1HGCR2F36DA769720,Toyota,Land Cruiser,2,472.03,false,true
+927,WBANV1C57AC158191,GMC,Acadia,1,160.59,true,true
+928,WBA3K5C54FK313574,Porsche,911,1,451.92,true,false
+929,JN8AZ1MUXCW381097,Acura,Legend,2,220.24,false,false
+930,SCFEBBAC3AG645501,Volkswagen,Type 2,3,394.52,true,false
+931,WBAFZ9C50DC096130,Ford,Probe,2,292.35,true,true
+932,19XFB4F22DE610600,Chevrolet,Suburban 1500,1,499.29,false,false
+933,4A4AP3AUXEE676395,Mercedes-Benz,CLK-Class,2,401.09,false,true
+934,19UUA76518A966181,BMW,7 Series,3,431.95,false,true
+935,4T3BA3BBXCU894787,Chrysler,300C,1,340.62,true,true
+936,SALVP2BG3FH455046,Mercedes-Benz,E-Class,3,445.49,true,true
+937,1HGCR2E79EA166511,Volkswagen,New Beetle,2,211.97,true,true
+938,3N1CN7AP0FL894888,Mazda,B-Series,2,485.79,false,true
+939,WA1EY94L97D640440,Dodge,Ram 1500,3,304.41,true,false
+940,3GYFNCE3XFS512991,Volkswagen,GTI,2,296.41,true,false
+941,1G6AJ5SX9D0757285,Ford,E-Series,2,245.26,false,true
+942,1GKMCCE31AR472979,Suzuki,Reno,3,406.95,true,false
+943,5J8TB3H58EL274076,Volvo,S80,3,113.29,false,true
+944,2G4WE587661763210,Audi,TT,3,431.0,true,false
+945,SCFEBBBC2AG089857,Suzuki,Sidekick,3,114.99,false,true
+946,WBAUT9C56AA862359,Mazda,CX-5,3,249.74,false,false
+947,2C3CCAEG9FH771047,Cadillac,Eldorado,3,233.45,true,true
+948,JN8CS1MU8FM076484,Mercury,Topaz,1,209.66,true,true
+949,WA1WYAFE4AD303959,Mitsubishi,3000GT,2,389.63,true,false
+950,2C3CDYBTXEH882793,GMC,Yukon XL 2500,3,50.15,false,true
+951,1D7RE3GK7BS742491,Mercedes-Benz,E-Class,1,267.62,true,true
+952,YV1612FH1E1050966,Audi,A4,1,487.09,true,false
+953,3GTU2YEJ0CG441865,Oldsmobile,Bravada,3,357.81,true,true
+954,WAUSH94F98N031215,Nissan,Rogue,2,485.3,false,false
+955,1D7RB1GP2AS407307,Jaguar,S-Type,2,261.95,true,true
+956,1C4SDJCT0CC888969,Nissan,Frontier,3,121.15,true,true
+957,JHMGE8G36CS801344,Hummer,H3,1,337.35,true,true
+958,SALFR2BN5BH106297,Maybach,57,2,194.54,true,true
+959,WBAUP9C53CV355239,Ford,Ranger,3,185.06,false,false
+960,1FMJK1F52AE723420,Saturn,Astra,2,165.32,true,false
+961,WAU3GAFC3DN005697,GMC,Savana 1500,3,106.96,false,false
+962,3D7JV1EP6BG983126,Dodge,Ram 1500,3,495.12,true,false
+963,1N6AF0KY9EN855129,Ford,Mustang,3,201.17,false,false
+964,1N6AF0LY6EN227284,Porsche,Cayenne,1,404.59,true,false
+965,SCBLE37G05C339742,Pontiac,Firebird,1,128.64,false,false
+966,2T2BK1BA2FC503179,Ford,Bronco,3,388.0,true,false
+967,WAUCFAFH1EN936831,Dodge,Ram 1500,3,52.55,false,true
+968,WBABS53413J297063,Mitsubishi,Diamante,3,131.04,false,true
+969,1G6KD57Y19U560849,Cadillac,SRX,2,491.3,false,true
+970,5GAKRBKDXEJ143924,Dodge,Magnum,1,220.89,false,false
+971,SCFLDCFP9EG343946,Volkswagen,Golf,3,434.39,false,false
+972,WBA3B3C52EJ037095,Ford,Mustang,2,203.76,false,true
+973,JN1AZ4EH2FM180280,Mercedes-Benz,GL-Class,1,425.56,false,true
+974,WBA3N7C51EK162758,Ford,Crown Victoria,1,341.77,false,false
+975,WBANW1C52AC662810,Scion,xD,1,222.12,true,true
+976,WVWED7AJ4DW193573,Subaru,Justy,1,214.81,true,false
+977,JTEBU4BF2CK157829,Chevrolet,Suburban 2500,1,391.26,false,false
+978,3VW507AT8FM974965,Oldsmobile,LSS,3,116.45,true,false
+979,WBABV13484J954801,Land Rover,Range Rover,1,144.15,false,false
+980,WBAWC33579P610084,Chevrolet,Bel Air,1,183.91,false,true
+981,WA1YD64BX2N616570,Land Rover,Range Rover,2,335.1,true,true
+982,WVWAA7AJ3CW238802,Porsche,911,3,184.64,true,false
+983,4T1BD1FK0FU912121,Volvo,S80,2,343.62,false,false
+984,JN8AZ2KR8AT255128,Mercury,Sable,1,85.1,false,true
+985,WAUEFBFL5BN583797,Plymouth,Colt Vista,3,127.28,true,false
+986,2FMGK5B82DB145479,Honda,del Sol,2,311.53,false,false
+987,19UYA42732A767938,Volvo,S60,2,434.89,true,false
+988,SCBBR9ZA0BC790404,Ford,Focus ST,2,284.95,false,true
+989,2HNYD18224H382269,Toyota,Tacoma Xtra,1,302.25,false,false
+990,5J6TF2H55FL255851,Acura,RDX,2,351.92,false,false
+991,KM8JT3AF2EU232840,Oldsmobile,Alero,3,182.62,true,true
+992,WA1MKAFP8AA024669,Suzuki,Daewoo Lacetti,3,251.3,false,true
+993,1GYFK63897R265489,Ford,Focus,1,455.1,true,false
+994,YV4952CF1C1700612,Mitsubishi,Pajero,1,166.74,true,true
+995,4USBT33584L368272,Audi,S5,3,290.83,true,false
+996,1G6AB5S36F0608572,Ford,Thunderbird,2,250.63,false,true
+997,WAUDH78EX8A272786,Mitsubishi,Tundra,3,54.98,true,true
+998,WAUJC68E84A086895,Mitsubishi,Pajero,1,106.52,true,true
+999,KMHTC6AD6CU534976,Audi,90,3,359.62,false,true
+1000,3D7TT2CT6AG074600,Audi,A5,1,221.01,false,true
