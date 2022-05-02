@@ -1,0 +1,10 @@
+insert into Dealership (dealershipId, address, state, zipCode) values (1, '92495 Troy Street', 'Virginia', 0);
+insert into Dealership (dealershipId, address, state, zipCode) values (2, '3678 Algoma Hill', 'Louisiana', 0);
+insert into Dealership (dealershipId, address, state, zipCode) values (3, '4 Grayhawk Place', 'Nevada', 0);
+insert into Dealership (dealershipId, address, state, zipCode) values (4, '1 Chive Crossing', 'Oklahoma', 0);
+insert into Dealership (dealershipId, address, state, zipCode) values (5, '6506 Karstens Point', 'California', 0);
+insert into Dealership (dealershipId, address, state, zipCode) values (6, '50918 Lindbergh Hill', 'Arkansas', 0);
+insert into Dealership (dealershipId, address, state, zipCode) values (7, '1492 Village Green Pass', 'Florida', 0);
+insert into Dealership (dealershipId, address, state, zipCode) values (8, '724 Fair Oaks Court', 'Louisiana', 0);
+insert into Dealership (dealershipId, address, state, zipCode) values (9, '05629 Oriole Center', 'Nevada', 0);
+insert into Dealership (dealershipId, address, state, zipCode) values (10, '3087 Namekagon Terrace', 'West Virginia', 0);
