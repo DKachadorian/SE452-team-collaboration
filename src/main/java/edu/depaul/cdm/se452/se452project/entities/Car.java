@@ -1,13 +1,13 @@
 package edu.depaul.cdm.se452.se452project.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -18,13 +18,13 @@ public class Car {
     @Id
     @GeneratedValue
     @Column(name = "CarId")
-    private long carId;
+    private Long carId;
 
     @Column(name = "CarVinId")
     private String carVinId;
 
     @Column(name = "CarManufacturer")
-    private String carMake;
+    private String carManufacturer;
 
     @Column(name = "CarModel")
     private String carModel;
@@ -35,15 +35,22 @@ public class Car {
     @Column(name = "CarPrice")
     private Double carPrice;
 
-    @Column(name = "CarSeat") //Booster Seat
-    private boolean carSeat;
+    @Column(name = "CarBabySeat")
+    private Boolean babySeat;
 
     @Column(name = "CarSunroof")
-    private boolean carSunroof;
+    private Boolean carSunroof;
 
-    //Flag for In/Out of Dealership
+    @Column(name = "CarAvailable")
+    private Boolean carAvailable;
 
-    //Needs DealershipId for Current Location Tracking
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "DealershipId")
+    private Dealership dealership;
 
+    @JsonIgnore
+    @OneToOne(mappedBy = "car", cascade = CascadeType.ALL)
+    private Reservation reservation;
 
 }

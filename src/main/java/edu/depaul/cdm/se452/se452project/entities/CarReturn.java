@@ -3,10 +3,7 @@ package edu.depaul.cdm.se452.se452project.entities;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -15,55 +12,49 @@ import javax.persistence.Table;
 public class CarReturn {
 
     @Id
+    @GeneratedValue
     @Column(name = "ReturnId")
-    private long returnId;
+    private Long returnId;
 
-    // Most likely CustomerId
+    @OneToOne
+    @JoinColumn(name = "DealershipId")
+    private Dealership dealership;
 
-    @Column(name = "RentalId")
-    private long rentalId; // ?? LINK TO RENTAL ID???
+    @OneToOne
+    @JoinColumn(name = "CustomerId")
+    private Customer customer;
 
-    @Column(name = "CarId")
-    private long carId; //  ADD FOREIGN KEY LINK TO CAR ID
-
-    @Column(name = "EmployeeId")
-    private long employeeId; // ADD FOREIGN KEY LINK TO EMPLOYEE ID (for employee processing the return)
-
-    @Column(name = "DealershipId")
-    private long dealershipId; // ADD FOREIGN KEY LINK TO DEALERSHIP ID (for physical location of car when returned)??
-
-    //=====FEES AND ALL THAT JAZZ =====
+    @OneToOne
+    @JoinColumn(name = "EmployeeId")
+    private Employee employee;
 
     @Column(name = "LateReturn")
-    private boolean lateReturn; // can we have an auto fee if this is true???
+    private Boolean lateReturn;
 
-    @Column(name = "GasTankFull")
-    private boolean fullTank;
+    @Column(name = "FullTank")
+    private Boolean fullTank;
 
     @Column(name = "ReturnMileage")
-    private long returnMileage; // usually some sort of general fee based on total trip mileage???? idk how rental works
+    private Long returnMileage;
 
     @Column(name = "InteriorDamage")
-    private boolean interiorDamage;
+    private Boolean interiorDamage;
 
     @Column(name = "InteriorNotes")
     private String interiorNotes;
 
     @Column(name = "InteriorFee")
-    private float interiorFee; // can we auto this to 0 if boolean is false???
+    private Double interiorFee;
 
     @Column(name = "ExteriorDamage")
-    private boolean exteriorDamage;
+    private Boolean exteriorDamage;
 
     @Column(name = "ExteriorNotes")
     private String exteriorNotes;
 
     @Column(name = "ExteriorFee")
-    private float exteriorFee; // ?? Can we auto this to 0 if boolean is false???
+    private Double exteriorFee;
 
     @Column(name = "TotalFee")
-    private float totalFee; // lateReturn fee + mileage fee + gas fee + damage fees
-
-
-
+    private Double totalFee;
 }

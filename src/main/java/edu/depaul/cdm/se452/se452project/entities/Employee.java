@@ -3,10 +3,7 @@ package edu.depaul.cdm.se452.se452project.entities;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -15,8 +12,9 @@ import javax.persistence.Table;
 public class Employee {
 
     @Id
+    @GeneratedValue
     @Column(name = "EmployeeId")
-    private long employeeId;
+    private Long employeeId;
 
     @Column(name = "FirstName")
     private String firstName;
@@ -24,9 +22,10 @@ public class Employee {
     @Column(name = "LastName")
     private String lastName;
 
-    @Column(name = "Role")
-    private String role;
+    @Column(name = "JobTitle")
+    private String jobTitle;
 
-    @Column(name = "DealershipId")
-    private long dealershipId; // NEEDS FOREIGN KEY LINK TO LOCATION TABLE
+    @OneToOne
+    @JoinColumn(name = "DealershipId")
+    private Dealership dealership;
 }

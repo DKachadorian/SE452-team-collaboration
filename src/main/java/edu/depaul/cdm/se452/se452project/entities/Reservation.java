@@ -29,13 +29,15 @@ public class Reservation {
     private Date endDate;
 
     @Column(name = "DaysReserved")
-    private int daysReserved;
+    private Long daysReserved;
 
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "CustomerId")
     private Customer customer;
 
-    // CarId Column
-
+    @JsonIgnore
+    @OneToOne
+    @JoinColumn(name = "CarId")
+    private Car car;
 }
