@@ -92,6 +92,7 @@ function validatePayment() {
     var creditCardNum = document.forms["paymentForm"]["creditCardNum"].value;
     var cvv = document.forms["paymentForm"]["cvv"].value;
     var cardholderName = document.forms["paymentForm"]["cardholderName"].value;
+    var expDate = document.forms["paymentForm"]["expDate"].value;
     
     if(creditCardNum == null || creditCardNum == "") {
         document.getElementsByClassName( "errorMessageCreditCardNum" )[0].style.visibility = "visible";
@@ -108,6 +109,12 @@ function validatePayment() {
             document.getElementsByClassName( "errorMessageCardholderName" )[0].style.visibility = "visible";
             document.getElementsByClassName( "errorMessageCardholderName" )[0].innerHTML = "<font color='red'>"+"Please enter your name that is on the credit card"+ "</font>";
         }        
+
+        if(expDate == null || expDate == "") {
+
+            document.getElementsByClassName( "errorMessageDate" )[0].style.visibility = "visible";
+            document.getElementsByClassName( "errorMessageDate" )[0].innerHTML = "<font color='red'>"+"Please enter a date"+ "</font>";
+        } 
     
     return false;
     } 
