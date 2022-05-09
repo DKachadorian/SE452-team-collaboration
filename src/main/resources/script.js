@@ -42,6 +42,11 @@ function validateAccount() {
             document.getElementsByClassName( "errorMessagePw" )[0].innerHTML = "<font color='red'>"+ "Please enter a password"+ "</font>";
         }
 
+        if (confirmPw !== password) {
+            document.getElementsByClassName( "errorMessageConfirm" )[0].style.visibility = "visible";
+            document.getElementsByClassName( "errorMessageConfirm" )[0].innerHTML = "<font color='red'>"+ "Your passwords must match!"+ "</font>";
+        }
+
         if(confirmPw == null || confirmPw == "") {
 
             document.getElementsByClassName( "errorMessageConfirm" )[0].style.visibility = "visible";
