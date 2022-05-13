@@ -1,6 +1,9 @@
 package edu.depaul.cdm.se452.se452project.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -47,8 +50,26 @@ public class Customer {
     @Column(name="Password")
     private String password;
 
+    @Column(name="ZipCode")
+    private String zipCode;
+
+    @Column(name="State")
+    private String state;
+
     @Column(name="Email")
-    private String email;
+    private String email; 
+    
+    @Column(name = "CardNumber")
+    private Long cardNumber;
+
+    @Column(name = "ExpirationDate")
+    private Date expirationDate;
+
+    @Column(name = "CVV")
+    private Short cvv;
+
+    @Column(name = "CardholderName")
+    private String cardholderName; 
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Reservation> reservations = new ArrayList<>();

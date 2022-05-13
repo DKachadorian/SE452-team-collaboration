@@ -4,10 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
+        <html xlms:th="https://thymeleaf.org">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <script src="script.js" async defer> </script>
     </head>
     <body>
 
@@ -17,20 +19,18 @@
                 <h1 class="title"> DePaul's Deluxe Rentals</h1>
             </div>
         </section>        
-        
-        <!-- Account Creation -->    
+       
+          
         <div class="account" >
             <h1 class="title"> Account Creation:</h1>
         </div>        
 
-        <div class="columns">
-            <div class="form column is-4 px-6">
-                <form class="form" id="accountForm" action="" onsubmit = "return validateAccount()" method="get" >
-              
+        <form class="form" id="accountForm" action="" th:action= "@{/accountCreate}" th:object="${customer}" onsubmit = "return validateAccount()" method="post" >
+            <div class="div1">
                 <div class="field pb-2">
                     <label class="label">Username</label>
                 <div class="control">
-                    <input class="input" type="text" id="username" placeholder="Enter Username">
+                    <input class="input" type="text" id="username"  th:field="*{username}" placeholder="Enter Username">
                 </div>
                 <p class = "errorMessageUser top-arrow" > </p>
             </div> 
@@ -38,7 +38,7 @@
             <div class="field pb-2 ">
                 <label class="label">Password</label>
                 <div class="control">
-                    <input class="input" type="text" id="password"  placeholder="Enter Password">
+                    <input class="input" type="text" id="password"  th:field="*{password}" placeholder="Enter Password">
                 </div>
                 <p class = "errorMessagePw top-arrow" > </p>
             </div>
@@ -54,7 +54,7 @@
             <div class="field pb-2 ">
                 <label class="label">First Name</label>
                 <div class="control">
-                    <input class="input" type="text" id= "firstName" placeholder="First Name">
+                    <input class="input" type="text" id= "firstName"  th:field="*{firstName}" placeholder="First Name">
                 </div>
                 <p class = "errorMessageFn top-arrow" > </p>                
             </div>
@@ -62,7 +62,7 @@
             <div class="field pb-2 ">
                 <label class="label">Last Name</label>
                 <div class="control">
-                    <input class="input" type="text" id= "lastName" placeholder="Last Name">
+                    <input class="input" type="text" id= "lastName"  th:field="*{lastName}" placeholder="Last Name">
                 </div>
                 <p class = "errorMessageLn top-arrow" > </p>                
             </div>
@@ -70,7 +70,7 @@
             <div class="field pb-2 ">
                 <label class="label">Street Address</label>
                 <div class="control">
-                    <input class="input" type="text" id= "streetName" placeholder="Street Address">
+                    <input class="input" type="text" id= "streetName"  th:field="*{address}" placeholder="Street Address">
                 </div>
                 <p class = "errorMessageSt top-arrow" > </p>                
             </div>
@@ -78,7 +78,7 @@
             <div class="field pb-2 ">
                 <label class="label">State</label>
                 <div class="dropdown">
-                    <select name="stateDropdown" id="dropdown" style="height: 40px; width:360px;">
+                    <select name="stateDropdown" id="dropdown" th:field="*{state}" style="height: 40px; width:360px;">
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
@@ -137,7 +137,7 @@
             <div class="field pb-2 ">
                 <label class="label">Zip Code</label>
                 <div class="control">                   
-                    <input class="input" type="text" id= "zipCode" pattern="[0-9]{5}" placeholder="12345">
+                    <input class="input" type="text" id= "zipCode" th:field="*{zipCode}" pattern="[0-9]{5}" placeholder="12345">
                 </div>  
                 <p class = "errorMessageZip top-arrow" > </p>                
             </div>
@@ -145,7 +145,7 @@
             <div class="field pb-6 ">
                 <label class="label">Phone Number</label>
                 <div class="control">
-                    <input class="input" type="phone" id= "phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  placeholder="123-456-7890">
+                    <input class="input" type="phone" id= "phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" th:field="*{phoneNumber}" placeholder="123-456-7890">
                 </div> 
                 <p class = "errorMessagePhone top-arrow"></p>                 
             </div>
@@ -153,51 +153,42 @@
             <div class="accountBtn columns is-centered is-2 px-6 pb-6">
                 <button class="button is-link is-light is-medium">Create Account</button>
             </div>
-        </form>
-        </div>     
-       
-            <div class="form column is-4 px-6">
-                <form class="paymentForm" id="paymentForm" action="" onsubmit = "return validatePayment()" method="get">
+        </div>
 
-                <div class="payment">
-                    <div class="field pb-2">
-                        <label class="label">Card Number</label>
-                    <div class="control">
-                        <input class="input" type="text" id="creditCardNum" placeholder="Enter Credit Card Number">
-                </div>
-                <p class = "errorMessageCreditCardNum top-arrow" > </p>  
-          </div> 
-        
-          <div class="field_ pb-2">                                
-                <div class="control_exp">
-                    <label class="label">Expiration Date</label>
-                    <input class="input" type="date" id="expDate" placeholder="Expiration Date">                       
-                </div> 
-                <p class = "errorMessageDate top-arrow" > </p>                     
-                                 
-                <div class="control_exp_cvv">  
-                    <label class="label">CVV</label>                                                         
-                    <input class="input" type="text" id="cvv"  pattern="[0-9]{3}"  placeholder="000">     
-                </div>  
-                <p class = "errorMessageCvv top-arrow" > </p>                                
+        <div class="div2">
+            <div class="payment">
+                <div class="field pb-2">
+                    <label class="label">Card Number</label>
+                <div class="control">
+                    <input class="input" type="text" id="creditCardNum" th:field="*{cardNumber}" placeholder="Enter Credit Card Number">
+            </div>
+            <p class = "errorMessageCreditCardNum top-arrow" > </p>  
+        </div> 
+
+        <div class="field_ pb-2">                                
+            <div class="control_exp">
+                <label class="label">Expiration Date</label>
+                <input class="input" type="date" id="expDate" value="2022-05-13" th:field="*{expirationDate}" placeholder="Expiration Date">                      
+            </div> 
+            <p class = "errorMessageDate top-arrow" > </p>                     
+                            
+        <div class="control_exp_cvv">  
+                <label class="label">CVV</label>                                                         
+                <input class="input" type="text" id="cvv"  pattern="[0-9]{3}" th:field="*{cvv}"  placeholder="000">     
+            </div>  
+            <p class = "errorMessageCvv top-arrow" > </p>                                
          </div>     
-           
+    
         <div class="field pb-6">  
             <label class="label">Cardholder Name</label>
             <div class="control">
-                <input class="input" type="text" id="cardholderName" placeholder="Cardholder Name">
-           </div>
-           <p class = "errorMessageCardholderName top-arrow" > </p>  
-        </div> 
-
-        <div class="buttons is-centered is-3">    
-            <div class="control">
-                <button class="button is-link is-light is-medium">Verify Payment Details</button>
+                <input class="input" type="text" id="cardholderName" th:field="*{cardholderName}" placeholder="Cardholder Name">
             </div>
-        </div>
-        </div>
-        </form>
-    </div>
-        <script src="script.js" async defer></script>
+            <p class = "errorMessageCardholderName top-arrow" > </p>  
+        </div> 
+        
+        </div> 
+        </div>      
+    </form>
     </body>
 </html>
