@@ -21,6 +21,14 @@ CREATE TABLE Customer (
     Username VARCHAR(30),
     Password VARCHAR(50),
     Email VARCHAR(50),
+    State VARCHAR(30),
+    ZipCode VARCHAR(5),
+    CardNumber BIGINT,
+    ExpirationDate DATE,
+    CVV VARCHAR(3),
+    CardholderName VARCHAR(30),   
+
+
     PRIMARY KEY(CustomerId)
 );
 

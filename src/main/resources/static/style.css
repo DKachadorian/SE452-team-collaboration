@@ -19,21 +19,31 @@
     width: 700px;
     border: 5px solid black;
     padding: 20px;
-    height: 550px;
+    height:550;
   }
 
-.control_exp{
-  width:200px;
+  .control_exp{
+      width:200px;
+  }
+
+  .control_exp_cvv{
+      width:150px;
+  }
+  .field_ {
+    column-count: 2;
+    padding:20px;
+  }
+
+  .div1{
+      width:30%;
+      float:left;
+  }
+
+  .div2{
+    width:50%;
+    float:right;
 }
 
-.control_exp_cvv{
-  width:150px;
-}
-
-.field_ {
-column-count: 2;
-padding:20px;
-}
 
 
 

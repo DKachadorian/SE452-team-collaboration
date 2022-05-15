@@ -22,6 +22,8 @@ function validateLogin() {
 
 
 function validateAccount() {
+
+
     var username = document.forms["accountForm"]["username"].value;
     var password = document.forms["accountForm"]["password"].value;
     var confirmPw = document.forms["accountForm"]["confirmPw"].value;
@@ -30,11 +32,25 @@ function validateAccount() {
     var streetName = document.forms["accountForm"]["streetName"].value;
     var zipCode = document.forms["accountForm"]["zipCode"].value;
     var phoneNum = document.forms["accountForm"]["phone"].value;
-    
-    if(username == null || username == "") {
+    var creditCardNum = document.forms["accountForm"]["creditCardNum"].value;
+    var cvv = document.forms["accountForm"]["cvv"].value;
+    var cardholderName = document.forms["accountForm"]["cardholderName"].value;
+    var expDate = document.forms["accountForm"]["expDate"].value;
+
+
+
+if (username == null || username == ""||confirmPw !== password||password == null || password == ""||confirmPw == null || confirmPw == ""
+    ||firstName == null || firstName == ""||lastName == null || lastName == ""||streetName == null || streetName== ""||
+    zipCode == null || zipCode == ""||phoneNum == null || phoneNum == "" || creditCardNum == null || creditCardNum == ""||
+    cvv == null || cvv == ""||cardholderName == null || cardholderName == ""||expDate == null || expDate == ""){ 
+
+    if(username == null || username == ""  ) {
         document.getElementsByClassName( "errorMessageUser" )[0].style.visibility = "visible";
         document.getElementsByClassName( "errorMessageUser" )[0].innerHTML = "<font color='red'>"+ "Please enter an username"+ "</font>";
-    
+    }
+    else{
+            document.getElementsByClassName( "errorMessageUser" )[0].innerHTML = "";
+        }
 
         if(password == null || password == "") {
 
@@ -42,9 +58,18 @@ function validateAccount() {
             document.getElementsByClassName( "errorMessagePw" )[0].innerHTML = "<font color='red'>"+ "Please enter a password"+ "</font>";
         }
 
+        else{
+            document.getElementsByClassName( "errorMessagePw" )[0].innerHTML = "";
+        }
+
         if (confirmPw !== password) {
             document.getElementsByClassName( "errorMessageConfirm" )[0].style.visibility = "visible";
             document.getElementsByClassName( "errorMessageConfirm" )[0].innerHTML = "<font color='red'>"+ "Your passwords must match!"+ "</font>";
+            alert("passwords dont match, please make sure the passwords match!");
+        }
+
+        else{
+            document.getElementsByClassName("errorMessageConfirm")[0].innerHTML = "";
         }
 
         if(confirmPw == null || confirmPw == "") {
@@ -53,10 +78,18 @@ function validateAccount() {
             document.getElementsByClassName( "errorMessageConfirm" )[0].innerHTML = "<font color='red'>"+ "Please confirm the password!"+ "</font>";
         }
 
+        else{
+            document.getElementsByClassName( "errorMessageConfirm" )[0].innerHTML = "";
+        }
+
         if(firstName == null || firstName == "") {
 
             document.getElementsByClassName( "errorMessageFn" )[0].style.visibility = "visible";
             document.getElementsByClassName( "errorMessageFn" )[0].innerHTML = "<font color='red'>"+ "Please enter a first name"+ "</font>";
+        }
+
+        else{
+            document.getElementsByClassName( "errorMessageFn" )[0].innerHTML = "";
         }
 
         if(lastName == null || lastName == "") {
@@ -65,10 +98,18 @@ function validateAccount() {
             document.getElementsByClassName( "errorMessageLn" )[0].innerHTML = "<font color='red'>"+ "Please enter a last name"+ "</font>";
         }
 
+        else{
+            document.getElementsByClassName( "errorMessageLn" )[0].innerHTML = "";
+        }
+
         if(streetName == null || streetName== "") {
 
             document.getElementsByClassName( "errorMessageSt" )[0].style.visibility = "visible";
             document.getElementsByClassName( "errorMessageSt" )[0].innerHTML = "<font color='red'>"+ "Please enter a street name"+ "</font>";
+        }
+
+        else{
+            document.getElementsByClassName( "errorMessageSt" )[0].innerHTML = "";
         }
 
         if(zipCode == null || zipCode == "") {
@@ -77,31 +118,92 @@ function validateAccount() {
             document.getElementsByClassName( "errorMessageZip" )[0].innerHTML = "<font color='red'>"+ "Please enter a zip code"+ "</font>";
         }
 
+        else{
+            document.getElementsByClassName( "errorMessageZip" )[0].innerHTML = "";
+        }
+
         if(phoneNum == null || phoneNum == "") {
 
             document.getElementsByClassName( "errorMessagePhone" )[0].style.visibility = "visible";
             document.getElementsByClassName( "errorMessagePhone" )[0].innerHTML = "<font color='red'>"+ "Please enter a phone number"+ "</font>";
         }
+
+        else{
+            document.getElementsByClassName( "errorMessagePhone" )[0].innerHTML = "";
+        }
+
+        
+        if (creditCardNum == null || creditCardNum == "") {
+            document.getElementsByClassName( "errorMessageCreditCardNum" )[0].style.visibility = "visible";
+            document.getElementsByClassName( "errorMessageCreditCardNum" )[0].innerHTML = "<font color='red'>"+ "Please enter your credit card number" + "</font>";
+        }
+
+        else{
+            document.getElementsByClassName( "errorMessageCreditCardNum" )[0].innerHTML =""; 
+        }     
+        
+        if(cvv == null || cvv == "") { 
+
+            document.getElementsByClassName( "errorMessageCvv" )[0].style.visibility = "visible";
+            document.getElementsByClassName( "errorMessageCvv" )[0].innerHTML = "<font color='red'>"+"Please enter cvv number"+ "</font>";
+        }
+
+        else{
+            document.getElementsByClassName( "errorMessageCvv" )[0].innerHTML = "";
+        }
+
+
+        if(cardholderName == null || cardholderName == "") {
+
+            document.getElementsByClassName( "errorMessageCardholderName" )[0].style.visibility = "visible";
+            document.getElementsByClassName( "errorMessageCardholderName" )[0].innerHTML = "<font color='red'>"+"Please enter your name that is on the credit card"+ "</font>";
+        }    
+        
+        else{
+            document.getElementsByClassName( "errorMessageCardholderName" )[0].innerHTML = "";
+        }
+
+        if(expDate == null || expDate == "") {
+
+            document.getElementsByClassName( "errorMessageDate" )[0].style.visibility = "visible";
+            document.getElementsByClassName( "errorMessageDate" )[0].innerHTML = "<font color='red'>"+"Please enter a date"+ "</font>";
+        } 
+        else{
+            document.getElementsByClassName( "errorMessageDate" )[0].innerHTML = "";
+        }        
+
     
     return false;
     } 
 
 
     else {
+        console.log("validateAccountFunction");
         return true;
     }
 
 }
+
+
 
 function validatePayment() {
     var creditCardNum = document.forms["paymentForm"]["creditCardNum"].value;
     var cvv = document.forms["paymentForm"]["cvv"].value;
     var cardholderName = document.forms["paymentForm"]["cardholderName"].value;
     var expDate = document.forms["paymentForm"]["expDate"].value;
+
     
-    if(creditCardNum == null || creditCardNum == "") {
-        document.getElementsByClassName( "errorMessageCreditCardNum" )[0].style.visibility = "visible";
-        document.getElementsByClassName( "errorMessageCreditCardNum" )[0].innerHTML = "<font color='red'>"+ "Please enter your credit card number" + "</font>";
+    
+    if (creditCardNum == null || creditCardNum == "" ||cvv == null || cvv == ""||cardholderName == null || cardholderName == ""||expDate == null || expDate == ""){
+    
+        if (creditCardNum == null || creditCardNum == "") {
+            document.getElementsByClassName( "errorMessageCreditCardNum" )[0].style.visibility = "visible";
+            document.getElementsByClassName( "errorMessageCreditCardNum" )[0].innerHTML = "<font color='red'>"+ "Please enter your credit card number" + "</font>";
+        }
+
+        else{
+            document.getElementsByClassName( "errorMessageCreditCardNum" )[0].innerHTML =""; 
+        }
 
         if(cvv == null || cvv == "") { 
 
@@ -109,24 +211,44 @@ function validatePayment() {
             document.getElementsByClassName( "errorMessageCvv" )[0].innerHTML = "<font color='red'>"+"Please enter cvv number"+ "</font>";
         }
 
+        else{
+            document.getElementsByClassName( "errorMessageCvv" )[0].innerHTML = "";
+        }
+
+
         if(cardholderName == null || cardholderName == "") {
 
             document.getElementsByClassName( "errorMessageCardholderName" )[0].style.visibility = "visible";
             document.getElementsByClassName( "errorMessageCardholderName" )[0].innerHTML = "<font color='red'>"+"Please enter your name that is on the credit card"+ "</font>";
-        }        
+        }    
+        
+        else{
+            document.getElementsByClassName( "errorMessageCardholderName" )[0].innerHTML = "";
+        }
 
         if(expDate == null || expDate == "") {
 
             document.getElementsByClassName( "errorMessageDate" )[0].style.visibility = "visible";
             document.getElementsByClassName( "errorMessageDate" )[0].innerHTML = "<font color='red'>"+"Please enter a date"+ "</font>";
         } 
+        else{
+            document.getElementsByClassName( "errorMessageDate" )[0].innerHTML = "";
+        }
     
-    return false;
-    } 
+    
+    alert("form is invalid");
+   return false;
+}
+
     else {
+        console.log("validatePaymentFunction");
+        document.getElementsByClassName( "errorMessageCardholderName" )[0].innerHTML = "";
+        alert("form has been validated");
+        
         return true;
     }
-
+   
 }
+
 
 
