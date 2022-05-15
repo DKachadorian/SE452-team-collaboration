@@ -16,9 +16,7 @@ public class TableConstraintService {
     DealershipRepository dealershipRepository;
 
     @Autowired
-    TableConstraintService(
-            DealershipRepository dealershipRepository) {
-
+    TableConstraintService(DealershipRepository dealershipRepository) {
         this.dealershipRepository = dealershipRepository;
     }
 
