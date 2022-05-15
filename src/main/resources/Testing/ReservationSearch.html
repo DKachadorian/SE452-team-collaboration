@@ -11,101 +11,99 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-        <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet">
-        <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet">
 
         <script>
-            function validateForm() {
-
+            function reservationForm1() {
+              let x = document.forms["myForm1"]["carDate1"].value;
+              let y = document.forms["myForm2"]["carDate2"].value;
+              let z = document.forms["myForm3"]["cars"].value;
+              //https://www.w3schools.com/js/js_validation.asp
+              if (x == "" || y == "" || z==""){
+                alert("Must Choose date");
+                return false;
+              }
             }
+
+            
+
         </script>
+
     </head>
     <body>
-        
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <h6 class="has-text-centered" ><strong>Depaul Deluxe Car Rentals</strong></h6>
             
-        
-    <div class="level-right">
-        <div class="buttons">
-            <p class="level-item has-text-right">
-                <button class="button is-info" onclick="window.location.href='index.html'">Login</button>
-                <button class="button is-info" onclick="window.location.href='index.html'">Create Account</button>
-            </p>
+     
+        <div class="level-right">
+            <div class="buttons">
+                <p class="level-item has-text-right">
+                    <button class="button is-info" onclick="window.location.href='index.html'">Login</button>
+                    <button class="button is-info" onclick="window.location.href='index.html'">Create Account</button>
+                </p>
+            </div>
         </div>
-    </div>
 
-<div class="tile is-ancestor">
-    <div class="tile is-parent">
-        <article class="tile is-child box">
-            <div class="level-left">
-                Reservation:
-            </div>
-            <nav class="level">
-                <div class="level-left">
-                    Rental Start Date:
-                </div>
-            </nav>
-            <input type="date">
-        </article>
-    </div>
-    <div class="tile is-parent">
-        <article class="tile is-child box">
-            <nav class="level">
-                <div class="level-left">
-                    Rental End Date:
-                </div>
-            </nav>
-            <input type="date">
-        </article>
-    </div>
-</div>
+        <div class="w3-container"> 
+        <p>Reservation</p>
+        <p>Rental Start Date:</p>
+        <form name="myForm1" action="/action_page.php" onsubmit="return reservationForm1()" method="post">
+            <label for="carRental"></label>
+            <input type="date" id="" name="carDate1">
+            <input type="submit" value="Submit" name="dateSubmit">
+          </form>
+        <hr>
+        </div>
 
-<div class="tile is-ancestor">
-    <div class="tile is-parent">
-        <article class="tile is-child box">
-            <div class="level-left">
-                Optional Criteria
-            </div>
-            <nav class="level">
-                <div class="level-left">
-                    <div class="select is-primary">
-                        <select>
-                          <option>Select dropdown</option>
-                          <option>Basic-Class</option>
-                          <option>Mid-Class</option>
-                          <option>Luxury-Class</option>
-                        </select>
-                      </div>
-                </div>
-            </nav>
-        </article>
-    </div>
-</div>
 
-<div class="tile is-ancestor">
-    <div class="tile is-parent">
-        <article class="tile is-child box">
-            <div class="level-item has-text-centered ">
-                <strong>Search Rental Location:</strong>
-            </div>
-            <nav class="level">
-                <div class="level-item has-text-centered">
-                    <input class="input is-rounded" type="text" placeholder="Rounded input">
-                </div>
-                <div class="buttons">
-                    <p class="level-item has-text-right">
-                        <button class="button is-info" type="button" onclick="window.location.href='index.html'">Search</button>
-                    </p>
-                </div>
-            </nav>
-        </article>
-    </div>
-</div>   
+        <div class="w3-container"> 
+            <p>Rental End Date:</p>
+            <form name="myForm2" action="/action_page.php" onsubmit="return reservationForm1()" method="post">
+                <label for="carRental"></label>
+                <input type="date" id="" name="carDate2">
+                <input type="submit" value="Submit" name="dateSubmit">
+              </form>
+            <hr>
+        </div>
+<!--
+
+        <div class="w3-container2"> 
+            <p>Optional Criteria</p>
+                <label for="cars">Choose Level:</label>
+                <select name="cars" id="cars">
+                  <option value="empty">Select</option>
+                  <option value="basic">Basic</option>
+                  <option value="mid">Mid-Level</option>
+                  <option value="upper">Luxury</option>
+                </select>
+                <br><br>
+                -->
+                <br><br>
+                <p>Required Criteria</p>
+                <form name="myForm3" action="/action_page.php" onsubmit="return reservationForm1()" method="post" >
+                  <!--<input type="dropdown menu" id="" name="carSubmit">-->
+                <label for="cars">Choose car type:</label>
+                <select name="cars" id="">
+                  <option value="empty">Select</option>
+                  <option value="honda">Honda</option>
+                  <option value="toyota">Toyota</option>
+                  <option value="audi">Audi</option>
+                  <option value="bmw">BMW</option>
+                  <option value="rover">Land Rover</option>
+                </select>
+                <br>
+                <input type="submit" value="Submit" name="car">
+                
+                
+                
+              </form>
+            <hr>
+        </div>
+        
         <script src="" async defer></script>
     </body>
 </html>
