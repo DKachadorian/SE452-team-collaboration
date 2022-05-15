@@ -1,0 +1,40 @@
+.login,.account{
+    margin-left:50px;
+}
+
+.form_login{
+    margin-left:120px;
+}
+
+.first-section{
+    margin-left:140px;
+}
+
+.field{
+    padding:20px;
+}
+
+.payment {
+    background-color: lightgrey;
+    width: 700px;
+    border: 5px solid black;
+    padding: 20px;
+    height:550;
+  }
+
+  .control_exp{
+      width:200px;
+  }
+
+  .control_exp_cvv{
+      width:150px;
+  }
+  .field_ {
+    column-count: 2;
+    padding:20px;
+  }
+
+
+
+
+  
