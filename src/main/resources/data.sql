@@ -2,11 +2,15 @@
 INSERT INTO Dealership(DealershipId, Address, State, ZipCode)
     VALUES(999, '2320 North Kenmore Ave. 1 East Jackson Blvd', 'Illinois', '60604');
 
-INSERT INTO Customer(CustomerId, FirstName, LastName, DateOfBirth, Address, PhoneNumber, DriversLicenseId, InsuranceCarrier, Username, Password, Email)
-    VALUES (100, 'John', 'Simon', '1999-03-06', 'Address', '222-222-2222', 99999999, 'State Farm', 'JSimon', 'JSimon111!', 'JSimon@gmail.com');
+INSERT INTO Customer(CustomerId, FirstName, LastName, DateOfBirth,
+                     Address, PhoneNumber, DriversLicenseId, InsuranceCarrier,
+                     Username, Password, ZipCode, State, Email)
+    VALUES (100, 'John', 'Simon', '1999-03-06',
+            'Address', '222-222-2222', 99999999, 'State Farm',
+            'JSimon', 'JSimon111!', '60234', 'IL', 'JSimon@gmail.com');
 
-INSERT INTO Payment(AccountId, CardType, CardNumber, ExpirationDate, CVV, Currency, CustomerId)
-    VALUES(5, 'AMEX', 11111111, '2023-09-22', 545, 'US', 100);
+INSERT INTO Payment(AccountId, CardType, CardNumber, ExpirationDate, CVV, Currency, CardHolderName, CustomerId)
+    VALUES(5, 'AMEX', 11111111, '2023-09-22', 545, 'US', 'John Simon', 100);
 
 INSERT INTO Employee(EmployeeId, FirstName, LastName, JobTitle, DealershipId)
     VALUES(200, 'Peter', 'Stone', 'Salesman', 999);

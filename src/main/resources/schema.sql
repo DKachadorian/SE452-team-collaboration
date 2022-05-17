@@ -20,15 +20,9 @@ CREATE TABLE Customer (
     InsuranceCarrier VARCHAR(50),
     Username VARCHAR(30),
     Password VARCHAR(50),
-    Email VARCHAR(50),
-    State VARCHAR(30),
     ZipCode VARCHAR(5),
-    CardNumber BIGINT,
-    ExpirationDate DATE,
-    CVV VARCHAR(3),
-    CardholderName VARCHAR(30),   
-
-
+    State VARCHAR(30),
+    Email VARCHAR(50),
     PRIMARY KEY(CustomerId)
 );
 
@@ -39,6 +33,7 @@ CREATE TABLE Payment (
     ExpirationDate DATE,
     CVV VARCHAR(10),
     Currency VARCHAR(20),
+    CardHolderName VARCHAR(100),
     CustomerId BIGINT,
     PRIMARY KEY(AccountId),
     FOREIGN KEY(CustomerId) REFERENCES Customer(CustomerId) ON DELETE CASCADE

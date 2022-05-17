@@ -34,8 +34,8 @@ public class Payment {
     @Column(name = "Currency")
     private String currency;
 
-    @Column(name = "CardholderName")
-    private String cardholderName;    
+    @Column(name = "CardHolderName")
+    private String cardHolderName;
 
     @JsonIgnore
     @OneToOne

@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8">
@@ -12,7 +12,6 @@
     </head>
     <body>
 
-        <!-- title -->
         <section class="section">
             <div class="first-section">
                 <h1 class="title"> DePaul's Deluxe Rentals</h1>
@@ -24,7 +23,7 @@
             <h1 class="title"> Account Creation:</h1>
         </div>        
 
-        <form class="form" id="accountForm" action="" th:action= "@{/accountCreate}" th:object="${customer}" onsubmit = "return validateAccount()" method="post" >
+        <form class="form" id="accountForm" action="" th:action= "@{/accountVerification}" th:object="${customerRegistration}" onsubmit = "return validateAccount()" method="post" >
             <div class="div1">
                 <div class="field pb-2">
                     <label class="label">Username</label>
@@ -144,7 +143,7 @@
             <div class="field pb-6 ">
                 <label class="label">Phone Number</label>
                 <div class="control">
-                    <input class="input" type="phone" id= "phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" th:field="*{phoneNumber}" placeholder="123-456-7890">
+                    <input class="input" type="phone" id= "phone" th:field="*{phoneNumber}" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
                 </div> 
                 <p class = "errorMessagePhone top-arrow"></p>                 
             </div>
@@ -167,13 +166,13 @@
         <div class="field_ pb-2">                                
             <div class="control_exp">
                 <label class="label">Expiration Date</label>
-                <input class="input" type="date" id="expDate" value="2022-05-13" th:field="*{expirationDate}" placeholder="Expiration Date">                      
+                <input class="input" type="date" id="expDate" value="2022-05-13" th:field="*{expirationDate}" placeholder="Expiration Date">
             </div> 
             <p class = "errorMessageDate top-arrow" > </p>                     
                             
         <div class="control_exp_cvv">  
                 <label class="label">CVV</label>                                                         
-                <input class="input" type="text" id="cvv"  pattern="[0-9]{3}" th:field="*{cvv}"  placeholder="000">     
+                <input class="input" type="text" id="cvv"  pattern="[0-9]{3}" th:field="*{cvv}"  placeholder="000">
             </div>  
             <p class = "errorMessageCvv top-arrow" > </p>                                
          </div>     
@@ -181,7 +180,7 @@
         <div class="field pb-6">  
             <label class="label">Cardholder Name</label>
             <div class="control">
-                <input class="input" type="text" id="cardholderName" th:field="*{cardholderName}" placeholder="Cardholder Name">
+                <input class="input" type="text" id="cardholderName" th:field="*{cardHolderName}" placeholder="Cardholder Name">
             </div>
             <p class = "errorMessageCardholderName top-arrow" > </p>  
         </div> 
