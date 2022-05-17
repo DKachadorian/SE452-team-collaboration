@@ -20,10 +20,35 @@
               let x = document.forms["myForm1"]["carDate1"].value;
               let y = document.forms["myForm2"]["carDate2"].value;
               let z = document.forms["myForm3"]["cars"].value;
+              let a = document.forms["myForm4"]["carSearch"].value;
               //https://www.w3schools.com/js/js_validation.asp
-              if (x == "" || y == "" || z==""){
+
+              /*
+              if (x == "" || y == "" || z=="" || a==""){
                 alert("Must Choose date");
                 return false;
+              }*/
+              if (x == "" || y == ""){
+                alert("Must Choose date");
+                return false;
+              }
+
+              if (z == "" ){
+                alert("Must choose type of car55");
+                return false;
+              }
+
+              if (a == "" ){
+                alert("Must put values in search");
+                return false;
+              }
+
+            }
+
+            function checkDropDownList(){
+              var carType = document.getElementbyId("cars");
+              if (carType.value == ""){
+                alert("Must choose type of car2")
               }
             }
 
@@ -48,7 +73,7 @@
             </div>
         </div>
 
-        <div class="w3-container"> 
+        <div class="w3-container1"> 
         <p>Reservation</p>
         <p>Rental Start Date:</p>
         <form name="myForm1" action="/action_page.php" onsubmit="return reservationForm1()" method="post">
@@ -60,7 +85,7 @@
         </div>
 
 
-        <div class="w3-container"> 
+        <div class="w3-container2"> 
             <p>Rental End Date:</p>
             <form name="myForm2" action="/action_page.php" onsubmit="return reservationForm1()" method="post">
                 <label for="carRental"></label>
@@ -69,9 +94,9 @@
               </form>
             <hr>
         </div>
-<!--
 
-        <div class="w3-container2"> 
+
+        <div class="w3-container3"> 
             <p>Optional Criteria</p>
                 <label for="cars">Choose Level:</label>
                 <select name="cars" id="cars">
@@ -80,15 +105,17 @@
                   <option value="mid">Mid-Level</option>
                   <option value="upper">Luxury</option>
                 </select>
-                <br><br>
-                -->
-                <br><br>
+                <br>
+                <hr>
+              </div>
+
+                <br>
                 <p>Required Criteria</p>
                 <form name="myForm3" action="/action_page.php" onsubmit="return reservationForm1()" method="post" >
                   <!--<input type="dropdown menu" id="" name="carSubmit">-->
                 <label for="cars">Choose car type:</label>
-                <select name="cars" id="">
-                  <option value="empty">Select</option>
+                <select name="cars" id="cars">
+                  <option value="">Select</option>
                   <option value="honda">Honda</option>
                   <option value="toyota">Toyota</option>
                   <option value="audi">Audi</option>
@@ -96,10 +123,17 @@
                   <option value="rover">Land Rover</option>
                 </select>
                 <br>
-                <input type="submit" value="Submit" name="car">
+               <!-- <input type="submit" value="Submit" name="car">-->
+                <hr><br>
                 
                 
-                
+              </form>
+              <br>
+              <form name="myForm4" action="/action_page.php" onsubmit="return reservationForm1()" method="post">
+                <label for="carSearch">Car Search</label>
+                <input for="search" id="carSearch" name="carSearch">
+                <input type="submit">
+                </label>
               </form>
             <hr>
         </div>
