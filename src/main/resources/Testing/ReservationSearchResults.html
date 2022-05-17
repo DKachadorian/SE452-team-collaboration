@@ -11,167 +11,111 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-        <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet">
-        <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet">
+
     </head>
-    <style>
-        table, th, td   
-        {
-            border:2px solid blue;
-            border-collapse: collapse;
-        }
-    </style>
-    
     <body>
-        
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <h6 class="has-text-centered" ><strong>Depaul Deluxe Car Rentals</strong></h6>
+        <h6 class="has-text-centered" ><strong>Reservation Results</strong></h6>
             
-        
-    <div class="level-right">
-        <div class="buttons">
-            <p class="level-item has-text-right">
-                <button class="button is-info">Login</button>
-                <button class="button is-info">Create Account</button>
-            </p>
+     
+        <div class="level-right">
+            <div class="buttons">
+                <p class="level-item has-text-right">
+                    <button class="button is-info" onclick="window.location.href='ReservationSearch.html'">BackToReservation</button>
+                </p>
+            </div>
         </div>
-    </div>
 
-<div class="tile is-ancestor">
-    <div class="tile is-parent">
-        <article class="tile is-child box">
-            <div class="level-left">
-                Reservation:
-            </div>
-            <nav class="level">
-                <div class="level-left">
-                    Rental Start Date:
-                </div>
-            </nav>
-            <input type="date">
-        </article>
-    </div>
-    <div class="tile is-parent">
-        <article class="tile is-child box">
-            <nav class="level">
-                <div class="level-left">
-                    Rental End Date:
-                </div>
-            </nav>
-            <input type="date">
-        </article>
-    </div>
-</div>
-
-<div class="tile is-ancestor">
-    <div class="tile is-parent">
-        <article class="tile is-child box">
-            <div class="level-left">
-                Optional Criteria
-            </div>
-            <nav class="level">
-                <div class="level-left">
-                    <div class="select is-primary">
-                        <select>
-                          <option>Select dropdown</option>
-                          <option>Basic-Class</option>
-                          <option>Mid-Class</option>
-                          <option>Luxury-Class</option>
-                        </select>
-                      </div>
-                </div>
-            </nav>
-        </article>
-    </div>
-</div>
-
-<div class="tile is-ancestor">
-    <div class="tile is-parent">
-        <article class="tile is-child box">
-            <div class="level-item has-text-centered ">
-                <strong>Search Rental Location:</strong>
-            </div>
-            <nav class="level">
-                <div class="level-item has-text-centered">
-                    <input class="input is-rounded" type="text" placeholder="Rounded input">
-                </div>
-                <div class="buttons">
-                    <p class="level-item has-text-right">
-                        <button class="button is-info">Search</button>
-                    </p>
-                </div>
-
-            </nav>
-        </article>
-    </div>
-</div>
-
-<div class="content">
-    <p>Results</p>
-    <p>DEALERSHIP NAME : ZIPCODE</p>
-    <div class="table-container">
-        <table class="table">
-            <tr>
-                <th><abbr title="">Make</abbr></th>
-                <th><abbr title=""><strong>Category</strong></abbr></th>
-                <th><abbr title=""><strong>Reserve</strong></abbr></th>
-            </tr>
-            <tr>
-                <td><abbr title="">Make</abbr></td>
-                <td><abbr title=""><strong>Category</strong></abbr></td>
-                <td><abbr title=""><strong>Reserve</strong></abbr></td>
-            </tr>
-         </table>
-    </div>
+        <div class="w3-container1"> 
+        <p>Reservation</p>
+        <p>Rental Start Date:</p>
+        <form name="myForm1" action="/action_page.php" onsubmit="return reservationForm1()" method="post">
+            <label for="carRental"></label>
+            <input type="date" id="" name="carDate1">
+            <!--<input type="submit" value="Submit" name="dateSubmit">-->
+          </form>
+        <hr>
+        </div>
 
 
-    <p>DEALERSHIP NAME : ZIPCODE</p>
-    <table style="width:100%">
-        <tr>
-          <th>Company</th>
-          <th>Contact</th>
-          <th>Country</th>
-        </tr>
-        <tr>
-          <td>Alfreds Futterkiste</td>
-          <td>Maria Anders</td>
-          <td>Germany</td>
-        </tr>
-        <tr>
-          <td>Centro comercial Moctezuma</td>
-          <td>Francisco Chang</td>
-          <td>Mexico</td>
-        </tr>
-      </table>
-</div>
-<!--
-<div class="tile is-ancestor">
-    <div class="tile is-parent">
-        <article class="tile is-child box">
-            <div class="level-left">
-                Optional Criteria
-            </div>
-            <nav class="level">
-                <div class="level-left">
-                    <div class="select is-primary">
-                        <select>
-                          <option>Select dropdown</option>
-                          <option>Basic-Class</option>
-                          <option>Mid-Class</option>
-                          <option>Luxury-Class</option>
-                        </select>
-                      </div>
-                </div>
-            </nav>
-        </article>
-    </div>
-</div>
+        <div class="w3-container2"> 
+            <p>Rental End Date:</p>
+            <form name="myForm2" action="/action_page.php" onsubmit="return reservationForm1()" method="post">
+                <label for="carRental"></label>
+                <input type="date" id="" name="carDate2">
+                <!--<input type="submit" value="Submit" name="dateSubmit">-->
+              </form>
+            <hr>
+        </div>
 
-   -->
+
+        <div class="w3-container3"> 
+            <p>Optional Criteria</p>
+                <label for="cars">Choose Level:</label>
+                <select name="cars" id="cars">
+                <!--  <option value="empty">Select</option>
+                  <option value="basic">Basic</option>
+                  <option value="mid">Mid-Level</option>
+                  <option value="upper">Luxury</option>-->
+                </select>
+                <br>
+                <hr>
+              </div>
+
+                <br>
+                <p>Required Criteria</p>
+                <form name="myForm3" action="/action_page.php" onsubmit="return reservationForm1()" method="post" >
+                  <!--<input type="dropdown menu" id="" name="carSubmit">-->
+                <label for="cars">Choose car type:</label>
+                <select name="cars" id="cars">
+                 <!-- <option value="">Select</option>
+                  <option value="honda">Honda</option>
+                  <option value="toyota">Toyota</option>
+                  <option value="audi">Audi</option>
+                  <option value="bmw">BMW</option>
+                  <option value="rover">Land Rover</option>-->
+                </select>
+                <br>
+               <!-- <input type="submit" value="Submit" name="car">-->
+                <hr><br>
+                
+                
+              </form>
+              <br>
+              
+        </div>
+
+        <div class="content">
+          <p>Results</p>
+          <p>DEALERSHIP NAME : ZIPCODE</p>
+          <div class="table-container">
+              <table class="table" style="width:30%">
+                  <tr>
+                      <th><abbr title="Required_Criteria">Make</abbr></th>
+                      <th><abbr title=""><strong>Optional Criteria</strong></abbr></th>
+                      <th><abbr title=""><strong>Reserve?</strong></abbr></th>
+                  </tr>
+                  <tr>
+                      <td><abbr title="">Honda</td>
+                      <td><abbr title="">Mid-Level</td>
+                      <td><abbr title="">Not Reserved</td>
+                  </tr>
+                  <tr>
+                    <td><abbr title="">Honda</abbr></td>
+                    <td><abbr title="">Mid-Level</abbr></td>
+                    <td><abbr title="">Reserved</abbr></td>
+                </tr>
+               </table>
+          </div>
+      
+      
+          
         
         <script src="" async defer></script>
     </body>
