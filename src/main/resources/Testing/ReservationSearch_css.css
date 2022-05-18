@@ -1,0 +1,29 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    gap: 5px;
+    background-color: lightcyan;
+    padding: 10px;
+}
+
+.moveRight{
+    float: right;
+}
+
+.grid-container2{
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 5px;
+    background-color: lightcyan;
+    padding: 10px;
+}
+
+.grid-container3{
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 5px;
+    background-color: lightgrey;
+    padding: 10px;
+}

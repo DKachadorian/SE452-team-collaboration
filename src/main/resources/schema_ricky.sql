@@ -44,3 +44,16 @@ CREATE TABLE PaymentAccounts(
     SecurityCode    INT(3),
     FOREIGN KEY(CustomerID), REFERENCES Customers(CustomerID)
 );
+
+CREATE TABLE Reservation (
+     ReservationId BIGINT AUTO_INCREMENT NOT NULL,
+     ReservationDate DATE,
+     ReturnToOrigin BOOLEAN,
+     StartDate DATE,
+     EndDate DATE,
+     DaysReserved BIGINT,
+     CustomerId BIGINT,
+     CarId BIGINT,
+     PRIMARY KEY(ReservationId),
+    
+);

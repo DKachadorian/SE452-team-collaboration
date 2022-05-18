@@ -14,6 +14,7 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <link rel="stylesheet" href="ReservationSearch_css.css">
 
         <script>
             function reservationForm1() {
@@ -73,7 +74,8 @@
             </div>
         </div>
 
-        <div class="w3-container1"> 
+        <div class="grid-container"> 
+          <div>
         <p>Reservation</p>
         <p>Rental Start Date:</p>
         <form name="myForm1" action="/action_page.php" onsubmit="return reservationForm1()" method="post">
@@ -81,11 +83,14 @@
             <input type="date" id="" name="carDate1">
             <!--<input type="submit" value="Submit" name="dateSubmit">-->
           </form>
-        <hr>
         </div>
+        <div class="emptyDiv's"></div>
+        <div class="emptyDiv's"></div>
+        <div class="emptyDiv's"></div>
+        <div class="emptyDiv's"></div>
 
-
-        <div class="w3-container2"> 
+         <div>
+          <p>Reservation</p>
             <p>Rental End Date:</p>
             <form name="myForm2" action="/action_page.php" onsubmit="return reservationForm1()" method="post">
                 <label for="carRental"></label>
@@ -93,11 +98,13 @@
                 <!--<input type="submit" value="Submit" name="dateSubmit">-->
               </form>
             <hr>
+          </div>
         </div>
 
 
-        <div class="w3-container3"> 
+        <div class="grid-container2"> 
             <p>Optional Criteria</p>
+            <form name="">
                 <label for="cars">Choose Level:</label>
                 <select name="cars" id="cars">
                   <option value="empty">Select</option>
@@ -105,11 +112,14 @@
                   <option value="mid">Mid-Level</option>
                   <option value="upper">Luxury</option>
                 </select>
-                <br>
-                <hr>
-              </div>
+              </form>
+              <br>
+            </div>
+            <hr>
+        
 
-                <br>
+                
+              <div class="grid-container2"> 
                 <p>Required Criteria</p>
                 <form name="myForm3" action="ReservationSearchResults.html" onsubmit="return reservationForm1()" method="post" >
                   <!--<input type="dropdown menu" id="" name="carSubmit">-->
@@ -122,19 +132,23 @@
                   <option value="bmw">BMW</option>
                   <option value="rover">Land Rover</option>
                 </select>
+              </form>
                 <br>
+              </div>
                <!-- <input type="submit" value="Submit" name="car">-->
                 <hr><br>
                 
                 
-              </form>
+              
               <br>
+              <div class="grid-container3"> 
               <form name="myForm4" action="ReservationSearchResults.html" onsubmit="return reservationForm1()" method="post">
                 <label for="carSearch">Car Search</label>
                 <input for="search" id="carSearch" name="carSearch">
                 <input type="submit">
                 </label>
               </form>
+              </div>
             <hr>
         </div>
         
