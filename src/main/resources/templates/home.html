@@ -8,57 +8,46 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+		<script src="script.js" async defer></script>
     </head>
     <body>
 
         <nav class = "level">
-			<!--	<p class="level-item has-text-centered">	LOGO IMAGE????
-				<img src=" alt="" style="height: 30px;">
-			</p> -->
 			<p class ="level-item has-text-centered">
 					<h1 class="title"> DePaul's Deluxe Rentals</h1>
 			</p>
 			<p class="level-item has-text-centered">
-				<button class="button is-link">Login</button>
+				<button class="button is-link" th:onclick= "|window.location.href='/login'|">Login</button>
 			</p>
 			<p class="level-item has-text-centered">
-				<button class="button is-link">Create Account</button>
+				<button class="button is-link" th:onclick= "|window.location.href='/accountCreate'|">Create Account</button>
 			</p>
 		</nav>	
-        
-        <!-- Body --> 
-		<!-- 1 Create Reservation --> 		
-		<section class="hero is-link is-light"> <!-- is-link makes the color a purpleish color-->
+
+		<section class="hero is-link is-light">
 			<div class="hero-body">
 				<p class="title">Reservations</p>
 				<p class="subtitle">Find a flexible car rental that fits your needs!</p>
 				<button class="button is-primary">Create Reservation</button>
 			</div>
 		</section>
-		
-		<!-- 2 View Dealerships -->
-		<section class="hero"> <!-- -->
+
+		<section class="hero">
 			<div class="hero-body">
 				<p class="title">Dealerships</p>
-				<!-- <figure class="image is-4by3">	Dealership Img????
-				<img src=" alt="">
-				</figure> -->
 				<p class="subtitle">View all our locations, nationwide!</p>
 				<button class="button is-primary">View Dealerships</button>
 			</div>
 		</section>
-		<!-- 3 View Cars --> 
-		<section class="hero"> <!-- -->
+
+		<section class="hero">
 			<div class="hero-body">
 				<p class="title">Cars</p>
-				<!-- <figure class="image is-4by3">	Car Img????
-				<img src=" alt="">
-				</figure> -->
 				<p class="subtitle">See our wide selection of luxurious cars available for rent.</p>
 				<button class="button is-primary">View Cars</button>
 			</div>
 		</section>
-		<!-- 4 Log In / Create Account -->
+
 		<footer class="footer">
 		  <nav class = "level">
 			<p class="level-item has-text-centered">
@@ -70,6 +59,5 @@
 		</nav>	
 		</footer>
     </div>
-        <script src="script.js" async defer></script>
     </body>
 </html>

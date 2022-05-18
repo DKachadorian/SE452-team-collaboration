@@ -7,30 +7,28 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <script src="script.js" async defer></script>
     </head>
     <body>
 
-    <!-- title -->
     <section class="section">
         <div class="first-section">
             <h1 class="title"> DePaul's Deluxe Rentals</h1>
         </div>
     </section>
 
-    <!-- login -->    
     <div class="login" >
         <h1 class="title"> Login:</h1>
     </div>
 
-    <!-- start the form -->
     <div class="form_login column is-4 px-6">
-        <form class="form" id="loginForm" action="" name="loginForm" onsubmit = "return validateLogin()" method="get">
+        <form class="form" id="loginForm" action="" th:action = "@{/loginVerification}" th:object="${loginFields}" onsubmit="return validateLogin()" method="post">
 
         <div class="field pb-6">
                 <label class="label">Username</label>
             <div class="control">
-                <input class="input" id="username" type="text" placeholder="Enter Username">
+                <input class="input" id="username" type="text" th:field="*{username}" placeholder="Enter Username">
             </div>
             <p class = "errorMessageUser top-arrow" > </p>
         </div> 
@@ -38,7 +36,7 @@
         <div class="field pb-6 ">
             <label class="label">Password</label>
         <div class="control">
-            <input class="input" id="password" type="text" placeholder="Enter Password">
+            <input class="input" id="password" type="text" th:field="*{password}" placeholder="Enter Password">
         </div>
         <p class = "errorMessagePw top-arrow" > </p>
     </div> 
@@ -52,12 +50,8 @@
           <button class="button is-link is-light is-medium">Create Account </button>
         </div>
       </div>
-
-      
       </form>
       </div>
     </div>
-
-        <script src="script.js" async defer></script>
     </body>
 </html>

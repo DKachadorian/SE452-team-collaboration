@@ -1,4 +1,4 @@
-package edu.depaul.cdm.se452.se452project.controllers;
+package edu.depaul.cdm.se452.se452project.controllers.rest;
 
 import edu.depaul.cdm.se452.se452project.entities.Car;
 import edu.depaul.cdm.se452.se452project.repositories.CarRepository;
@@ -13,11 +13,11 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class CarController {
+public class CarRestController {
 
     CarRepository carRepository;
 
-    public CarController(@Autowired CarRepository carRepository) {
+    public CarRestController(@Autowired CarRepository carRepository) {
         this.carRepository = carRepository;
     }
 

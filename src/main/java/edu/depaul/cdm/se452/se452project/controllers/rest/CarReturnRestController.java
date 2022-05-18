@@ -1,4 +1,4 @@
-package edu.depaul.cdm.se452.se452project.controllers;
+package edu.depaul.cdm.se452.se452project.controllers.rest;
 
 import edu.depaul.cdm.se452.se452project.entities.CarReturn;
 import edu.depaul.cdm.se452.se452project.repositories.CarReturnRepository;
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-public class CarReturnController {
+public class CarReturnRestController {
 
     CarReturnRepository carReturnRepository;
 
-    public CarReturnController(@Autowired CarReturnRepository carReturnRepository) {
+    public CarReturnRestController(@Autowired CarReturnRepository carReturnRepository) {
         this.carReturnRepository = carReturnRepository;
     }
 
