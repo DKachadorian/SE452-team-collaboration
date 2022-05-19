@@ -1,3 +1,4 @@
+
 -- Full Customer Creation Example
 INSERT INTO Dealership(DealershipId, Address, State, ZipCode)
     VALUES(999, '2320 North Kenmore Ave. 1 East Jackson Blvd', 'Illinois', '60604');
@@ -12,8 +13,8 @@ INSERT INTO Customer(CustomerId, FirstName, LastName, DateOfBirth,
 INSERT INTO Payment(AccountId, CardType, CardNumber, ExpirationDate, CVV, Currency, CardHolderName, CustomerId)
     VALUES(5, 'AMEX', 11111111, '2023-09-22', 545, 'US', 'John Simon', 100);
 
-INSERT INTO Employee(EmployeeId, FirstName, LastName, JobTitle, DealershipId)
-    VALUES(111, 'Employee', 'Account', 'Admin', 111);
+INSERT INTO Employee(EmployeeId, FirstName, LastName, JobTitle, Username, Password, DealershipId)
+    VALUES(100, 'Employee', 'Account', 'Admin', 'emp', 123, 999);
 
 INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
     VALUES(20, 'TGR231', 'Dodge', 'Challenger', 'SPORTS_CAR', 40000, 'Y', 'Y', 'Y', 999);
@@ -26,5 +27,5 @@ INSERT INTO Reservation(ReservationId, ReservationDate, DaysReserved, ReturnToOr
     VALUES(2, '2021-04-22', 3, true, '2021-05-01', '2021-05-04', 100, 21);
 
 INSERT INTO CarReturn(ReturnId, DealershipId, CustomerId, EmployeeId, LateReturn,
-                      FullTank, ReturnMileage, InteriorDamage, InteriorNotes, InteriorFee, ExteriorDamage, ExteriorNotes, ExteriorFee, TotalFee)
-    VALUES(1, 999, 100, 200, 'N', 'Y', 50000, 'F', 'NA', 0, 'F', 'NA', 0, 0);
+                   FullTank, ReturnMileage, InteriorDamage, InteriorNotes, InteriorFee, ExteriorDamage, ExteriorNotes, ExteriorFee, TotalFee)
+   VALUES(1, 999, 100, 100, 'N', 'Y', 50000, 'F', 'NA', 0, 'F', 'NA', 0, 0);

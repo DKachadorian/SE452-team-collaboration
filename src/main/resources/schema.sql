@@ -44,6 +44,8 @@ CREATE TABLE Employee (
     FirstName VARCHAR(50),
     LastName VARCHAR(50),
     JobTitle VARCHAR(100),
+    Username VARCHAR(30),
+    Password VARCHAR(50),
     DealershipId BIGINT,
     PRIMARY KEY(EmployeeId),
     FOREIGN KEY(DealershipId) REFERENCES Dealership(DealershipId) ON DELETE CASCADE

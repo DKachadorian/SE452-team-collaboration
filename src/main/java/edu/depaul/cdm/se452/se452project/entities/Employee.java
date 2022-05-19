@@ -25,6 +25,12 @@ public class Employee {
     @Column(name = "JobTitle")
     private String jobTitle;
 
+    @Column(name="Username")
+    private String username;
+
+    @Column(name="Password")
+    private String password;
+
     @OneToOne
     @JoinColumn(name = "DealershipId")
     private Dealership dealership;
