@@ -13,7 +13,7 @@ INSERT INTO Payment(AccountId, CardType, CardNumber, ExpirationDate, CVV, Curren
     VALUES(5, 'AMEX', 11111111, '2023-09-22', 545, 'US', 'John Simon', 100);
 
 INSERT INTO Employee(EmployeeId, FirstName, LastName, JobTitle, DealershipId)
-    VALUES(200, 'Peter', 'Stone', 'Salesman', 999);
+    VALUES(111, 'Employee', 'Account', 'Admin', 111);
 
 INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
     VALUES(20, 'TGR231', 'Dodge', 'Challenger', 'SPORTS_CAR', 40000, 'Y', 'Y', 'Y', 999);

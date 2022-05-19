@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    </head>
+    <body>
+
+        <!-- title -->
+        <nav class = "level">
+	<!--	<p class="level-item has-text-centered">	LOGO IMAGE????
+				<img src=" alt="" style="height: 30px;">
+			</p> -->
+			<p class ="level-item has-text-centered">
+					<h1 class="title"> DePaul's Deluxe Rentals</h1>
+			</p>
+			<p class="level-item has-text-centered">
+				<button class="button is-link">Home</button>
+			</p>
+			<p class="level-item has-text-centered">
+				<button class="button is-link">Logout</button>
+			</p>
+		</nav>	
+        
+        <!-- Body --> 
+		<!-- 1 Upcoming Reservations --> 		
+		<section class="hero is-light"> <!-- is-link makes the color a purpleish color-->
+			<div class="hero-body">
+				<p class="title">Upcoming Reservations:</p>
+				<p class="subtitle"> </p>
+				<!-- table info: https://bulma.io/documentation/elements/table/ -->
+				<!-- Manually Entered Example: -->
+				<!-- NOTE: nice to have - narrow by dealership or location??? -->
+				<table class="table">
+					<thread>
+						<tr>
+							<th><title="Reservation">Reservation</th>
+							<th><title="Start Date">Start Date</th>
+							<th><title="End Date">End Date</th>
+							<th><title="Type">Type</th>
+						</tr>
+					</thread>
+					<tbody>
+						<tr>
+							<td>29403</td>
+							<td>13 05 2022</td>
+							<td>24 05 2022</td>
+							<td>Economy</td>
+						</tr>
+						<tr>
+							<td>29446</td>
+							<td>25 05 2022</td>
+							<td>05 06 2022</td>
+							<td>Luxury</td>
+						</tr>
+						<tr>
+							<td>30001</td>
+							<td>01 07 2022</td>
+							<td>04 07 2022</td>
+							<td>Economy</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+		
+		
+		<!-- 2 Current Reservations -->
+		<section class="hero"> <!-- -->
+			<div class="hero-body">
+				<p class="title">Active Rentals: </p>
+				
+				<p class="subtitle"> </p>
+				<!-- table info: https://bulma.io/documentation/elements/table/ -->
+				<!-- Manually Entered Example: -->
+				<table class="table">
+					<thread>
+						<tr>
+							<th><title="Reservation">Reservation</th>
+							<th><title="Start Date">Start Date</th>
+							<th><title="End Date">End Date</th>
+							<th><title="Type">Type</th>
+						</tr>
+					</thread>
+					<tbody>
+						<tr>
+							<td>29403</td>
+							<td>13 05 2022</td>
+							<td>24 05 2022</td>
+							<td>Economy</td>
+						</tr>
+						<tr>
+							<td>29446</td>
+							<td>25 05 2022</td>
+							<td>05 06 2022</td>
+							<td>Luxury</td>
+						</tr>
+						<tr>
+							<td>30001</td>
+							<td>01 07 2022</td>
+							<td>04 07 2022</td>
+							<td>Economy</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</section>
+		
+		<!-- 3 Past Reservations --> 
+		<section class="hero is-light"> <!-- -->
+			<div class="hero-body">
+				<p class="title">Past Reservations:</p>
+				
+				<p class="subtitle"> </p>
+				<!-- table info: https://bulma.io/documentation/elements/table/ -->
+				<!-- Manually Entered Example: -->
+				<table class="table">
+					<thread>
+						<tr>
+							<th><title="Reservation">Reservation</th>
+							<th><title="Start Date">Start Date</th>
+							<th><title="End Date">End Date</th>
+							<th><title="Type">Type</th>
+							<th><title="Cost">Cost</title></th>
+						</tr>
+					</thread>
+					<tbody>
+						<tr>
+							<td>29403</td>
+							<td>13 05 2022</td>
+							<td>24 05 2022</td>
+							<td>Economy</td>
+							<td>$405.89</td>
+						</tr>
+						<tr>
+							<td>29446</td>
+							<td>25 05 2022</td>
+							<td>05 06 2022</td>
+							<td>Luxury</td>
+							<td>$960.50</td>
+						</tr>
+						<tr>
+							<td>30001</td>
+							<td>01 07 2022</td>
+							<td>04 07 2022</td>
+							<td>Economy</td>
+							<td>$100.00</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</section>
+		
+		<!-- 4 Log In / Create Account -->
+		<footer class="footer">
+		  <nav class = "level">
+			<p class="level-item has-text-centered">
+				<button class="button is-link">Home</button>
+			</p>
+			<p class="level-item has-text-centered">
+				<button class="button is-link">My Account</button>
+			</p>
+			<p class="level-item has-text-centered">
+				<button class="button is-link">Log Out</button>
+			</p>
+		</nav>	
+		</footer>
+    </div>
+        <script src="script.js" async defer></script>
+    </body>
+</html>
