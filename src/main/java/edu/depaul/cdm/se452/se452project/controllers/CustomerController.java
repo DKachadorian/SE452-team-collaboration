@@ -29,7 +29,7 @@ public class CustomerController {
         }
 
         @GetMapping("/accountCreate")
-        public String accountCreate(Model model){
+        public String accountCreate(){
             return "accountCreate";
         }
     

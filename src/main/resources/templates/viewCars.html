@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Cars View</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+    <h1> All Cars</h1>
+
+    <table>
+        <tr>
+            <th>Car Manufacturer</th>
+            <th>Car Model</th>
+            <th>Car Class</th>
+            <th>Car Price</th>
+            <th>Car Available</th>
+        </tr>
+        <tr th:each="car : ${cars}">
+            <td th:text="${car.getCarManufacturer()}"/>
+            <td th:text="${car.getCarModel()}"/>
+            <td th:text="${car.getCarClass()}"/>
+            <td th:text="${car.getCarPrice()}"/>
+            <td th:text="${car.getCarAvailable()}"/>
+        </tr>
+    </table>
+
+    </body>
+</html>

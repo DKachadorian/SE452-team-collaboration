@@ -24,7 +24,8 @@ public class LoginService {
     public boolean validateLoginCredentials(LoginFields loginFields) {
 
         try {
-            Optional.of(customerRepository.findUserByLogin(loginFields.getUsername(), loginFields.getPassword())).orElseThrow(RuntimeException::new);
+            Optional.of(customerRepository.findUserByLogin(loginFields.getUsername(), loginFields.getPassword()))
+                    .orElseThrow(RuntimeException::new);
         } catch (Exception e) {
             logger.error("Credentials not found in DB");
             return false;

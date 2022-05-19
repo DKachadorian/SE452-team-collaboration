@@ -15,7 +15,7 @@ CREATE TABLE Customer (
     LastName VARCHAR(50),
     DateOfBirth DATE,
     Address VARCHAR(100),
-    PhoneNumber VARCHAR(12),
+    PhoneNumber VARCHAR(20),
     DriversLicenseId BIGINT,
     InsuranceCarrier VARCHAR(50),
     Username VARCHAR(30),

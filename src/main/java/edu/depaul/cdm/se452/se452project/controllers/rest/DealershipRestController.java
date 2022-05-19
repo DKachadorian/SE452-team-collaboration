@@ -3,7 +3,7 @@ package edu.depaul.cdm.se452.se452project.controllers.rest;
 import edu.depaul.cdm.se452.se452project.entities.Car;
 import edu.depaul.cdm.se452.se452project.entities.Dealership;
 import edu.depaul.cdm.se452.se452project.repositories.DealershipRepository;
-import edu.depaul.cdm.se452.se452project.services.TableConstraintService;
+import edu.depaul.cdm.se452.se452project.services.DealershipService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,10 +18,10 @@ import java.util.Optional;
 public class DealershipRestController {
 
     DealershipRepository dealershipRepository;
-    TableConstraintService tableConstraintService;
+    DealershipService tableConstraintService;
 
     @Autowired
-    public DealershipRestController(DealershipRepository dealershipRepository, TableConstraintService tableConstraintService) {
+    public DealershipRestController(DealershipRepository dealershipRepository, DealershipService tableConstraintService) {
         this.dealershipRepository = dealershipRepository;
         this.tableConstraintService = tableConstraintService;
     }
