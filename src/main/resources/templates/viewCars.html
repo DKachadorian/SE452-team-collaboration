@@ -1,31 +1,64 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
 
-    <head>
-        <meta charset="UTF-8"/>
-        <title>Cars View</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<!-- title -->
+<nav class = "level">
+    <!--	<p class="level-item has-text-centered">	LOGO IMAGE????
+                <img src=" alt="" style="height: 30px;">
+            </p> -->
+    <p class ="level-item has-text-centered">
+    <h1 class="title"> DePaul's Deluxe Rentals</h1>
+    </p>
+    <p class="level-item has-text-centered">
+        <button class="button is-link">Home</button>
+    </p>
+    <p class="level-item has-text-centered">
+        <button class="button is-link">Logout</button>
+    </p>
+</nav>
 
-    <body>
-    <h1> All Cars</h1>
+<!-- Body -->
+<!-- 1 Upcoming Reservations -->
+<section class="hero is-light"> <!-- is-link makes the color a purpleish color-->
+    <div class="hero-body">
+        <p class="title">Upcoming Reservations:</p>
+        <p class="subtitle"> </p>
+        <!-- table info: https://bulma.io/documentation/elements/table/ -->
+        <!-- Manually Entered Example: -->
+        <!-- NOTE: nice to have - narrow by dealership or location??? -->
+        <table class="table">
+            <thread>
+                <tr>
+                    <th><title="Manufacturer">Manufacturer</th>
+                    <th><title="Model">Model</th>
+                    <th><title="Class">Class</th>
+                    <th><title="Price Per Day">Price per Day</th>
+                    <th><title="Availability">Availiability</th>
+                </tr>
+            </thread>
+            <tbody>
+            <tr th:each="car : ${cars}">
+                <td th:text="${car.getCarManufacturer()}"/>
+                <td th:text="${car.getCarModel()}"/>
+                <td th:text="${car.getCarClass()}"/>
+                <td th:text="${car.getCarPrice()}"/>
+                <td th:text="${car.getCarAvailable()}"/>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
 
-    <table>
-        <tr>
-            <th>Car Manufacturer</th>
-            <th>Car Model</th>
-            <th>Car Class</th>
-            <th>Car Price</th>
-            <th>Car Available</th>
-        </tr>
-        <tr th:each="car : ${cars}">
-            <td th:text="${car.getCarManufacturer()}"/>
-            <td th:text="${car.getCarModel()}"/>
-            <td th:text="${car.getCarClass()}"/>
-            <td th:text="${car.getCarPrice()}"/>
-            <td th:text="${car.getCarAvailable()}"/>
-        </tr>
-    </table>
-
-    </body>
+<script src="script.js" async defer></script>
+</body>
 </html>

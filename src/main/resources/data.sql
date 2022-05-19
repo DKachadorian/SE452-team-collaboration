@@ -17,9 +17,9 @@ INSERT INTO Employee(EmployeeId, FirstName, LastName, JobTitle, Username, Passwo
     VALUES(100, 'Employee', 'Account', 'Admin', 'emp', 123, 999);
 
 INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
-    VALUES(20, 'TGR231', 'Dodge', 'Challenger', 'SPORTS_CAR', 40000, 'Y', 'Y', 'Y', 999);
+    VALUES(20, 'TGR231', 'Dodge', 'Challenger', 'LUXURY', 40000, 'Y', 'Y', 'Y', 999);
 INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
-    VALUES(21, 'TGR231', 'Dodge', 'Challenger', 'SPORTS_CAR', 50000, 'Y', 'Y', 'Y', 999);
+    VALUES(21, 'TGR231', 'Dodge', 'Challenger', 'ECONOMY', 50000, 'Y', 'Y', 'Y', 999);
 
 INSERT INTO Reservation(ReservationId, ReservationDate, DaysReserved, ReturnToOrigin, StartDate, EndDate, CustomerId, CarId)
     VALUES(1, '2021-04-22', 3, true, '2021-05-01', '2021-05-04', 100, 20);
