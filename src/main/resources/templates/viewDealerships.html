@@ -39,20 +39,18 @@
         <table class="table">
             <thread>
                 <tr>
-                    <th><title="Manufacturer">Manufacturer</th>
-                    <th><title="Model">Model</th>
-                    <th><title="Class">Class</th>
-                    <th><title="Price Per Day">Price per Day</th>
-                    <th><title="Availability">Availiability</th>
+                    <th><title="Dealership ID">Dealership ID</th>
+                    <th><title="Address">Address</th>
+                    <th><title="State">State</th>
+                    <th><title="Zip Code">Zip Code</th>
                 </tr>
             </thread>
             <tbody>
-            <tr th:each="car : ${cars}">
-                <td th:text="${car.getCarManufacturer()}"/>
-                <td th:text="${car.getCarModel()}"/>
-                <td th:text="${car.getCarClass()}"/>
-                <td th:text="${car.getCarPrice()}"/>
-                <td th:text="${car.getCarAvailable()}"/>
+            <tr th:each="dealership : ${dealerships}">
+                <td th:text="${dealership.dealershipId}"></td>
+                <td th:text="${dealership.address}"></td>
+                <td th:text="${dealership.state}"></td>
+                <td th:text="${dealership.zipCode}"></td>
             </tr>
             </tbody>
         </table>

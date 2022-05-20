@@ -1,6 +1,7 @@
 package edu.depaul.cdm.se452.se452project.services;
 
 import edu.depaul.cdm.se452.se452project.entities.Car;
+import edu.depaul.cdm.se452.se452project.entities.Dealership;
 import edu.depaul.cdm.se452.se452project.repositories.DealershipRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,10 @@ public class DealershipService {
 
     public List<Car> getAllDealershipCars(Long dealershipId) {
         return dealershipRepository.getById(dealershipId).getCars();
+    }
+
+    public List<Dealership> findAllDealerships(){
+        return (List<Dealership>) dealershipRepository.findAll();
     }
 
 }

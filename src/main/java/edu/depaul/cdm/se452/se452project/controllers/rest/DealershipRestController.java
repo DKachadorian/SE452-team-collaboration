@@ -30,6 +30,7 @@ public class DealershipRestController {
     public List<Dealership> getAllDealerships() {
         return dealershipRepository.findAll();
     }
+    
 
     @GetMapping(value ="/singleDealership", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Optional<Dealership> getSingleDealership(@RequestBody Long dealershipId) {
