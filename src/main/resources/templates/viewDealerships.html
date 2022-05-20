@@ -31,7 +31,7 @@
 <!-- 1 Upcoming Reservations -->
 <section class="hero is-light"> <!-- is-link makes the color a purpleish color-->
     <div class="hero-body">
-        <p class="title">Upcoming Reservations:</p>
+        <p class="title">We have several convenient locations across the U.S.</p>
         <p class="subtitle"> </p>
         <!-- table info: https://bulma.io/documentation/elements/table/ -->
         <!-- Manually Entered Example: -->
@@ -47,8 +47,8 @@
             </thread>
             <tbody>
             <tr th:each="dealership : ${dealerships}">
-                <td th:text="${dealership.dealershipId}"></td>
-                <td th:text="${dealership.address}"></td>
+                <td th:text="${dealership.getDealershipId}"></td>
+                <td th:text="${dealership.getAddress}"></td>
                 <td th:text="${dealership.state}"></td>
                 <td th:text="${dealership.zipCode}"></td>
             </tr>
