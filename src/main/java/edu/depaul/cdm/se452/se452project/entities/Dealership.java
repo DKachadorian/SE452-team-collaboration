@@ -26,6 +26,9 @@ public class Dealership {
     @Column(name = "Address")
     private String address;
 
+    @Column(name = "City")
+    private String city;
+
     @Column(name = "State")
     private String state;
 

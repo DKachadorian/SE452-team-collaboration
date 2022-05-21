@@ -1,41 +1,41 @@
-INSERT INTO Dealership(DealershipId, Address, State, ZipCode)
+INSERT INTO Dealership(DealershipId, Address, City, State, ZipCode)
 VALUES
-  (111,'2742 Velit Rd.','Utah','787157'),
-  (112,'649-9720 Amet St.','Arizona','52881'),
-  (113,'Ap #424-4026 Dui St.','Utah','26565'),
-  (114,'356-9612 Sed Ave','Georgia','58528'),
-  (115,'Ap #520-7611 Semper St.','Texas','488322'),
-  (116,'268 Suspendisse Rd.','Oklahoma','195555'),
-  (117,'Ap #404-4538 Blandit Road','Delaware','65839'),
-  (118,'492-2778 Ridiculus St.','Virginia','57262'),
-  (119,'5302 Elementum, Road','Illinois','89-21'),
-  (120,'978-6997 Fermentum Av.','Maryland','30403');
-  
-INSERT INTO Dealership(DealershipId, Address, State, ZipCode)
-VALUES
-  (121,'Ap #976-7757 Eu Avenue','Florida','4860'),
-  (122,'Ap #350-5081 Augue Rd.','Texas','R7V 8X4'),
-  (123,'Ap #439-1230 Dictum. St.','Vermont','705545'),
-  (124,'P.O. Box 551, 7272 Augue St.','Oklahoma','232586'),
-  (125,'2541 Vitae Avenue','Alaska','892595'),
-  (126,'Ap #442-582 Ridiculus Avenue','Pennsylvania','3455'),
-  (127,'624-628 Tincidunt Avenue','Virginia','71255'),
-  (128,'Ap #556-632 Scelerisque Av.','Arkansas','76710-568'),
-  (129,'473-1340 Vivamus St.','Vermont','5245'),
-  (130,'Ap #686-4811 Orci Avenue','Wyoming','67406-020');
+  (111,'2742 Velit Rd.','Salt Lake City','Utah','07065'),
+  (112,'649-9720 Amet St.','Phoenix','Arizona','07430'),
+  (113,'Ap #424-4026 Dui St.','Ogden','Utah','17109'),
+  (114,'356-9612 Sed Ave','Atlanta','Georgia','32503'),
+  (115,'Ap #520-7611 Semper St.', 'Austin','Texas','01752'),
+  (116,'268 Suspendisse Rd.', 'Tulsa','Oklahoma','60156'),
+  (117,'Ap #404-4538 Blandit Road', 'Wilmington','Delaware','50010'),
+  (118,'492-2778 Ridiculus St.', 'Virginia Beach','Virginia','02176'),
+  (119,'5302 Elementum, Road','Chicago','Illinois','55347'),
+  (120,'978-6997 Fermentum Av.', 'Annapolis','Maryland','97402');
 
-INSERT INTO Dealership(DealershipId, Address, State, ZipCode)
+INSERT INTO Dealership(DealershipId, Address, City, State, ZipCode)
 VALUES
-  (131,'Ap #753-9063 Nec St.','Idaho','41669'),
-  (132,'791-1968 Luctus, Rd.','Idaho','2735'),
-  (133,'208-3513 Mauris St.','Montana','28726'),
-  (134,'Ap #437-1662 Eu Rd.','Connecticut','3717'),
-  (135,'6335 Elit. Ave','Nebraska','44284'),
-  (136,'2393 Aliquet Avenue','Georgia','3554'),
-  (137,'461-9986 Nam Rd.','Iowa','210471'),
-  (138,'640-1144 Non Rd.','Alaska','476767'),
-  (139,'Ap #493-7579 Malesuada Rd.','Indiana','657629'),
-  (140,'116-7878 Sit St.','California','7453');
+  (121,'Ap #976-7757 Eu Avenue', 'Talahassee','Florida','90260'),
+  (122,'Ap #350-5081 Augue Rd.', 'Dallas','Texas','08648'),
+  (123,'Ap #439-1230 Dictum. St.','Burlington','Vermont','45011'),
+  (124,'P.O. Box 551, 7272 Augue St.','Oklahoma City','Oklahoma','60110'),
+  (125,'2541 Vitae Avenue','Nome','Alaska','94043'),
+  (126,'Ap #442-582 Ridiculus Avenue','Philadelphia','Pennsylvania','02155'),
+  (127,'624-628 Tincidunt Avenue','McLean','Virginia','11572'),
+  (128,'Ap #556-632 Scelerisque Av.', 'Little Rock','Arkansas','32159'),
+  (129,'473-1340 Vivamus St.','Montpeiler','Vermont','44203'),
+  (130,'Ap #686-4811 Orci Avenue', 'Casper','Wyoming','02453');
+
+INSERT INTO Dealership(DealershipId, Address, City, State, ZipCode)
+VALUES
+  (131,'Ap #753-9063 Nec St.','Boise','Idaho','46514'),
+  (132,'791-1968 Luctus, Rd.','Pocatello','Idaho','30906'),
+  (133,'208-3513 Mauris St.','Billings','Montana','18974'),
+  (134,'Ap #437-1662 Eu Rd.','Hartford','Connecticut','21801'),
+  (135,'6335 Elit. Ave','Omaha','Nebraska','33308'),
+  (136,'2393 Aliquet Avenue','Savannah','Georgia','53590'),
+  (137,'461-9986 Nam Rd.','Dubuque','Iowa','80911'),
+  (138,'640-1144 Non Rd.','Juneau','Alaska','08723'),
+  (139,'Ap #493-7579 Malesuada Rd.','Indianapolis','Indiana','50401'),
+  (140,'116-7878 Sit St.','Los Angeles','California','30605');
 
 
 

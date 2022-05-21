@@ -30,34 +30,46 @@
 <!-- Body -->
 <!-- 1 Upcoming Reservations -->
 <section class="hero is-light"> <!-- is-link makes the color a purpleish color-->
-    <div class="hero-body">
-        <h6>We have several convenient locations across the U.S.</h6>
-        <p class="subtitle"> </p>
-        <!-- table info: https://bulma.io/documentation/elements/table/ -->
-        <!-- Manually Entered Example: -->
-        <!-- NOTE: nice to have - narrow by dealership or location??? -->
-        <table class="table">
-            <thread>
-                <tr>
-                   <!--- <th><title="Dealership ID">Dealership ID</th>-->
-                    <th><title="Address">Address</th>
-                    <th><title="City">City</th>
-                    <th><title="State">State</th>
-                    <th><title="Zip Code">Zip Code</th>
-                </tr>
-            </thread>
-            <tbody>
-            <tr th:each="dealership : ${dealerships}">
-                <!--<td th:text="${dealership.dealershipId}"></td> -->
-                <td th:text="${dealership.address}"></td>
-                <td th:text="${dealership.city}"></td>
-                <td th:text="${dealership.state}"></td>
-                <td th:text="${dealership.zipCode}"></td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="has-text-centered">
+        <h1>We carry the following Car Manufacturers:</h1>
     </div>
 </section>
+
+<div class="has-text-centered">
+
+    <div class="list-item is-size-15 has-text-weight-bold">
+        Acura<br>
+        Aston Martin<br>
+        Audi<br>
+        BMW<br>
+        Bentley<br>
+        Cadillac<br>
+        Chevrolet<br>
+        Chrysler<br>
+        Dodge<br>
+        Ferrari<br>
+        Ford<br>
+        GMC<br>
+        Hummer<br>
+        Infiniti<br>
+        Jaguar<br>
+        Jeep<br>
+        Lamborghini<br>
+        Land Rover<br>
+        Lincoln<br>
+        Lotus<br>
+        Maserati<br>
+        Maybach<br>
+        Mercedes-Benz<br>
+        Porsche<br>
+        Rolls-Royce<br>
+        Tesla<br>
+        Toyota<br>
+        Volkswagen<br>
+        Volvo<br>
+        <h6>AND MORE EXCLUSIVE BRANDS THAT YOU HAVE NEVER HEARD OF OR WENT BANKRUPT (YES WE STILL CARRY SATURN AND SAAB AUTOMOBILES!)</h6>
+    </div>
+</div>
 
 <script src="script.js" async defer></script>
 </body>

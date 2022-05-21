@@ -29,5 +29,13 @@ public class CarController {
     }
 
     // write view CarBrands here
-    
+    @GetMapping(value="/viewCarBrands")
+    public String viewCarBrands(Model model) {
+
+        //List<Car> carBrandList = carRepository.findDistinctByCarManufacturer();
+        //model.addAttribute("carBrands", carBrandList);
+
+        return "viewCarBrands";
+    }
+
 }

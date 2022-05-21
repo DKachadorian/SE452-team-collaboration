@@ -4,7 +4,8 @@ DROP TABLE IF EXISTS Dealership, Customer, Payment, Employee, Car, Reservation, 
 CREATE TABLE Dealership (
     DealershipId BIGINT AUTO_INCREMENT NOT NULL,
     Address VARCHAR(200),
-    State VARCHAR(30),
+    City VARCHAR(50),
+    State VARCHAR(30),    
     ZipCode VARCHAR(100),
     PRIMARY KEY(DealershipId)
 );
