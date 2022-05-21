@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
+@Service
 public class ReturnCarService {
     CustomerRepository customerRepository;
     ReservationRepository reservationRepository;
@@ -57,16 +58,17 @@ public class ReturnCarService {
         Reservation r = Optional.of(reservationRepository.findReservationById(rcf.getRentalId()))
                 .orElseThrow(RuntimeException::new);
 
+        // REMOVE car prive element from cars? or draw from cars instead????
         Car car = r.getCar();
         switch(car.getCarClass()){
             case "LUXURY":
                 daily = 485;
                 break;
-            case"ECONOMY PLUS":
-                daily = 295;
+            case"ECONOMY":
+                daily = 95;
                 break;
             default:
-                daily = 95;
+                daily = 295;
                 break;
         }
 

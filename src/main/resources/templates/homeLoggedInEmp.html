@@ -21,7 +21,7 @@
 					<h1 class="title"> DePaul's Deluxe Rentals</h1>
 			</p>
 			<p class="level-item has-text-centered">
-				<button class="button is-link">Logout</button>
+				<button class="button is-link" th:onclick= "|window.location.href='/home'|">Logout</button>
 			</p>
 		</nav>	
         
@@ -31,7 +31,7 @@
 			<div class="hero-body">
 				<p class="title">Returns</p>
 				<p class="subtitle">Open form for rental car return.</p>
-				<button class="button is-primary">Car Return</button>
+				<button class="button is-primary" th:onclick= "|window.location.href='/returnCar'|">Return Car</button>
 			</div>
 		</section>
 		
@@ -40,7 +40,7 @@
 			<div class="hero-body">
 				<p class="title">Reservations</p>
 				<p class="subtitle">View all reservations</p>
-				<button class="button is-primary">View Reservation</button>
+				<button class="button is-primary" th:onclick= "|window.location.href='/reservationListEmp'|">View Reservations</button>
 			</div>
 		</section>
 		
@@ -63,7 +63,7 @@
 				<img src=" alt="">
 				</figure> -->
 				<p class="subtitle">See our wide selection of luxurious cars available for rent.</p>
-				<button class="button is-primary">View Cars</button>
+				<button class="button is-primary" th:onclick= "|window.location.href='/viewCars'|">View Cars</button>
 			</div>
 		</section>
     </div>

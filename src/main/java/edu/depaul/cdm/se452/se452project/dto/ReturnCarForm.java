@@ -28,13 +28,11 @@ public class ReturnCarForm {
     private Boolean interiorDamageBack;
     private Boolean interiorDamageTrunk;
     private String interiorNotes;
-    private Double interiorFee;
     private Boolean exteriorDamageFront;
     private Boolean exteriorDamageBack;
     private Boolean exteriorDamageLeft;
     private Boolean exteriorDamageRight;
     private String exteriorNotes;
-    private Double exteriorFee;
     private Double totalFee;
 
 }

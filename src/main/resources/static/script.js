@@ -20,6 +20,18 @@ function validateLogin() {
 
 }
 
+function validateReservation(){
+    var sf = document.forms["returnCar"]["id"].value;
+
+    if(sf == null || sf == ""){
+        document.getElementsByClassName( "errorMessageEmptySearch" )[0].style.visibility = "visible";
+        document.getElementsByClassName( "errorMessageEmptySearch" )[0].innerHTML = "<font color='white'>"+ "Enter a reservation number to initiate car return."+ "</font>";
+        return false;
+    }
+    else
+        return true;
+}
+
 
 function validateAccount() {
 
