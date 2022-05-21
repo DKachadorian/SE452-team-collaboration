@@ -14,24 +14,26 @@ import edu.depaul.cdm.se452.se452project.services.DealershipService;
 @Controller
 public class DealershipController {
 
+    
     DealershipRepository dealershipRepository;
     DealershipService dealershipService;
+ 
 
-    public DealershipController(@Autowired DealershipService dealershipService) {
-        this.dealershipService = dealershipService;
+    @Autowired
+    public DealershipController(DealershipRepository dealershipRepository) {
+        this.dealershipRepository = dealershipRepository;
     }
 
-    //public DealershipController(DealershipRepository dealershipRepository) {
-   //     this.dealershipRepository = dealershipRepository;
-   // }
-
     @GetMapping(value="/viewDealerships")
-    public String groupByDealershipLocation(Model model){
-        List<Dealership> dealerships = dealershipService.findAllDealerships();
-        model.addAttribute("dealership", dealerships);
+    public String viewDealers(Model model) {
+
+        List<Dealership> dealerList = dealershipRepository.findAll();
+        model.addAttribute("dealerships",dealerList);
+
         return "viewDealerships";
     }
 
-    }
+
+}
 
 
