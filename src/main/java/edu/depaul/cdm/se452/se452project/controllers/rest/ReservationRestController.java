@@ -29,4 +29,15 @@ public class ReservationRestController {
     public Optional<Reservation> getSingleReservation(@RequestBody Long reservationId) {
         return reservationRepository.findById(reservationId);
     }
+
+    @GetMapping(value ="/ReservationSearch", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Reservation> getReservationSearch() {
+        return reservationRepository.findAll();
+    }
 }
+
+/*
+@GetMapping(value ="/allCars", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Car> getAllCars() {
+        return carRepository.findAll();
+    }*/

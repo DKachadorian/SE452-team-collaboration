@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"></html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet">
+        <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.3/es6-shim.min.js"></script>
+        <script src="/vendors/formvalidation/dist/js/FormValidation.min.js"></script>
+        <script src="/vendors/formvalidation/dist/js/plugins/Bulma.min.js"></script>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function (e)
+            {
+                FormValidation.FormValidation(document.getElementById('reservationForm'),{
+                    fields:{
+                        searchInput:{
+                            validators:{
+                                message: "Type of car is required"
+                            }
+                        }
+                    },
+                    plugins: {
+                        trigger: new FormValidation.plugins.Trigger(),
+                        bulma: new FormValidation.plugins.Bulma(),
+                        submitButton: new FormValidation.plugins.SubmitButton(),
+                        icon: new FormValidation.plugins.Icon({
+                            valid: 'fa fa-check',
+                            invalid: 'fa fa-times',
+                            validating: 'fa fa-refresh',
+                        }),
+                    },
+                });
+            });
+        </script>
+    </head>
+    <body>
+        
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+    <h6 class="has-text-centered" ><strong>Depaul Deluxe Car Rentals</strong></h6>
+            
+     
+    <div class="level-right">
+        <div class="buttons">
+            <p class="level-item has-text-right">
+                <button class="button is-info" onclick="window.location.href='index.html'">Login</button>
+                <button class="button is-info" onclick="window.location.href='index.html'">Create Account</button>
+            </p>
+        </div>
+    </div>
+<form id="reservationForm" method="POST"> 
+<div class="tile is-ancestor">
+    <div class="tile is-parent">
+        <article class="tile is-child box">
+            <div class="level-left">
+                Reservation:
+            </div>
+            <nav class="level">
+                <div class="level-left">
+                    Rental Start Date:
+                </div>
+            </nav>
+            <input type="date">
+        </article>
+    </div>
+    <div class="tile is-parent">
+        <article class="tile is-child box">
+            <nav class="level">
+                <div class="level-left">
+                    Rental End Date:
+                </div>
+            </nav>
+            <input type="date">
+        </article>
+    </div>
+</div>
+
+<div class="tile is-ancestor">
+    <div class="tile is-parent">
+        <article class="tile is-child box">
+            <div class="level-left">
+                Optional Criteria
+            </div>
+            <nav class="level">
+                <div class="level-left">
+                    <div class="select is-primary">
+                        <select>
+                          <option>Select dropdown</option>
+                          <option>Basic-Class</option>
+                          <option>Mid-Class</option>
+                          <option>Luxury-Class</option>
+                        </select>
+                      </div>
+                </div>
+            </nav>
+        </article>
+    </div>
+</div>
+
+<div class="tile is-ancestor">
+    <div class="tile is-parent">
+        <article class="tile is-child box">
+            <div class="level-item has-text-centered">
+                <strong>Search Rental Location:</strong>
+            </div>
+            <nav class="level">
+                <div class="level-item has-text-centered">
+                    <input class="input is-rounded" type="text" placeholder="Rounded input" name="searchInput">
+                </div>
+                <div class="buttons">
+                    <p class="level-item has-text-right">
+                        <button class="button is-info" type="button" onclick="window.location.href='index.html'">Search</button>
+                    </p>
+                </div>
+            </nav>
+        </article>
+    </div>
+    </div>   
+        <script src="" async defer></script>
+    </form>
+    </body>
+</html>
