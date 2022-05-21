@@ -28,15 +28,19 @@ INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, 
     VALUES(20, 'TGR231', 'Dodge', 'Challenger', 'LUXURY', 40000, 'Y', 'Y', 'Y', 999);
 INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
     VALUES(21, 'TGR231', 'Dodge', 'Challenger', 'ECONOMY', 50000, 'Y', 'Y', 'Y', 999);
+INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
+    VALUES(22, '4343434', 'Toyota', 'Challenger', 'LUXURY', 40000, 'Y', 'Y', 'Y', 999);
+INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
+    VALUES(23, 'n84rt24', 'Ford', 'F150', 'ECONOMYPlus', 50000, 'Y', 'Y', 'Y', 999);
 
 INSERT INTO Reservation(ReservationId, ReservationDate, DaysReserved, ReturnToOrigin, StartDate, EndDate, CustomerId, CarId)
     VALUES(11, '2021-04-22', 3, true, '2021-05-01', '2021-05-04', 100, 20);
 INSERT INTO Reservation(ReservationId, ReservationDate, DaysReserved, ReturnToOrigin, StartDate, EndDate, CustomerId, CarId)
     VALUES(12, '2021-04-22', 3, true, '2021-06-01', '2021-06-04', 100, 21);
 INSERT INTO Reservation(ReservationId, ReservationDate, DaysReserved, ReturnToOrigin, StartDate, EndDate, CustomerId, CarId)
-    VALUES(13, '2022-04-22', 3, true, '2022-05-01', '2022-05-04', 101, 20);
+    VALUES(13, '2022-04-22', 3, true, '2022-05-01', '2022-05-04', 101, 22);
 INSERT INTO Reservation(ReservationId, ReservationDate, DaysReserved, ReturnToOrigin, StartDate, EndDate, CustomerId, CarId)
-    VALUES(14, '2022-04-22', 3, true, '2022-06-01', '2022-06-04', 101, 21);
+    VALUES(14, '2022-04-22', 3, true, '2022-06-01', '2022-06-04', 101, 23);
 
 INSERT INTO CarReturn(ReturnId, DealershipId, CustomerId, EmployeeId, LateReturn,
                    FullTank, ReturnMileage, InteriorDamage, InteriorNotes, InteriorFee, ExteriorDamage, ExteriorNotes, ExteriorFee, TotalFee)
