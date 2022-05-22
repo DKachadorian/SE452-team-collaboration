@@ -1,14 +1,11 @@
 package edu.depaul.cdm.se452.se452project.controllers;
 
-import edu.depaul.cdm.se452.se452project.dto.LoginFields;
 import edu.depaul.cdm.se452.se452project.dto.ReturnCarForm;
 import edu.depaul.cdm.se452.se452project.services.ReturnCarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -22,21 +19,25 @@ public class ReturnCarFormController {
 
     @ModelAttribute
     public void generateModel(Model model) {
-        model.addAttribute("returnCarForm", new ReturnCarForm());
+        model.addAttribute("rcf", new ReturnCarForm());
+        // getting error: Caused by: java.lang.IllegalStateException: Neither BindingResult nor plain target object for bean name 'rcf' available as request attribute
     }
 
     @GetMapping(value="/returnCarForm")
     public String returnCarForm() {
+
+        // init form - populate reservation number on the form???
+
         return "returnCarForm";
     }
-/*
+
     //WIPWIPWIPWIP
     @PostMapping(value="/returnCarFormVerification")
-    public String returnVerification(@ModelAttribute(value="returnCarForm") ReturnCarForm returnCarForm) {
+    public String validateReturnForm(@ModelAttribute(value="rcf") ReturnCarForm returnCarForm) {
         if (returnCarService.validateReturn(returnCarForm)) {
             return "homeLoggedInEmp"; //Return Complete
         }
         return "returnCarForm"; // no success
-    }*/
+    }
 
 }

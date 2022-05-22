@@ -32,9 +32,31 @@ function validateReservation(){
         return true;
 }
 
-function reservationError(){
-    document.getElementsByClassName("errorMessageNoMatch")[0].style.visibility = "visible";
-    document.getElementsByClassName("errorMessageNoMatch")[0].innerHTML = "<font color='white'>"+ "Invalid reservation number."+ "</font>";
+function validateReturnForm(){
+    var dateCurr = document.forms["formReturn"]["dateCurr"].value;
+    //var mileage = document.forms["formReturn"]["mileage"].value;
+   // var tank = document.forms["formReturn"]["tank"].value;
+
+    if(dateCurr==null||dateCurr=="")
+    {
+        document.getElementsByClassName("errorMessageFirstSection")[0].style.visibility = "visible";
+        document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='white'>"+ "Date must be filled in."+ "</font>";
+        return false;
+    }
+  /*  else if(mileage==null||mileage=="")
+    {
+        document.getElementsByClassName("errorMessageFirstSection")[0].style.visibility = "visible";
+        document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='white'>"+ "Mileage must be filled in."+ "</font>";
+        return false;
+    }
+    else if(tank==null||tank=="")
+    {
+         document.getElementsByClassName("errorMessageFirstSection")[0].style.visibility = "visible";
+         document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='white'>"+ "Tank level must be filled in."+ "</font>";
+         return false;
+    } */
+    else
+        return true;
 }
 
 

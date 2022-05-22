@@ -1,11 +1,14 @@
 package edu.depaul.cdm.se452.se452project.services;
 
+import edu.depaul.cdm.se452.se452project.dto.ReservationSearch;
 import edu.depaul.cdm.se452.se452project.dto.ReturnCarForm;
 import edu.depaul.cdm.se452.se452project.entities.Car;
 import edu.depaul.cdm.se452.se452project.entities.Customer;
 import edu.depaul.cdm.se452.se452project.repositories.CustomerRepository;
 import edu.depaul.cdm.se452.se452project.entities.Reservation;
 import edu.depaul.cdm.se452.se452project.repositories.ReservationRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +23,8 @@ public class ReturnCarService {
     CustomerRepository customerRepository;
     ReservationRepository reservationRepository;
 
+    Logger logger = LoggerFactory.getLogger(ReturnCarService.class);
+
     @Autowired
     ReturnCarService(CustomerRepository customerRepository, ReservationRepository reservationRepository){
         this.customerRepository = customerRepository; this.reservationRepository = reservationRepository;
@@ -27,6 +32,8 @@ public class ReturnCarService {
 
     public boolean validateReturn(ReturnCarForm returnCarForm){
         double fees = CalculateFees(returnCarForm);
+
+        ResetCar(returnCarForm);
         return false;
     }
 
@@ -36,11 +43,11 @@ public class ReturnCarService {
         if(rcf.getLateReturn()){ fee += 500;}
 
         // gas fee = up to $50
-        fee += (50 - (((rcf.getFullTank())/100)*50));
+        fee += (50 - (((rcf.getTank())/100)*50));
 
         // missing extra(s) fee - sunroof is 200, carseat is 70
-        if(!rcf.getDamagedSunRoof()){fee += 200;}
-        if(!rcf.getMissingCarSeat()){fee += 70;}
+        if(!rcf.getSunRoof()){fee += 200;}
+        if(!rcf.getCarSeat()){fee += 70;}
 
         // interior damage(s) fee
         if(rcf.getInteriorDamageBack()){fee += 100;}
@@ -97,6 +104,37 @@ public class ReturnCarService {
     }
 
     //METHOD: Set car back to available
+    public void ResetCar(ReturnCarForm rcf){
+        if(rcf.getExteriorDamageRight()|| rcf.getExteriorDamageBack()||
+                rcf.getExteriorDamageFront()|| rcf.getExteriorDamageLeft()||
+                rcf.getInteriorDamageBack()||rcf.getInteriorDamageDriver()||
+                rcf.getInteriorDamagePassenger()|| rcf.getInteriorDamageTrunk()||
+                !rcf.getSunRoof()){
+            // In real life, we would send car for repairs, instead of setting available here, due to damages
+            logger.info("CAR SHOULD BE SENT FOR REPAIRS... CAR HAS BEEN REPAIRED...");
+        }
+        long reservation = rcf.getRentalId();
+        try{
+            Reservation res = fetchReservation(reservation); // get reservation
+            Car c = res.getCar(); // pull car
+            c.setCarAvailable(true); // reset availability
+            return;
+        }
+        catch(Exception e){
+            logger.error("Unable to process reservation and reset car");
+            return;}
+
+    }
+
+    public Reservation fetchReservation(long id) {
+        try {
+            return Optional.of(reservationRepository.findReservationById(id))
+                    .orElseThrow(RuntimeException::new);
+        } catch (RuntimeException e) {
+            logger.error("Reservation not found in DB: " + id );
+            return null;
+        }
+    }
 
     //METHOD: Get customer and car info to set form up
 

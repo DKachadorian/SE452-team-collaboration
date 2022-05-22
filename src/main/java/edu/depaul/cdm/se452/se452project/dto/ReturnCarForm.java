@@ -19,10 +19,11 @@ public class ReturnCarForm {
     private Dealership dealershipId;
     private Customer customerId;
     private Boolean lateReturn;
-    private int fullTank;
-    private Long returnMileage;
-    private Boolean missingCarSeat;
-    private Boolean damagedSunRoof;
+    private Date dateCurr;
+    private int tank;
+    private int mileage;
+    private Boolean carSeat;
+    private Boolean sunRoof;
     private Boolean interiorDamageDriver;
     private Boolean interiorDamagePassenger;
     private Boolean interiorDamageBack;
