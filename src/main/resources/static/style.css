@@ -1,3 +1,7 @@
+table, th, td {
+    border:1px solid black;
+}
+
 .login,.account{
     margin-left:50px;
 }
@@ -45,8 +49,14 @@
     float:right;
 }
 
-table, th, td {
-     border:1px solid black;
+.top_indent {
+    position: relative;
+    top: 15px;
+}
+
+.large_font_support {
+    font-size:100px;
+    height:50px;
 }
 
 

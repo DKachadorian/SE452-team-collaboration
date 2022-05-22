@@ -24,15 +24,20 @@ public class CustomerRegistrationService {
 
     public void persistData(CustomerRegistration customerRegistration) throws RuntimeException{
 
-        Long customerId = customerCreation(customerRegistration);
-        Long accountId = paymentCreation(customerRegistration);
 
-        Optional.of(customerId).orElseThrow(() -> new RuntimeException("Customer creation failed."));
-        Optional.of(accountId).orElseThrow(() -> new RuntimeException("Payment creation failed."));
+        if(customerRegistration == null) {
+            throw new RuntimeException("Customer Form Failed to Register");
+        }
+
+        Customer customer = customerCreation(customerRegistration);
+        Payment payment = paymentCreation(customerRegistration, customer);
+
+        Optional.of(customer).map(Customer::getCustomerId).orElseThrow(() -> new RuntimeException("Customer creation failed."));
+        Optional.of(payment).map(Payment::getPaymentId).orElseThrow(() -> new RuntimeException("Payment creation failed."));
 
     }
 
-    private Long customerCreation(CustomerRegistration customerRegistration) {
+    private Customer customerCreation(CustomerRegistration customerRegistration) {
         Customer customer = new Customer();
 
         customer.setFirstName(customerRegistration.getFirstName());
@@ -44,10 +49,10 @@ public class CustomerRegistrationService {
         customer.setZipCode(customerRegistration.getZipCode());
         customer.setPhoneNumber(customerRegistration.getPhoneNumber());
 
-        return customerRepository.save(customer).getCustomerId();
+        return customerRepository.save(customer);
     }
 
-    private Long paymentCreation(CustomerRegistration customerRegistration) {
+    private Payment paymentCreation(CustomerRegistration customerRegistration, Customer customer) {
         Payment payment = new Payment();
 
         payment.setCardNumber(customerRegistration.getCardNumber());
@@ -55,6 +60,8 @@ public class CustomerRegistrationService {
         payment.setCvv(customerRegistration.getCvv());
         payment.setCardHolderName(customerRegistration.getCardHolderName());
 
-        return paymentRepository.save(payment).getAccountId();
+        payment.setCustomer(customer);
+
+        return paymentRepository.save(payment);
     }
 }

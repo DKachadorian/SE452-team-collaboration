@@ -9,7 +9,7 @@ INSERT INTO Customer(CustomerId, FirstName, LastName, DateOfBirth,
             'Address', '222-222-2222', 99999999, 'State Farm',
             'JSimon', 'JSimon111!', '60234', 'IL', 'JSimon@gmail.com');
 
-INSERT INTO Payment(AccountId, CardType, CardNumber, ExpirationDate, CVV, Currency, CardHolderName, CustomerId)
+INSERT INTO Payment(PaymentId, CardType, CardNumber, ExpirationDate, CVV, Currency, CardHolderName, CustomerId)
     VALUES(5, 'AMEX', 11111111, '2023-09-22', 545, 'US', 'John Simon', 100);
 
 INSERT INTO Employee(EmployeeId, FirstName, LastName, JobTitle, DealershipId)
