@@ -28,7 +28,7 @@
          <!--Car Return Search Bar --> 
         <section class="hero is-link">
 			<div class="hero-body" >
-                <form class="form" id="returnCar" action="" th:action = "@{/returnCarError}" th:object="${reservationSearch}" onsubmit="return validateReservation()" method="post">
+                <form class="form" id="returnCar" action="" th:action = "@{/returnCarSearch}" th:object="${reservationSearch}" onsubmit="return validateReservation()" method="post">
 				<p class="title"> Car Return</p>
 				<nav class="level">
                     <div class="level-left">
@@ -48,6 +48,7 @@
                   </div>
               </nav>
                 <p class = "errorMessageEmptySearch top-arrow" > </p>
+                <p class = "errorMessageNoMatch top-arrow" > </p>
                 </form>
             </div>
 

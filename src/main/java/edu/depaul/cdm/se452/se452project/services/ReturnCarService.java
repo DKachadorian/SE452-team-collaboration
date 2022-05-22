@@ -25,6 +25,11 @@ public class ReturnCarService {
         this.customerRepository = customerRepository; this.reservationRepository = reservationRepository;
     }
 
+    public boolean validateReturn(ReturnCarForm returnCarForm){
+        double fees = CalculateFees(returnCarForm);
+        return false;
+    }
+
     public double CalculateFees(ReturnCarForm rcf){
         // late fee = $500
         double fee = 0;

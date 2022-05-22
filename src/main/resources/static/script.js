@@ -32,6 +32,11 @@ function validateReservation(){
         return true;
 }
 
+function reservationError(){
+    document.getElementsByClassName("errorMessageNoMatch")[0].style.visibility = "visible";
+    document.getElementsByClassName("errorMessageNoMatch")[0].innerHTML = "<font color='white'>"+ "Invalid reservation number."+ "</font>";
+}
+
 
 function validateAccount() {
 

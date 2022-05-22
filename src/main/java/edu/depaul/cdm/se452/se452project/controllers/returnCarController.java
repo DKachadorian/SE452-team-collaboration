@@ -30,12 +30,14 @@ public class returnCarController {
         return "returnCar";
     }
 
-    @PostMapping(value = "/returnCarError")
+    @PostMapping(value = "/returnCarSearch")
     public String returnCarResults(@ModelAttribute(value="id") ReservationSearch reservationSearch){
 
         if(reservationSearchService.validateReservation(reservationSearch)) {
             return "returnCarForm"; //go to return car form if reservation is found
         }
-        return "returnCar"; // otherwise stay on form // NOTE: -- display error message??? How???
+        else {
+            return "returnCar"; // otherwise stay on form // NOTE: -- display error message??? How???
+        }
     }
 }

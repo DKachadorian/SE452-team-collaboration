@@ -12,7 +12,7 @@ import java.util.List;
 @ToString
 public class ReservationSearch {
 
-    private Long id;
+    private long id;
     private Reservation reservation;
     //private List<Reservation> reservationList;
 }
