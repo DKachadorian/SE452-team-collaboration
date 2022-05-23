@@ -5,7 +5,9 @@ import edu.depaul.cdm.se452.se452project.services.ReturnCarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
@@ -25,7 +27,6 @@ public class ReturnCarFormController {
 
     @GetMapping(value="/returnCarForm")
     public String returnCarForm() {
-
         // init form - populate reservation number on the form???
 
         return "returnCarForm";

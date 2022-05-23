@@ -1,6 +1,7 @@
 package edu.depaul.cdm.se452.se452project.controllers;
 
 import edu.depaul.cdm.se452.se452project.dto.ReservationSearch;
+import edu.depaul.cdm.se452.se452project.dto.ReturnCarForm;
 import edu.depaul.cdm.se452.se452project.services.ReservationSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,7 @@ public class returnCarController {
     @ModelAttribute
     public void generateModel(Model model) {
         model.addAttribute("reservationSearch", new ReservationSearch());
+        model.addAttribute("rcf", new ReturnCarForm());
     }
 
     @GetMapping(value = "/returnCar")
