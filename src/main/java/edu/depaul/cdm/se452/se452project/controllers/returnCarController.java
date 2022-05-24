@@ -3,23 +3,24 @@ package edu.depaul.cdm.se452.se452project.controllers;
 import edu.depaul.cdm.se452.se452project.dto.ReservationSearch;
 import edu.depaul.cdm.se452.se452project.dto.ReturnCarForm;
 import edu.depaul.cdm.se452.se452project.services.ReservationSearchService;
+import edu.depaul.cdm.se452.se452project.services.ReturnCarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-
+@SessionAttributes("rcf")
 @Controller
 public class returnCarController {
 
 
     ReservationSearchService reservationSearchService;
+    ReturnCarService returnCarService;
 
     @Autowired
-    public returnCarController(ReservationSearchService reservationSearchService) {
-        this.reservationSearchService = reservationSearchService;}
+    public returnCarController(ReservationSearchService reservationSearchService, ReturnCarService returnCarService) {
+        this.reservationSearchService = reservationSearchService; this.returnCarService = returnCarService;}
 
     @ModelAttribute
     public void generateModel(Model model) {
@@ -33,13 +34,35 @@ public class returnCarController {
     }
 
     @PostMapping(value = "/returnCarSearch")
-    public String returnCarResults(@ModelAttribute(value="id") ReservationSearch reservationSearch){
+    public String returnCarResults(@ModelAttribute(value="id") ReservationSearch reservationSearch, @ModelAttribute(value="rcf") ReturnCarForm returnCarForm){
 
         if(reservationSearchService.validateReservation(reservationSearch)) {
+            returnCarService.setupReturn(returnCarForm, reservationSearch);
+            System.out.println(">AfterSetup==============="+ returnCarForm.getRentalId());
             return "returnCarForm"; //go to return car form if reservation is found
         }
         else {
             return "returnCar"; // otherwise stay on form // NOTE: -- display error message??? How???
         }
+    }
+
+    @GetMapping(value = "/returnCarForm")
+    public String returnCarForm(){
+        return "returnCarForm";
+    }
+
+    @PostMapping(value="/returnCarFormCalculate")
+    public String calculateReturnForm(@SessionAttribute("rcf") ReturnCarForm returnCarForm) {
+        System.out.println(">Calc==============="+ returnCarForm.getRentalId());
+        if(returnCarService.validateReturn(returnCarForm)){
+          return "returnCarResults";
+        }
+        return "returnCarForm";
+    }
+
+
+    @PostMapping(value="/returnCarFormVerification")
+    public String validateReturnForm() {
+            return "homeLoggedInEmp"; //Return Complete
     }
 }

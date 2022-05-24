@@ -32,10 +32,10 @@ function validateReservation(){
         return true;
 }
 
-function validateReturnForm(){
+function calculateReturnForm(){
     var dateCurr = document.forms["returnCarForm"]["dateCurr"].value;
-    //var mileage = document.forms["formReturn"]["mileage"].value;
-   // var tank = document.forms["formReturn"]["tank"].value;
+    var mileage = document.forms["formReturn"]["mileage"].value;
+    var tank = document.forms["formReturn"]["tank"].value;
 
     if(dateCurr==null||dateCurr=="")
     {
@@ -43,7 +43,7 @@ function validateReturnForm(){
         document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='red'>"+ "Date must be filled in."+ "</font>";
         return false;
     }
-  /*  else if(mileage==null||mileage=="")
+    else if(mileage==null||mileage=="")
     {
         document.getElementsByClassName("errorMessageFirstSection")[0].style.visibility = "visible";
         document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='red'>"+ "Mileage must be filled in."+ "</font>";
@@ -54,9 +54,16 @@ function validateReturnForm(){
          document.getElementsByClassName("errorMessageFirstSection")[0].style.visibility = "visible";
          document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='red'>"+ "Tank level must be filled in."+ "</font>";
          return false;
-    } */
+    }
     else
         return true;
+}
+
+function hideCarSeat(){
+    document.getElementsByClassName("carSeat")[0].style.visibility = "hidden";
+}
+function hideSunRoof(){
+    document.getElementsByClassName("sunRoof")[0].style.visibility = "hidden";
 }
 
 

@@ -1,82 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-        <script src="script.js" async defer> </script>
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="script.js" async defer> </script>
+</head>
+<body>
 
-        <!-- title -->
-        <nav class = "level">
-            <!--	<p class="level-item has-text-centered">	LOGO IMAGE????
-                        <img src=" alt="" style="height: 30px;">
-                    </p> -->
-            <p class ="level-item has-text-centered">
-            <h1 class="title"> DePaul's Deluxe Rentals</h1>
-            </p>
-            <p class="level-item has-text-centered">
-                <button class="button is-link" th:onclick= "|window.location.href='/homeLoggedInEmp'|">Back</button>
-            </p>
-        </nav>
-       
-         <!--Car Return Search Bar --> 
-        <section class="hero is-link">
-			<div class="hero-body" >
-				<p class="title"> Car Return</p>
-				<nav class="level">
-                    <div class="level-left">
-                    <div class="level-item">
-                    <p class="subtitle is-5"> <strong>Reservation Id: </strong></p>
-                    </div>
-                    <div class="level-item">
-                      <div class="field has-addons">
-                        <p class="control">
-                          <input class="input" type="text" placeholder="Reservation Id">
-                        </p>
-                        <p class="control">
-                            <button class="button" th:onclick= "|window.location.href='/returnCarResults'|">Search</button>
-                        </p>
-                      </div>
-                  </div>
-                  </div>
-              </nav>
-			</div> 
-		</section>
+<!-- title -->
+<section class="section">
+    <div class="first-section">
+        <h1 class="title"> DePaul's Deluxe Rentals</h1>
+    </div>
+</section>
 
-    <!--Results --> 
-    <section class="hero">
-      <div class="hero-body" >
-          <p class="title"> No Matching Reservation</p>
-          <p class="subtitle">Enter another reservation number or view all reservations to continue</p>
-          <button class="button is-primary" th:onclick= "|window.location.href='/reservationListEmp'|">View Reservations</button>
-          <!-- CODE TIE IN: Inser Table HERE-->
-          <!-- Reservation Number, Customer Name(?), "Select" Button (Select Button goes to next page with this reservation selected) -->
-        <!--  <table class="table">
-              <thread>
-                  <tr>
-                      <th><abbr title="Reservation Id">Reservation Id</abbr></th>
-                      <th><abbr title="Start Date">Start Date</abbr></th>
-                      <th><abbr title="Return Date">Return Date</abbr></th>
-                      <th><abbr title="Last Name">Name</abbr></th>
-                  </tr>
-              </thread>
-              <tbody>
-              <tr th:each="reservation : ${reservations}">
-                  <td th:text="${reservation.getReservationId()}"/>
-                  <td th:text="${reservation.getStartDate()}"/>
-                  <td th:text="${reservation.getEndDate()}"/>
-                  <td th:text="${reservation.getCustomer().getLastName()}"/>
-              </tr>
-              </tbody>
-          </table> -->
-      </div> 
-  </section>
-        <script src="script.js" async defer></script>
-    </body>
+<!--Car Return Search Bar -->
+<section class="hero">
+    <div class="hero-body" >
+        <p class="title"> Car Return</p>
+        <p class="subtitle" id="reservationId" th:text="*{rcf.getRentalId()}"></p>
+        <p class="subtitle" text = "Rental Cost: "></p>
+        <p class="heading" id="rentalFee" th:text="*{rcf.getRentalFee()}"></p>
+        <p class="subtitle" text = "Late Fee Cost: "></p>
+        <p class="heading" id="lateFee" th:text="*{rcf.getLateFee()}"></p>
+        <p class="subtitle" text = "Gas Cost: "></p>
+        <p class="heading" id="gasFee" th:text="*{rcf.getGasFee()}"></p>
+        <p class="subtitle" text = "Extras Damage Cost: "></p>
+        <p class="heading" id="extrasFee" th:text="*{rcf.getExtrasFee()}"></p>
+        <p class="subtitle" text = "Car Damages Cost: "></p>
+        <p class="heading" id="damageFee" th:text="*{rcf.getDamageFee()}"><br></p>
+        <p class="subtitle" text = "Total Cost: "></p>
+        <p class="heading" id="totalFee" th:text="*{rcf.getTotalFee()}"></p>
+                <button class="button is-primary" th:onclick= "|window.location.href='/homeLoggedInEmp'|">Confirm Return</button>
+            </div>
+        </form>
+    </div>
+</section>
+</body>
 </html>

@@ -25,13 +25,25 @@ public class ReservationSearchService {
     public boolean validateReservation(ReservationSearch reservationSearch) {
 
         try {
-            Optional.of(reservationRepository.findReservationById(reservationSearch.getId()))
-                    .orElseThrow(RuntimeException::new);
+            reservationSearch.setReservation(Optional.of(reservationRepository.findReservationById(reservationSearch.getId()))
+                    .orElseThrow(RuntimeException::new));
         } catch (RuntimeException e) {
             logger.error("Reservation not found in DB: " + reservationSearch.getId() );
             return false;
         }
         return true;
+    }
+
+    public Reservation fetchReservation(Long id) {
+
+        try {
+            Reservation r = (Optional.of(reservationRepository.findReservationById(id))
+                    .orElseThrow(RuntimeException::new));
+            return r;
+        } catch (RuntimeException e) {
+            logger.error("Reservation not found in DB: " + id );
+            return null;
+        }
     }
 
     public List<Reservation> FindAllReservations(){
