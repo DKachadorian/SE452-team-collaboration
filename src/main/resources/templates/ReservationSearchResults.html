@@ -98,16 +98,16 @@
               <tr>
                   <th>Reservation StartDate</th>
                   <th>Reservation EndDate</th>
-                  <!--<th>Reservation Class</th>
-                  <th>Reservation Price</th>
-                  <th>Reservation Available</th>-->
+                  <!--<th>Reservation Class</th>-->
+                  <th>Reservation Days</th>
+                  <th>Reservation ReservationID</th>
               </tr>
               <tr th:each="reservation : ${reservations}">
                   <td th:text="${reservation.getStartDate()}"/>
                   <td th:text="${reservation.getEndDate()}"/>
-                  <!--<td th:text="${reservation.getCarClass()}"/>
-                  <td th:text="${reservation.getCarPrice()}"/>
-                  <td th:text="${reservation.getCarAvailable()}"/>-->
+                  <!--<td th:text="${reservation.getCarClass()}"/>-->
+                  <td th:text="${reservation.getDaysReserved()}"/>
+                  <td th:text="${reservation.getReservationId()}"/>
               </tr>
           </table>
           </div>
