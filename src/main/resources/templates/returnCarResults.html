@@ -21,25 +21,26 @@
 
 <!--Car Return Search Bar -->
 <section class="hero">
+   <form class="form" id="returnCarResults" action="" th:action= "@{/returnCarComplete}" th:object="${rcf}"  method="post" > <!--  -->
     <div class="hero-body" >
         <p class="title"> Car Return</p>
-        <p class="subtitle" id="reservationId" th:text="*{rcf.getRentalId()}"></p>
-        <p class="subtitle" text = "Rental Cost: "></p>
-        <p class="heading" id="rentalFee" th:text="*{rcf.getRentalFee()}"></p>
-        <p class="subtitle" text = "Late Fee Cost: "></p>
-        <p class="heading" id="lateFee" th:text="*{rcf.getLateFee()}"></p>
-        <p class="subtitle" text = "Gas Cost: "></p>
-        <p class="heading" id="gasFee" th:text="*{rcf.getGasFee()}"></p>
-        <p class="subtitle" text = "Extras Damage Cost: "></p>
-        <p class="heading" id="extrasFee" th:text="*{rcf.getExtrasFee()}"></p>
-        <p class="subtitle" text = "Car Damages Cost: "></p>
-        <p class="heading" id="damageFee" th:text="*{rcf.getDamageFee()}"><br></p>
-        <p class="subtitle" text = "Total Cost: "></p>
-        <p class="heading" id="totalFee" th:text="*{rcf.getTotalFee()}"></p>
-                <button class="button is-primary" th:onclick= "|window.location.href='/homeLoggedInEmp'|">Confirm Return</button>
+        <!-- <p class="subtitle" id="reservationId" th:object="${rcf}" th:text="*{rentalId}"></p>  or th:value="${rcf.rentalId}"? -->
+        <p class="subtitle" id="rid" th:field="*{rentalId}"></p>
+        <p class="subtitle" >Rental Cost: </p>
+        <p class="h2" id="rf" th:value="*{rentalFee}"></p>
+        <p class="subtitle"  >Late Fee: </p>
+        <p class="h2" id="lf" th:field="#{lateFee}"></p>
+        <p class="subtitle" >Gas Fill-Up Fee: </p>
+        <p class="h2" id="gf" th:field="${gasFee}"></p>
+        <p class="subtitle" >Damaged Extras Fee: </p>
+        <p class="subtitle" id="ef" th:value="*{extrasFee}"></p>
+        <p class="subtitle" >Car Damages Fee: </p>
+        <p class="subtitle" id="df" th:object="${rcf}" th:field="*{damageFee}"><br></p>
+        <p class="subtitle" >Total Cost Fee: </p>
+        <p class="subtitle" id="tf"  th:field="*{totalFee}"></p>
+                <button class="button is-primary" th:onclick= "|window.location.href='/returnCarComplete'|">Confirm Return</button>
             </div>
-        </form>
-    </div>
+        </form> <!-- -->
 </section>
 </body>
 </html>

@@ -38,7 +38,6 @@ public class returnCarController {
 
         if(reservationSearchService.validateReservation(reservationSearch)) {
             returnCarService.setupReturn(returnCarForm, reservationSearch);
-            System.out.println(">AfterSetup==============="+ returnCarForm.getRentalId());
             return "returnCarForm"; //go to return car form if reservation is found
         }
         else {
@@ -51,10 +50,16 @@ public class returnCarController {
         return "returnCarForm";
     }
 
+    /* @GetMapping(value = "/returnCarResults")
+    public String returnCarResults(@SessionAttribute("rcf") ReturnCarForm returnCarForm){
+        System.out.println("FEEEEEEEES" + returnCarForm.getTotalFee());
+        return "returnCarResults";
+    } */
+
     @PostMapping(value="/returnCarFormCalculate")
     public String calculateReturnForm(@SessionAttribute("rcf") ReturnCarForm returnCarForm) {
-        System.out.println(">Calc==============="+ returnCarForm.getRentalId());
         if(returnCarService.validateReturn(returnCarForm)){
+            System.out.println("FEEEEEEEES " + returnCarForm.getTotalFee());
           return "returnCarResults";
         }
         return "returnCarForm";
@@ -64,5 +69,10 @@ public class returnCarController {
     @PostMapping(value="/returnCarFormVerification")
     public String validateReturnForm() {
             return "homeLoggedInEmp"; //Return Complete
+    }
+
+    @PostMapping(value="/returnCarComplete")
+    public String returnCarComplete(){
+        return "homeLoggedInEmp"; //Return Complete
     }
 }

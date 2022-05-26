@@ -49,11 +49,22 @@ function calculateReturnForm(){
         document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='red'>"+ "Mileage must be filled in."+ "</font>";
         return false;
     }
+    else if(parseInt(mileage)>0)
+        {
+            document.getElementsByClassName("errorMessageFirstSection")[0].style.visibility = "visible";
+            document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='red'>"+ "Mileage must be over 0."+ "</font>";
+            return false;
+        }
     else if(tank==null||tank=="")
     {
          document.getElementsByClassName("errorMessageFirstSection")[0].style.visibility = "visible";
          document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='red'>"+ "Tank level must be filled in."+ "</font>";
          return false;
+    }
+    else if(parseInt(tank)>100 || parseInt(tank)<0)
+    {
+            document.getElementsByClassName("errorMessageFirstSection")[0].style.visibility = "visible";
+             document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='red'>"+ "Tank level must be between 0 and 100."+ "</font>";
     }
     else
         return true;

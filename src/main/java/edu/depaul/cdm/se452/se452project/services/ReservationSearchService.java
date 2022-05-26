@@ -1,5 +1,6 @@
 package edu.depaul.cdm.se452.se452project.services;
 
+import edu.depaul.cdm.se452.se452project.dto.LoginFields;
 import edu.depaul.cdm.se452.se452project.dto.ReservationSearch;
 import edu.depaul.cdm.se452.se452project.entities.Reservation;
 import edu.depaul.cdm.se452.se452project.repositories.ReservationRepository;
@@ -57,4 +58,18 @@ public class ReservationSearchService {
         }
         return reservations;
     }
+
+    /*
+    public List<Reservation> FindCustomerReservations(Long id){
+        List<Reservation> reservations;
+        try {
+            reservations = Optional.of(reservationRepository.FindCustReservations(id))
+                    .orElseThrow(RuntimeException::new);
+        } catch (RuntimeException e) {
+            logger.error("No Reservations");
+            return null;
+        }
+        return reservations;
+    }
+    */
 }
