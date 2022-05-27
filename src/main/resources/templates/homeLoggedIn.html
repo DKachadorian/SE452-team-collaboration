@@ -34,7 +34,7 @@
 			<div class="hero-body">
 				<p class="title">Reservations</p>
 				<p class="subtitle">Find a flexible car rental that fits your needs!</p>
-				<button class="button is-primary">Create Reservation</button>
+				<button class="button is-primary" th:onclick= "|window.location.href='/ReservationSearch'|">Create Reservation</button>
 			</div>
 		</section>
 		
@@ -43,7 +43,7 @@
 			<div class="hero-body">
 				<p class="title">Reservation History</p>
 				<p class="subtitle">View all past, present and upcoming reservations</p>
-				<button class="button is-link" th:onclick= "|window.location.href='/reservationList'|">My Reservations</button>
+				<button class="button is-primary" th:onclick= "|window.location.href='/reservationList'|">My Reservations</button>
 			</div>
 		</section>
 		

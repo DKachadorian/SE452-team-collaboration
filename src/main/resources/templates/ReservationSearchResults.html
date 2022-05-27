@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <script src="script.js" async defer> </script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h6 class="has-text-centered" ><strong>Depaul Deluxe Car Rentals</strong></h6>
+        <h6 class="has-text-centered" ><strong>Reservation Results</strong></h6>
+            
+     
+        <div class="level-right">
+            <div class="buttons">
+                <p class="level-item has-text-right">
+                    <button class="button is-info" th:onclick= "|window.location.href='/ReservationSearch.html'">Back to Search</button>
+                </p>
+            </div>
+        </div>
+
+
+        <section class="hero is-light"> <!-- is-link makes the color a purpleish color-->
+            <div class="hero-body">
+                <form class="form" id="reservationSearchResults" action="" th:action="@{/createReservationDealerships}" th:object="${rf}" onsubmit="return createReservationDealerships()" method="post">
+                <p class="title">Dealerships:</p>
+                <!-- <button class="button is-link" th:onclick= "|window.location.href='/home'|">Create Reservation</button> (ADD??) -->
+                <p class="subtitle"><br></p>
+
+                <table class="table">
+                    <thread>
+                        <tr>
+                            <th><abbr title="Reservation">Reservation</abbr></th>
+                            <th><abbr title="Start Date">Start Date</abbr></th>
+                            <th><abbr title="End Date">End Date</abbr></th>
+                            <th><abbr title="Reservation Creation Date">Reserved On</abbr></th>
+                        </tr>
+                    </thread>
+                    <tbody>
+                    <tr th:each="dealershipList : ${rf}">
+                        <td th:text="${dealershipList.getDealershipAddress()}"/>
+                        <td th:text="${dealershipList.getDealershipZipCode()}"/>
+                        <td th:text="${dealershipList.getCars().size()}"/>
+                        <td button class="submit" th:value=*"{rf.getDealershipId()}">Select</button></td> <!-- Send dealership id of selected dealership?-->
+                    </tr>
+                    </tbody>
+                </table>
+                </form>
+            </div>
+        </section>
+
+
+          
+        
+        <script src="" async defer></script>
+    </body>
+</html>

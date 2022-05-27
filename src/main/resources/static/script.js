@@ -77,9 +77,36 @@ function hideSunRoof(){
     document.getElementsByClassName("sunRoof")[0].style.visibility = "hidden";
 }
 
+function createReservationValidate() {
+              var x = document.forms["reservationSearch"]["startDate"].value;
+              var y = document.forms["reservationSearch"]["endDate"].value;
+              var z = document.forms["reservationSearch"]["optionalCriteria"].value;
+              var w = document.forms["reservationSearch"]["requiredCriteria"].value;
+              var a = document.forms["reservationSearch"]["states"].value;
+              var carVal = document.forms["reservationSearch"]["carSearch"].value;
+
+              if (x == "" || y == "" || x == null || y == null ){
+                document.getElementsByClassName("errorMessageReservationSearch")[0].style.visibility = "visible";
+                document.getElementsByClassName("errorMessageReservationSearch")[0].innerHTML = "<font color='red'>"+ "Must select reservation start and end dates."+ "</font>";
+                return false;
+              }
+
+              if (z == "" || z == null || w == "" || w == null ){
+                document.getElementsByClassName("errorMessageReservationSearch")[0].style.visibility = "visible";
+                document.getElementsByClassName("errorMessageReservationSearch")[0].innerHTML = "<font color='red'>"+ "Must select car preferences for your reservation."+ "</font>";
+                return false;
+              }
+
+              if (a == "" || a == null){
+                document.getElementsByClassName("errorMessageReservationSearch")[0].style.visibility = "visible";
+                document.getElementsByClassName("errorMessageReservationSearch")[0].innerHTML = "<font color='red'>"+ "Must select a location for your reservation"+ "</font>";
+                return false;
+              }
+    return true;
+}
+
 
 function validateAccount() {
-
 
     var username = document.forms["accountForm"]["username"].value;
     var password = document.forms["accountForm"]["password"].value;
