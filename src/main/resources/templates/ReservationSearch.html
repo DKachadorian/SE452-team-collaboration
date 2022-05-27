@@ -34,7 +34,7 @@
             <nav class="level">
                 <div class="level-left">Rental Start Date</div>
             </nav>
-            <input type="date" id="startDate" th:field="*{startDate}">
+            <input type="date" id="startDate" th:field="*{startD}" dateFormat="yyyy-MM-dd">
         </article>
     </div>
     <div class="tile is-parent">
@@ -42,7 +42,7 @@
             <nav class="level">
                 <div class="level-left">Rental End Date</div>
             </nav>
-            <input type="date" id="endDate" th:field="*{endDate}">
+            <input type="date" id="endDate" th:field="*{endD}" dateFormat="yyyy-MM-dd">
         </article>
     </div>
 </div>
@@ -70,12 +70,12 @@
                 <div class="level-left">
                     <div class="dropdown">
                         <select name="requiredCriteria" id="requiredCriteria" th:field="*{requiredCriteria}" style="height: 40px; width:260px;">
-                            <option value="nopreference">No Preference</option>>
-                            <option value="acura">Acura</option>
-                            <option value="ford">Ford</option>
-                            <option value="honda">Honda</option>
-                            <option value="subaru">Subaru</option>
-                            <option value="toyota">Toyota</option>
+                            <option value="NONE">No Preference</option>>
+                            <option value="Acura">Acura</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Subaru">Subaru</option>
+                            <option value="Toyota">Toyota</option>
                         </select>
                       </div>
                 </div>

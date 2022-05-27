@@ -2,6 +2,7 @@ package edu.depaul.cdm.se452.se452project.services;
 
 import edu.depaul.cdm.se452.se452project.dto.RegistrationFields;
 import edu.depaul.cdm.se452.se452project.dto.ReservationSearch;
+import edu.depaul.cdm.se452.se452project.entities.Car;
 import edu.depaul.cdm.se452.se452project.entities.Dealership;
 import edu.depaul.cdm.se452.se452project.entities.Reservation;
 import edu.depaul.cdm.se452.se452project.repositories.CarRepository;
@@ -72,7 +73,40 @@ public class ReservationCreationService {
         return true;
     }
 
-    public void setupResults(RegistrationFields rs){
+    public void setupResults(RegistrationFields rs){    }
+
+    public void FindCars(RegistrationFields rs){
+        long id = rs.getSelectedDealershipId();
+        try{
+            System.out.println("=================Entering find cars" ); //TESTING
+            Dealership d = dealershipRepository.findDealershipsById(id);
+            System.out.println("=================Found Dealership"); //TESTING
+            // if there are no cars at the dealership, stop
+            if(d.getCars().size()<1 || d.getCars() == null)
+                return;
+            else{
+                System.out.println("=================Starting to look at cars"); //TESTING
+                String str = rs.getRequiredCriteria();
+                System.out.println(str);
+                if(str.equals("NONE")) {
+                    System.out.println("=================Getting car list, nopreference on type"); //TESTING
+                    rs.setCarList(carRepository.findCarBySomeRequirements(id, rs.getOptionalCriteria()));
+                }
+                else{
+                    System.out.println("=================getting car list on all types"); //TESTING
+                    rs.setCarList(carRepository.findCarByAllRequirements(id, rs.getOptionalCriteria(), rs.getRequiredCriteria()));
+                    if(rs.getCarList().isEmpty())
+                    {
+                        System.out.println("=================empty car list with all criteria"); //TESTING
+                        rs.setCarList(carRepository.findCarBySomeRequirements(id, rs.getOptionalCriteria()));
+                    }
+                }
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println("The dealership ID became an issue");
+        }
 
 
     }
@@ -81,6 +115,18 @@ public class ReservationCreationService {
     // that rental end date is after rental start date
     public boolean validateDates(RegistrationFields rs){
         System.out.println("===========Validating DatesS"); //TESTING
+        try{
+            String e = rs.getEndD();
+            String s = rs.getStartD();
+            SimpleDateFormat form=new SimpleDateFormat("yyyy-MM-dd");
+            rs.setStartDate(form.parse(s));
+            rs.setEndDate(form.parse(e));
+
+        }
+        catch(Exception e){
+            System.out.println("Unable to convert values to Date format");
+            return false;
+        }
         Instant nowTime = ZonedDateTime.now().minusDays(1).toInstant();
         Instant insStart = rs.getStartDate().toInstant();
         Instant insEnd = rs.getEndDate().toInstant();

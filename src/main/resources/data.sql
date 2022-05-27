@@ -1,7 +1,9 @@
 
 -- Full Customer Creation Example
 INSERT INTO Dealership(DealershipId, Address, State, ZipCode)
-    VALUES(999, '2320 North Kenmore Ave. 1 East Jackson Blvd', 'IL', '60604');
+    VALUES(999, '1 East Jackson Blvd', 'IL', '60604');
+INSERT INTO Dealership(DealershipId, Address, State, ZipCode)
+    VALUES(998, '2320 North Ken St.', 'IL', '60608');
 
 INSERT INTO Customer(CustomerId, FirstName, LastName, DateOfBirth,
                      Address, PhoneNumber, DriversLicenseId, InsuranceCarrier,
@@ -29,7 +31,7 @@ INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, 
 INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
     VALUES(21, 'TGR231', 'Dodge', 'Challenger', 'ECONOMY', 50000, 'N', 'Y', 'Y', 999);
 INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
-    VALUES(22, '4343434', 'Toyota', 'Challenger', 'LUXURY', 40000, 'Y', 'N', 'Y', 999);
+    VALUES(22, '4343434', 'Toyota', 'Challenger', 'LUXURY', 40000, 'Y', 'N', 'Y', 998);
 INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
     VALUES(23, 'n84rt24', 'Ford', 'F150', 'ECONOMYPlus', 50000, 'Y', 'Y', 'Y', 999);
 

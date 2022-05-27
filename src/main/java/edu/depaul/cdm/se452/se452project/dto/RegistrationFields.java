@@ -15,6 +15,8 @@ import java.util.List;
 public class RegistrationFields {
 
    
+    private String startD;
+    private String endD;
     private Date startDate;
     private Date endDate;
     private String optionalCriteria;

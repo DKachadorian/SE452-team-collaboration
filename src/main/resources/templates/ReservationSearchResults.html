@@ -33,7 +33,7 @@
 
         <section class="hero is-light"> <!-- is-link makes the color a purpleish color-->
             <div class="hero-body">
-                <form class="form" id="reservationSearchResults" action="" th:action="@{/createReservationDealerships}" th:object="${rf}" onsubmit="return createReservationDealerships()" method="post">
+                <form class="form" id="reservationSearchResults" action="" th:action="@{/reservationSearchCar}" th:object="${rf}" onsubmit="return createReservationDealerships()" method="post">
                 <p class="title">Dealerships:</p>
                 <!-- <button class="button is-link" th:onclick= "|window.location.href='/home'|">Create Reservation</button> (ADD??) -->
                 <p class="subtitle"><br></p>
@@ -50,6 +50,7 @@
                     <tbody>
                     <tr th:each="dealership : ${dealerships}">
                         <td th:text="${dealership.getAddress()}"/>
+                        <td th:text="${dealership.getState()}"/>
                         <td th:text="${dealership.getZipCode()}"/>
                         <td th:text="${dealership.getCars().size()}"/>
                         <td><button class="submit" th:value="${dealership.getDealershipId()}">Select</button></td> <!-- Send dealership id of selected dealership?-->

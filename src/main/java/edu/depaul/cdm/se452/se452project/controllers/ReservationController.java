@@ -1,6 +1,7 @@
 package edu.depaul.cdm.se452.se452project.controllers;
 
 import edu.depaul.cdm.se452.se452project.dto.RegistrationFields;
+import edu.depaul.cdm.se452.se452project.entities.Car;
 import edu.depaul.cdm.se452.se452project.entities.Dealership;
 import edu.depaul.cdm.se452.se452project.entities.Reservation;
 import edu.depaul.cdm.se452.se452project.services.ReservationCreationService;
@@ -36,7 +37,7 @@ public class ReservationController {
 
 
     @PostMapping(value = "/createReservationValidate")
-    public String createReservationValidate(@SessionAttribute("rf") RegistrationFields registrationFields, Model model){
+    public String createReservationValidate(@ModelAttribute("rf") RegistrationFields registrationFields, Model model){
         System.out.println("=====================TESTING===============");
         System.out.println("===========" + registrationFields.getStates()); //TESTING
         System.out.println("===========" + registrationFields.getOptionalCriteria()); //TESTING
@@ -44,30 +45,13 @@ public class ReservationController {
         System.out.println("===========" + registrationFields.getStartDate()); //TESTING
         System.out.println("===========" + registrationFields.getEndDate()); //TESTING
 
-        ////For TESTING because form is not pulling values atm
-        Date e = new Date(2022, 07, 07);
-        Date s = new Date(2022, 06, 06);
-        registrationFields.setEndDate(e); //TESTING
-        registrationFields.setStartDate(s);
-        registrationFields.setOptionalCriteria("Economy");
-        registrationFields.setRequiredCriteria("Ford");
-        registrationFields.setStates("IL");
-        System.out.println("===========" + registrationFields.getStates()); //TESTING
-        System.out.println("===========" + registrationFields.getOptionalCriteria()); //TESTING
-        System.out.println("===========" + registrationFields.getRequiredCriteria()); //
-        System.out.println("===========" + registrationFields.getStartDate()); //TESTING
-        System.out.println("===========" + registrationFields.getEndDate()); //TESTING
+
         if(reservationCreationService.validateSearch(registrationFields)) {
             //reservationCreationService.setupResults(registrationFields);
-            System.out.println("validated done");
+
             List<Dealership> dl = registrationFields.getDealershipList();
             model.addAttribute("dealerships", dl);
-            System.out.println("===========" + registrationFields.getStates()); //TESTING
-            System.out.println("===========" + registrationFields.getOptionalCriteria()); //TESTING
-            System.out.println("===========" + registrationFields.getRequiredCriteria()); //
-            System.out.println("===========" + registrationFields.getStartDate()); //TESTING
-            System.out.println("===========" + registrationFields.getEndDate()); //TESTING
-            System.out.println("===========List Size" + registrationFields.getDealershipList().size()); //TESTING
+
             return "ReservationSearchResults"; //go to return car form if reservation is found
         }
         else {
@@ -77,9 +61,23 @@ public class ReservationController {
 
 
 
-    @PostMapping(value = "/createReservationDealerships")
-    public String createReservationDealership(@SessionAttribute("rf") RegistrationFields registrationFields){
-        System.out.println(registrationFields.getSelectedDealershipId());
+
+
+    @PostMapping(value = "/reservationSearchCar")
+    public String createReservationDealership(@SessionAttribute("rf") RegistrationFields registrationFields, Model model){
+        System.out.println("================" + registrationFields.getSelectedDealershipId()); //TESTING
+        registrationFields.setSelectedDealershipId(999l); // TESTING ONLY HARD CODING VALUE <-----------------------------
+        System.out.println("=================" +registrationFields.getSelectedDealershipId()); //TESTING
+        reservationCreationService.FindCars(registrationFields);
+        List<Car> vroom = registrationFields.getCarList();
+        model.addAttribute("cars", vroom);
+        return "reservationSearchComplete"; //TEMPTEMPTEMPTEMPTEMP
+
+    }
+
+    @PostMapping(value = "/reservationSearchComplete")
+    public String confirmReservation(@SessionAttribute("rf") RegistrationFields registrationFields, Model model){
+
         return "homeLoggedIn"; //TEMPTEMPTEMPTEMPTEMP
 
     }
