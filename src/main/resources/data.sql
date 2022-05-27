@@ -1,7 +1,7 @@
 
 -- Full Customer Creation Example
 INSERT INTO Dealership(DealershipId, Address, State, ZipCode)
-    VALUES(999, '2320 North Kenmore Ave. 1 East Jackson Blvd', 'Illinois', '60604');
+    VALUES(999, '2320 North Kenmore Ave. 1 East Jackson Blvd', 'IL', '60604');
 
 INSERT INTO Customer(CustomerId, FirstName, LastName, DateOfBirth,
                      Address, PhoneNumber, DriversLicenseId, InsuranceCarrier,

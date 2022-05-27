@@ -41,18 +41,18 @@
                 <table class="table">
                     <thread>
                         <tr>
-                            <th><abbr title="Reservation">Reservation</abbr></th>
-                            <th><abbr title="Start Date">Start Date</abbr></th>
-                            <th><abbr title="End Date">End Date</abbr></th>
-                            <th><abbr title="Reservation Creation Date">Reserved On</abbr></th>
+                            <th><abbr title="Address">Address</abbr></th>
+                            <th><abbr title="Zip Code">Zip Code</abbr></th>
+                            <th><abbr title="Available Cars">Available Cars</abbr></th>
+                            <th><abbr title="Select">Select</abbr></th>
                         </tr>
                     </thread>
                     <tbody>
-                    <tr th:each="dealershipList : ${rf}">
-                        <td th:text="${dealershipList.getDealershipAddress()}"/>
-                        <td th:text="${dealershipList.getDealershipZipCode()}"/>
-                        <td th:text="${dealershipList.getCars().size()}"/>
-                        <td button class="submit" th:value=*"{rf.getDealershipId()}">Select</button></td> <!-- Send dealership id of selected dealership?-->
+                    <tr th:each="dealership : ${dealerships}">
+                        <td th:text="${dealership.getAddress()}"/>
+                        <td th:text="${dealership.getZipCode()}"/>
+                        <td th:text="${dealership.getCars().size()}"/>
+                        <td><button class="submit" th:value="${dealership.getDealershipId()}">Select</button></td> <!-- Send dealership id of selected dealership?-->
                     </tr>
                     </tbody>
                 </table>
