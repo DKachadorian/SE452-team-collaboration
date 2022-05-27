@@ -30,9 +30,12 @@ public class LoginController {
 
     @PostMapping(value="/loginVerification")
     public String loginVerification(@ModelAttribute(value="loginFields") LoginFields loginFields) {
-        if(loginService.validateLoginCredentials(loginFields)) {
-            return "homeLoggedIn";
+        if (loginService.validateLoginCredentialsEmp(loginFields)) {
+                return "homeLoggedInEmp"; //Check if employee has logged in
+            }
+        else if (loginService.validateLoginCredentials(loginFields)) {
+                return "homeLoggedIn"; // check if customer has logged in
+            }
+         return "home";
         }
-        return "home";
-    }
 }

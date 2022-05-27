@@ -32,9 +32,7 @@
     <div class="tile is-parent">
         <article class="tile is-child box">
             <nav class="level">
-                <div class="level-left">
-                    Rental Start Date:
-                </div>
+                <div class="level-left">Rental Start Date:</div>
             </nav>
             <input type="date" id="startDate" th:field="*{startDate}">
         </article>
@@ -42,9 +40,7 @@
     <div class="tile is-parent">
         <article class="tile is-child box">
             <nav class="level">
-                <div class="level-left">
-                    Rental End Date:
-                </div>
+                <div class="level-left">Rental End Date:</div>
             </nav>
             <input type="date" id="endDate" th:field="*{endDate}">
         </article>
@@ -58,7 +54,7 @@
             <nav class="level">
                 <div class="level-left">
                     <div class="dropdown">
-                        <select name="optionalCriteria" id="optionalCriteria" th:field="*{optionalCriteria}" style="height: 40px; width:360px;">
+                        <select name="optionalCriteria" id="optionalCriteria" th:field="*{optionalCriteria}" style="height: 40px; width:260px;">
                           <option value="Economy">Economy</option>
                           <option value="EconomyPlus">Economy Plus</option>
                           <option value="Luxury">Luxury</option>
@@ -73,7 +69,7 @@
             <nav class="level">
                 <div class="level-left">
                     <div class="dropdown">
-                        <select name="requiredCriteria" id="requiredCriteria" th:field="*{requiredCriteria}" style="height: 40px; width:360px;">
+                        <select name="requiredCriteria" id="requiredCriteria" th:field="*{requiredCriteria}" style="height: 40px; width:260px;">
                             <option value="nopreference">No Preference</option>>
                             <option value="acura">Acura</option>
                             <option value="ford">Ford</option>
@@ -162,7 +158,7 @@
             </nav>
             <div class="level-centered">
                 <p class = "errorMessageReservationSearch top-arrow" > </p>
-                <button class="button is-link" th:onclick= "|window.location.href='/createReservationValidate'|">Search Available Cars</button>
+                <button class="button is-link">Search Available Cars</button>
             </div>
         </article>
     </div>
