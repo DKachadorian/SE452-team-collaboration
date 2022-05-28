@@ -59,9 +59,6 @@ public class ReservationController {
     }
 
 
-
-
-
     @PostMapping(value = "/reservationSearchCar")
     public String createReservationDealership(@SessionAttribute("rf") RegistrationFields registrationFields, Model model){
         System.out.println("================" + registrationFields.getSelectedDealershipId()); //TESTING
@@ -80,6 +77,13 @@ public class ReservationController {
         return "reservationSearchComplete"; //TEMPTEMPTEMPTEMPTEMP
 
     }
+
+    //To-DO
+    // Dealership Selection saves the id (maybe just have a field to type the ID)
+    // ^ save deal with car selection
+    // Confirmation page show details
+    // Get customer ID number for reservation somehow??? (and tell Joscelyn so she can do this for viewREservation page
+    // In the database add this new reservation -> in /reservation Search Complete
 
 
 
