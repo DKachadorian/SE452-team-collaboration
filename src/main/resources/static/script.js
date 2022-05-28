@@ -87,7 +87,10 @@ for(var i = 0; i < calendars.length; i++) {
 		console.log(date);
 	});
 } */
-
+function onClickDealership(){
+    document.forms["reservationSearchResults"]["id"].value = document.forms["reservationSearchResults"]["rowId"].value;
+    return true;
+}
 function createReservationValidate() {
               var x = document.forms["reservationSearch"]["startDate"].value;
               var y = document.forms["reservationSearch"]["endDate"].value;

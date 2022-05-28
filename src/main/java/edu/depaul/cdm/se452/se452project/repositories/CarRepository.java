@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface CarRepository extends JpaRepository<Car, Long> {
 
-    @Query(value = "SELECT * FROM Car WHERE dealership = ?1 AND carAvailable = TRUE AND carClass = ?2 AND carManufacturer = ?3", nativeQuery = true)
+    @Query(value = "SELECT * FROM Car WHERE dealershipId = ?1 AND carAvailable = TRUE AND carClass = ?2 AND carManufacturer = ?3", nativeQuery = true)
     List<Car> findCarByAllRequirements(long dealership, String carClass, String carManufacturer);
 
-    @Query(value = "SELECT * FROM Car WHERE dealership = ?1 AND carAvailable = TRUE AND carClass = ?2", nativeQuery = true)
+    @Query(value = "SELECT * FROM Car WHERE dealershipId = ?1 AND carAvailable = TRUE AND carClass = ?2", nativeQuery = true)
     List<Car> findCarBySomeRequirements(long dealership, String carClass);
 }

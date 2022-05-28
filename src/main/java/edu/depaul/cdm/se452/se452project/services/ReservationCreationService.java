@@ -38,39 +38,14 @@ public class ReservationCreationService {
     }
 
     public boolean validateSearch(RegistrationFields rs){
-        System.out.println("===========Entering validation"); //TESTING
-        System.out.println("===========" + rs.getStates()); //TESTING
-        System.out.println("===========" + rs.getOptionalCriteria()); //TESTING
-        System.out.println("===========" + rs.getRequiredCriteria()); //
-        System.out.println("===========" + rs.getStartDate()); //TESTING
-        System.out.println("===========" + rs.getEndDate()); //TESTING
         // Make sure entered dates are valid first
-        if(rs.getEndDate()==null || rs.getStartDate()==null)
+        if(rs.getEndD()==null || rs.getStartD()==null || rs.getStartD().equals("") || rs.getEndD().equals(""))
             return false;
-        System.out.println("===========Dates not null"); //TESTING
         if(!validateDates(rs))
             return false;
-        System.out.println("===========Dates Passed"); //TESTING
-        // begin search for matching cars
-        String carClass = rs.getOptionalCriteria();
-        String preferredType = rs.getRequiredCriteria();
-
-        //Finding the Dealerships available
-        System.out.println("===========FINDING DEALERSHIPS"); //TESTING
+       //Finding the Dealerships available
         rs.setDealershipList(dealershipRepository.findDealershipsByState(rs.getStates()));
-        /*List<Long> dealershipIdList = new ArrayList<>();
-
-        // if there are results
-        if(!rs.getDealershipList().isEmpty()) {
-            for (int i = 0; i < rs.getDealershipList().size(); i++) {
-                dealershipIdList.add(rs.getDealershipList().get(i).getDealershipId());
-                System.out.println("===========Dealership: " + dealershipIdList.get(i)); //TESTING
-            }
-            //find cars by dealership
-           // for()
-        }
-*/
-        return true;
+       return true;
     }
 
     public void setupResults(RegistrationFields rs){    }
@@ -87,6 +62,7 @@ public class ReservationCreationService {
             else{
                 System.out.println("=================Starting to look at cars"); //TESTING
                 String str = rs.getRequiredCriteria();
+
                 System.out.println(str);
                 if(str.equals("NONE")) {
                     System.out.println("=================Getting car list, nopreference on type"); //TESTING
@@ -114,14 +90,13 @@ public class ReservationCreationService {
     // Ensure that rental start date is on or after current date and
     // that rental end date is after rental start date
     public boolean validateDates(RegistrationFields rs){
-        System.out.println("===========Validating DatesS"); //TESTING
         try{
+            // String dates to Date dates
             String e = rs.getEndD();
             String s = rs.getStartD();
             SimpleDateFormat form=new SimpleDateFormat("yyyy-MM-dd");
             rs.setStartDate(form.parse(s));
             rs.setEndDate(form.parse(e));
-
         }
         catch(Exception e){
             System.out.println("Unable to convert values to Date format");
@@ -130,7 +105,6 @@ public class ReservationCreationService {
         Instant nowTime = ZonedDateTime.now().minusDays(1).toInstant();
         Instant insStart = rs.getStartDate().toInstant();
         Instant insEnd = rs.getEndDate().toInstant();
-        System.out.println("===========Instant Done"); //TESTING
         if(nowTime.isBefore(insStart)&& insStart.isBefore(insEnd))
             return true;
         else
