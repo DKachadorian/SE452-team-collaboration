@@ -83,6 +83,7 @@ public class ReservationController {
         List<Car> cl = reservationCreationService.getCarDisplay(registrationFields);
         model.addAttribute("finalDealerships", dl);
         model.addAttribute("finalCars", cl);
+        reservationCreationService.createReservation(registrationFields);
         return "reservationSearchComplete"; //TEMPTEMPTEMPTEMPTEMP
 
     }

@@ -15,8 +15,11 @@ import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class ReservationCreationService {
@@ -116,6 +119,37 @@ public class ReservationCreationService {
 
     public List<Car> getCarDisplay(RegistrationFields rs){
         return carRepository.findCarListById(rs.getSelectedCarId());
+    }
+
+    public void createReservation(RegistrationFields rs){
+        // Entry #1:  Get Date of reservation for reservation
+        SimpleDateFormat form=new SimpleDateFormat("yyyy-MM-dd");
+        Instant curr = ZonedDateTime.now().toInstant();
+        Date current;
+        try {
+            current = Date.from(curr);
+        }
+        catch(Exception e){
+            System.out.println("Error converting Date");
+            current = new Date(2022, 01, 01);
+        }
+
+        // Entry #1:  Get number of days reserved
+        Long days = 0l; // will stay this if there is a parse issue
+        try {
+            validateDates(rs); //TESTING
+            //SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy", Locale.ENGLISH);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+            Date start = sdf.parse(rs.getStartD());
+            Date end = sdf.parse(rs.getEndD());
+            long diff = end.getTime() - start.getTime();
+            TimeUnit time = TimeUnit.DAYS;
+            days = time.convert(diff, TimeUnit.MILLISECONDS);
+        }catch(Exception e){System.out.println("Parse issue");}
+
+        Long customerId = 101l; // TEMP TEMP TEMP TEMP TEMP <------------------------------------------------------
+
+        reservationRepository.addReservation(current, days, rs.getStartDate(), rs.getEndDate(), customerId, rs.getSelectedCarId());
     }
 
 }
