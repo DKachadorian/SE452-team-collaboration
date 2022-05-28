@@ -24,6 +24,7 @@ public class RegistrationFields {
     private String states;
     private String searchCity;
     private List<Dealership> dealershipList;
+    //private Dealership selectedDealership;
     private Long selectedDealershipId;
     private Long selectedCarId;
     private List<Car> carList;

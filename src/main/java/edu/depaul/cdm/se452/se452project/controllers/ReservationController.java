@@ -60,22 +60,23 @@ public class ReservationController {
 
 
     @PostMapping(value = "/reservationSearchCar")
-    public String createReservationDealership(@SessionAttribute("rf") RegistrationFields registrationFields, Model model){
-        System.out.println("================" + registrationFields.getSelectedDealershipId()); //TESTING
-        registrationFields.setSelectedDealershipId(999l); // TESTING ONLY HARD CODING VALUE <-----------------------------
-        System.out.println("=================" +registrationFields.getSelectedDealershipId()); //TESTING
+    public String createReservationDealerships(@SessionAttribute("rf") RegistrationFields registrationFields, Model model, @ModelAttribute("rf") RegistrationFields rf){
+
+        registrationFields.setSelectedDealershipId(rf.getSelectedDealershipId());
         reservationCreationService.FindCars(registrationFields);
         List<Car> vroom = registrationFields.getCarList();
         model.addAttribute("cars", vroom);
+
         return "reservationSearchCar"; //TEMPTEMPTEMPTEMPTEMP
 
     }
 
     @PostMapping(value = "/reservationSearchComplete")
-    public String confirmReservation(@SessionAttribute("rf") RegistrationFields registrationFields, Model model){
+    public String confirmReservation(@SessionAttribute("rf") RegistrationFields registrationFields, Model model, @ModelAttribute("rf") RegistrationFields rf){
+        registrationFields.setSelectedCarId(rf.getSelectedCarId());
         System.out.println("================" + registrationFields.getSelectedCarId()); //TESTING
         System.out.println("================" + registrationFields.getSelectedDealershipId()); //TESTING
-        registrationFields.setSelectedCarId(21l); // TESTING ONLY HARD CODING VALUE <-------------------------------
+        registrationFields.setSelectedCarId(24l); // TESTING ONLY HARD CODING VALUE <-------------------------------
         registrationFields.setSelectedDealershipId(999l); // TESTING ONLY HARD CODING VALUE <-----------------------------
         System.out.println("=================" +registrationFields.getSelectedDealershipId()); //TESTING
         System.out.println("=================" +registrationFields.getSelectedCarId()); //TESTING
@@ -91,6 +92,7 @@ public class ReservationController {
     @PostMapping(value = "/ReservationConfirmed")
      public String confirmed()
     {
+        //Session.setComplete(); // Do we need to close session????
        return "homeLoggedIn";
     }
 

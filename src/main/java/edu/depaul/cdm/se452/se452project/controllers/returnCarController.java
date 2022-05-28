@@ -58,13 +58,16 @@ public class returnCarController {
         return "returnCarForm";
     }
 
+    /*
     @PostMapping(value="/returnCarFormVerification")
-    public String validateReturnForm() {
-            return "homeLoggedInEmp"; //Return Complete
-    }
+    public String validateReturnForm(@SessionAttribute("rcf") ReturnCarForm returnCarForm) {
+        System.out.println("FEEEEEEEES After Load22    " + returnCarForm.getTotalFee());
+        return "homeLoggedInEmp"; //Return Complete
+    } */
 
     @PostMapping(value="/returnCarComplete")
     public String returnCarComplete(@SessionAttribute("rcf") ReturnCarForm returnCarForm){
+        System.out.println("FEEEEEEEES After Load    " + returnCarForm.getTotalFee());
         return "homeLoggedInEmp"; //Return Complete
     }
 }

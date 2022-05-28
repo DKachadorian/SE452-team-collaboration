@@ -87,10 +87,64 @@ for(var i = 0; i < calendars.length; i++) {
 		console.log(date);
 	});
 } */
-function onClickDealership(){
+/* function onClickDealership(){
     document.forms["reservationSearchResults"]["id"].value = document.forms["reservationSearchResults"]["rowId"].value;
     return true;
+} */
+
+ function onClickDealership(){
+                var radios = document.getElementsByName("select");
+                for( var i = 0; i < radios.length; i++ )
+                {
+                    radios[i].onclick = function()
+                    {
+                        // remove class from the other rows
+
+                        var el = document.getElementById("first-tr");
+
+                        // go to the nex sibing
+                        while(el = el.nextSibling)
+                        {
+                            if(el.tagName === "TR")
+                            {
+                                // remove the selected class
+                                el.classList.remove("selected");
+                            }
+                        }
+
+                     // radio  -      td      -          tr
+                        this.parentElement.parentElement.classList.toggle("selected");
+
+                    };
+                }
+                /* for( var i = 0; i < radios.length; i++ )
+                {
+                    var el = document.getElementById("first-tr");
+                    // go to the nex sibing
+                    while(el = el.nextSibling)
+                    {
+                        if(el.tagName === "TR")
+                        {
+                            document.forms["reservationSearchResults"]["id"].value = el.value;
+                            return true;
+                        }
+                    }
+                }  */
+                return true;
 }
+
+function createReservationDealerships(){
+    var tank = document.forms["reservationSearchResults"]["id"].value;
+
+        if(tank==null||tank=="")
+        {
+            document.getElementsByClassName("errorMessageNoDealership")[0].style.visibility = "visible";
+            document.getElementsByClassName("errorMessageNoDealership")[0].innerHTML = "<font color='red'>"+ "Enter a Dealership from the List to continue"+ "</font>";
+            return false;
+        }
+    return true;
+}
+
 function createReservationValidate() {
               var x = document.forms["reservationSearch"]["startDate"].value;
               var y = document.forms["reservationSearch"]["endDate"].value;

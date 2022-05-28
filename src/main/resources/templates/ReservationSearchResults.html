@@ -37,7 +37,8 @@
                 <p class="title">Dealerships:</p>
                 <!-- <button class="button is-link" th:onclick= "|window.location.href='/home'|">Create Reservation</button> (ADD??) -->
                 <p class="subtitle"><br></p>
-
+                <div class="control">
+                    <label class ="radio">
                 <table class="table">
                     <thread>
                         <tr>
@@ -56,11 +57,19 @@
                         <td th:text="${dealership.getState()}"/>
                         <td th:text="${dealership.getZipCode()}"/>
                         <td th:text="${dealership.getCars().size()}"/>
-                        <td><button class="submit" id="rowId" onclick="onClickDealership()" th:value="${dealership.getDealershipId()}">Select</button></td> <!-- Send dealership id of selected dealership?-->
+                        <!--  <td><input type="radio" name="select" th:value="${dealership.getDealershipId()}" onclick="onClickDealership()"></input></td>  Send dealership id of selected dealership?-->
                     </tr>
                     </tbody>
                 </table>
-                    <p class="h2" id="id" type="text is-hidden" th:field="*{selectedDealershipId}" ></p>
+                    </label>
+                </div>
+                    <div class="box">
+                    <div class="control">
+                        <input class="input" id="id" type="text" th:field="*{selectedDealershipId}" placeholder="Enter a Dealership ID To Continue"> <!-- -->
+                        <p class = "errorMessageNoDealership top-arrow" > </p>
+                        <button class="button is-link">Select This Dealership</button>
+                    </div>
+                    </div>
                 </form>
             </div>
         </section>

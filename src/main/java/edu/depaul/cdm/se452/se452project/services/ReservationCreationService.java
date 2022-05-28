@@ -152,4 +152,8 @@ public class ReservationCreationService {
         reservationRepository.addReservation(current, days, rs.getStartDate(), rs.getEndDate(), customerId, rs.getSelectedCarId());
     }
 
+   /* public void getId(RegistrationFields rs){
+        rs.setSelectedDealershipId(rs.getSelectedDealership().getDealershipId());
+    } */
+
 }
