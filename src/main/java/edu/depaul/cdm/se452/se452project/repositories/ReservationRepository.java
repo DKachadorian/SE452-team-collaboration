@@ -18,7 +18,7 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
     Reservation findReservationById(Long reservationId);
 
     @Modifying
-    @Query(value = "DELETE * FROM Reservation WHERE reservationId = ?1", nativeQuery = true)
+    @Query(value = "DELETE FROM Reservation WHERE reservationId = ?1", nativeQuery = true)
     void removeReservationById(Long reservationId);
 
     @Query(value = "SELECT * FROM Reservation ORDER BY startDate DESC", nativeQuery = true)
