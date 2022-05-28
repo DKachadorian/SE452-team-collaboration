@@ -67,7 +67,7 @@ public class returnCarController {
 
     @PostMapping(value="/returnCarComplete")
     public String returnCarComplete(@SessionAttribute("rcf") ReturnCarForm returnCarForm){
-        System.out.println("FEEEEEEEES After Load    " + returnCarForm.getTotalFee());
+        System.out.println("FEEEEEEEES After Load    " + returnCarForm.getTotalFee());// <----------------- VALUES ARE NULL???
         return "homeLoggedInEmp"; //Return Complete
     }
 }

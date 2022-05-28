@@ -38,16 +38,8 @@ public class ReservationController {
 
     @PostMapping(value = "/createReservationValidate")
     public String createReservationValidate(@ModelAttribute("rf") RegistrationFields registrationFields, Model model){
-        // /*
-        System.out.println("=====================TESTING===============");
-        System.out.println("===========" + registrationFields.getStates()); //TESTING
-        System.out.println("===========" + registrationFields.getOptionalCriteria()); //TESTING
-        System.out.println("===========" + registrationFields.getRequiredCriteria()); //
-        System.out.println("===========" + registrationFields.getStartDate()); //TESTING
-        System.out.println("===========" + registrationFields.getEndDate()); //TESTING
-        // */
+
         if(reservationCreationService.validateSearch(registrationFields)) {
-            //reservationCreationService.setupResults(registrationFields);
 
             List<Dealership> dl = registrationFields.getDealershipList();
             model.addAttribute("dealerships", dl);
@@ -67,7 +59,7 @@ public class ReservationController {
         List<Car> vroom = registrationFields.getCarList();
         model.addAttribute("cars", vroom);
 
-        return "reservationSearchCar"; //TEMPTEMPTEMPTEMPTEMP
+        return "reservationSearchCar";
 
     }
 

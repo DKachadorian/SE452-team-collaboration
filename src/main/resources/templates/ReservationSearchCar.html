@@ -33,6 +33,7 @@
       <table class="table">
         <thread>
           <tr>
+            <th><abbr title="Id">ID</abbr></th>
             <th><abbr title="Make">Make</abbr></th>
             <th><abbr title="Model">Model</abbr></th>
             <th><abbr title="Has a Sunroof">Has a Sunroof</abbr></th>
@@ -42,15 +43,25 @@
         </thread>
         <tbody>
         <tr th:each="car : ${cars}">
+          <td th:text="${car.getCarId()}"/>
           <td th:text="${car.getCarManufacturer()}"/>
           <td th:text="${car.getCarModel()}"/>
           <td th:text="${car.getCarSunroof()}"/>
           <td th:text="${car.getBabySeat()}"/>
-          <td><button class="submit" th:value="${car.getCarId()}">Select</button></td> <!-- Send dealership id of selected dealership?-->
+          <!--  <td><button class="submit" th:value="${car.getCarId()}">Select</button></td> Send dealership id of selected dealership?-->
         </tr>
         </tbody>
       </table>
+      <div class="box">
+        <div class="control">
+          <input class="input" id="id" type="text" th:field="*{selectedCarId}" placeholder="Enter Desired Car's ID To Continue"> <!-- -->
+          <p class = "errorMessageNoCar top-arrow" > </p>
+          <p><br></p>
+          <button class="button is-link">Select This Car</button>
+        </div>
+      </div>
     </form>
+
   </div>
 </section>
 

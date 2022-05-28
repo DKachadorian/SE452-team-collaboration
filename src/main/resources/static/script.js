@@ -139,7 +139,19 @@ function createReservationDealerships(){
         if(tank==null||tank=="")
         {
             document.getElementsByClassName("errorMessageNoDealership")[0].style.visibility = "visible";
-            document.getElementsByClassName("errorMessageNoDealership")[0].innerHTML = "<font color='red'>"+ "Enter a Dealership from the List to continue"+ "</font>";
+            document.getElementsByClassName("errorMessageNoDealership")[0].innerHTML = "<font color='red'>"+ "Enter a Dealership from the list to continue"+ "</font>";
+            return false;
+        }
+    return true;
+}
+
+function reservationSearchCar(){
+    var tank = document.forms["reservationSearchCar"]["id"].value;
+
+        if(tank==null||tank=="")
+        {
+            document.getElementsByClassName("errorMessageNoCar")[0].style.visibility = "visible";
+            document.getElementsByClassName("errorMessageNoCar")[0].innerHTML = "<font color='red'>"+ "Enter a Car from the list to continue"+ "</font>";
             return false;
         }
     return true;
