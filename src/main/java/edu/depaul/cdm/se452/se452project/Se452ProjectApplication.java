@@ -25,6 +25,6 @@ public class Se452ProjectApplication {
 
 	@Bean
 	public void helloWorld(){
-		System.out.println("Hello World");
+		System.out.println("Team Group 7");
 	}
 }

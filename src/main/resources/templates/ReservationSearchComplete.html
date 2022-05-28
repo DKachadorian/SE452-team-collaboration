@@ -26,11 +26,56 @@
 
 <section class="hero is-light"> <!-- is-link makes the color a purpleish color-->
   <div class="hero-body">
-    <form class="form" id="reservationSearchComplete" action="" th:action="@{/homeLoggedIn}" th:object="${rf}" onsubmit="return reservationSearchComplete()" method="poat">
+    <form class="form" id="reservationSearchComplete" action="" th:action="@{/ReservationConfirmed}" th:object="${rf}" onsubmit="return reservationSearchComplete()" method="post">
       <p class="title">Confirm Reservation:</p>
       <!-- <button class="button is-link" th:onclick= "|window.location.href='/home'|">Create Reservation</button> (ADD??) -->
       <p class="subtitle"><br></p>
 
+      <p class="subtitle" >Start Date: </p>
+      <p class="h2" id="rf" th:field="*{startD}"></p>
+      <p class="subtitle"  >End Date: </p>
+      <p class="h2" id="lf" th:field="*{endD}"></p>
+      <p class="subtitle" >Rental Dealership: </p>
+      <table class="table">
+        <thread>
+          <tr>
+            <th><abbr title="Id">Id</abbr></th>
+            <th><abbr title="Address">Address</abbr></th>
+            <th><abbr title="State">Address</abbr></th>
+            <th><abbr title="Zip Code">Zip Code</abbr></th>
+          </tr>
+        </thread>
+        <tbody>
+        <tr th:each="dealership : ${finalDealerships}">
+          <td th:text="${dealership.getDealershipId()}"/>
+          <td th:text="${dealership.getAddress()}"/>
+          <td th:text="${dealership.getState()}"/>
+          <td th:text="${dealership.getZipCode()}"/>
+        </tr>
+        </tbody>
+      </table>
+      <p class="subtitle" >Rental Car: </p>
+      <table class="table">
+        <thread>
+          <tr>
+            <th><abbr title="Make">Make</abbr></th>
+            <th><abbr title="Model">Model</abbr></th>
+            <th><abbr title="Has a Sunroof">Has a Sunroof</abbr></th>
+            <th><abbr title="Has a Car Seat">Has a Car Seat</abbr></th>
+          </tr>
+        </thread>
+        <tbody>
+        <tr th:each="car : ${finalCars}">
+          <td th:text="${car.getCarManufacturer()}"/>
+          <td th:text="${car.getCarModel()}"/>
+          <td th:text="${car.getCarSunroof()}"/>
+          <td th:text="${car.getBabySeat()}"/>
+        </tr>
+        </tbody>
+      </table>
+     <!--  <p class="subtitle" >Starting Cost (*excluding fees from damages): </p>
+      <p class="subtitle" id="tf"  th:field="*{totalFee}"></p> -->
+      <button class="button is-primary" >Confirm Reservation</button>
 
     </form>
   </div>

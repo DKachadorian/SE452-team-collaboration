@@ -14,7 +14,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class returnCarController {
 
-
     ReservationSearchService reservationSearchService;
     ReturnCarService returnCarService;
 
@@ -50,12 +49,6 @@ public class returnCarController {
         return "returnCarForm";
     }
 
-    /* @GetMapping(value = "/returnCarResults")
-    public String returnCarResults(@SessionAttribute("rcf") ReturnCarForm returnCarForm){
-        System.out.println("FEEEEEEEES" + returnCarForm.getTotalFee());
-        return "returnCarResults";
-    } */
-
     @PostMapping(value="/returnCarFormCalculate")
     public String calculateReturnForm(@SessionAttribute("rcf") ReturnCarForm returnCarForm) {
         if(returnCarService.validateReturn(returnCarForm)){
@@ -65,14 +58,13 @@ public class returnCarController {
         return "returnCarForm";
     }
 
-
     @PostMapping(value="/returnCarFormVerification")
     public String validateReturnForm() {
             return "homeLoggedInEmp"; //Return Complete
     }
 
     @PostMapping(value="/returnCarComplete")
-    public String returnCarComplete(){
+    public String returnCarComplete(@SessionAttribute("rcf") ReturnCarForm returnCarForm){
         return "homeLoggedInEmp"; //Return Complete
     }
 }

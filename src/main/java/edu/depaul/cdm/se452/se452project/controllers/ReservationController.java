@@ -73,9 +73,24 @@ public class ReservationController {
 
     @PostMapping(value = "/reservationSearchComplete")
     public String confirmReservation(@SessionAttribute("rf") RegistrationFields registrationFields, Model model){
-
+        System.out.println("================" + registrationFields.getSelectedCarId()); //TESTING
+        System.out.println("================" + registrationFields.getSelectedDealershipId()); //TESTING
+        registrationFields.setSelectedCarId(21l); // TESTING ONLY HARD CODING VALUE <-------------------------------
+        registrationFields.setSelectedDealershipId(999l); // TESTING ONLY HARD CODING VALUE <-----------------------------
+        System.out.println("=================" +registrationFields.getSelectedDealershipId()); //TESTING
+        System.out.println("=================" +registrationFields.getSelectedCarId()); //TESTING
+        List<Dealership> dl = reservationCreationService.getDealershipDisplay(registrationFields);
+        List<Car> cl = reservationCreationService.getCarDisplay(registrationFields);
+        model.addAttribute("finalDealerships", dl);
+        model.addAttribute("finalCars", cl);
         return "reservationSearchComplete"; //TEMPTEMPTEMPTEMPTEMP
 
+    }
+
+    @PostMapping(value = "/ReservationConfirmed")
+     public String confirmed()
+    {
+       return "homeLoggedIn";
     }
 
     //To-DO

@@ -15,9 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.time.Instant;
-import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @Service
@@ -110,6 +108,14 @@ public class ReservationCreationService {
         else
             return false;
 
+    }
+
+    public List<Dealership> getDealershipDisplay(RegistrationFields rs){
+        return dealershipRepository.findDealershipsListById(rs.getSelectedDealershipId());
+    }
+
+    public List<Car> getCarDisplay(RegistrationFields rs){
+        return carRepository.findCarListById(rs.getSelectedCarId());
     }
 
 }

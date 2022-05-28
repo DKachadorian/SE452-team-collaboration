@@ -14,4 +14,7 @@ public interface DealershipRepository extends JpaRepository<Dealership, Long> {
 
     @Query(value = "SELECT * FROM Dealership WHERE dealershipId = ?1", nativeQuery = true)
     Dealership findDealershipsById(long id);
+
+    @Query(value = "SELECT * FROM Dealership WHERE dealershipId = ?1", nativeQuery = true)
+    List<Dealership> findDealershipsListById(long id);
 }
