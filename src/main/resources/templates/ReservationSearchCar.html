@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+
+<!-- title -->
+<nav class = "level">
+  <!--	<p class="level-item has-text-centered">	LOGO IMAGE????
+              <img src=" alt="" style="height: 30px;">
+          </p> -->
+  <p class ="level-item has-text-centered">
+  <h1 class="title"> DePaul's Deluxe Rentals</h1>
+  </p>
+  <p class="level-item has-text-centered">
+    <button class="button is-link" th:onclick= "|window.location.href='/ReservationSearch'|">Back to Search</button>
+  </p>
+</nav>
+
+<section class="hero is-light"> <!-- is-link makes the color a purpleish color-->
+  <div class="hero-body">
+    <form class="form" id="reservationSearchCar" action="" th:action="@{/reservationSearchComplete}" th:object="${rf}" onsubmit="return reservationSearchCar()" method="post">
+      <p class="title">Cars:</p>
+      <p class="subtitle">The listed cars match the given criteria at your chosen dealership<br></p>
+
+      <table class="table">
+        <thread>
+          <tr>
+            <th><abbr title="Id">ID</abbr></th>
+            <th><abbr title="Make">Make</abbr></th>
+            <th><abbr title="Model">Model</abbr></th>
+            <th><abbr title="Has a Sunroof">Has a Sunroof</abbr></th>
+            <th><abbr title="Has a Car Seat">Has a Car Seat</abbr></th>
+            <th><abbr title="Select">Select</abbr></th>
+          </tr>
+        </thread>
+        <tbody>
+        <tr th:each="car : ${cars}">
+          <td th:text="${car.getCarId()}"/>
+          <td th:text="${car.getCarManufacturer()}"/>
+          <td th:text="${car.getCarModel()}"/>
+          <td th:text="${car.getCarSunroof()}"/>
+          <td th:text="${car.getBabySeat()}"/>
+          <!--  <td><button class="submit" th:value="${car.getCarId()}">Select</button></td> Send dealership id of selected dealership?-->
+        </tr>
+        </tbody>
+      </table>
+      <div class="box">
+        <div class="control">
+          <input class="input" id="id" type="text" th:field="*{selectedCarId}" placeholder="Enter Desired Car's ID To Continue"> <!-- -->
+          <p class = "errorMessageNoCar top-arrow" > </p>
+          <p><br></p>
+          <button class="button is-link">Select This Car</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</section>
+
+
+
+</div>
+<script src="script.js" async defer></script>
+</body>
+</html>

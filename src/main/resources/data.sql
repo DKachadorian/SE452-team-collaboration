@@ -1,7 +1,9 @@
 
 -- Full Customer Creation Example
 INSERT INTO Dealership(DealershipId, Address, State, ZipCode)
-    VALUES(999, '2320 North Kenmore Ave. 1 East Jackson Blvd', 'Illinois', '60604');
+    VALUES(999, '1 East Jackson Blvd', 'IL', '60604');
+INSERT INTO Dealership(DealershipId, Address, State, ZipCode)
+    VALUES(998, '2320 North Ken St.', 'IL', '60608');
 
 INSERT INTO Customer(CustomerId, FirstName, LastName, DateOfBirth,
                      Address, PhoneNumber, DriversLicenseId, InsuranceCarrier,
@@ -25,13 +27,21 @@ INSERT INTO Employee(EmployeeId, FirstName, LastName, JobTitle, Username, Passwo
     VALUES(100, 'Employee', 'Account', 'Admin', 'emp', 123, 999);
 
 INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
-    VALUES(20, 'TGR231', 'Dodge', 'Challenger', 'LUXURY', 40000, 'Y', 'Y', 'Y', 999);
+    VALUES(20, 'TGR231', 'Honda', 'Challenger', 'LUXURY', 485, 'N', 'N', 'N', 999);
 INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
-    VALUES(21, 'TGR231', 'Dodge', 'Challenger', 'ECONOMY', 50000, 'Y', 'Y', 'Y', 999);
+    VALUES(21, 'TGR231', 'Honda', 'Challenger', 'ECONOMY', 95, 'N', 'Y', 'N', 999);
 INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
-    VALUES(22, '4343434', 'Toyota', 'Challenger', 'LUXURY', 40000, 'Y', 'Y', 'Y', 999);
+    VALUES(22, '4343434', 'Toyota', 'Challenger', 'LUXURY', 485, 'Y', 'N', 'N', 998);
 INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
-    VALUES(23, 'n84rt24', 'Ford', 'F150', 'ECONOMYPlus', 50000, 'Y', 'Y', 'Y', 999);
+    VALUES(23, 'n84rt24', 'Ford', 'F150', 'ECONOMY', 95, 'Y', 'Y', 'N', 999);
+INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
+    VALUES(24, 'TGR231', 'Toyota', 'Ram', 'ECONOMYPLUS', 295, 'N', 'N', 'Y', 998);
+INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
+    VALUES(25, 'TGR231', 'Honda', 'Plum', 'ECONOMY', 95, 'N', 'Y', 'Y', 999);
+INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
+    VALUES(26, '4343434', 'Acura', 'FX35', 'LUXURY', 485, 'Y', 'N', 'Y', 998);
+INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, CarBabySeat, CarSunroof, CarAvailable, DealershipId)
+    VALUES(27, 'n84rt24', 'Subaru', 'F150', 'ECONOMYPLUS', 295, 'Y', 'Y', 'Y', 999);
 
 INSERT INTO Reservation(ReservationId, ReservationDate, DaysReserved, ReturnToOrigin, StartDate, EndDate, CustomerId, CarId)
     VALUES(11, '2021-04-22', 3, true, '2021-05-01', '2021-05-04', 100, 20);

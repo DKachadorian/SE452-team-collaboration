@@ -13,20 +13,15 @@
 
         <!-- title -->
         <nav class = "level">
-	<!--	<p class="level-item has-text-centered">	LOGO IMAGE????
-				<img src=" alt="" style="height: 30px;">
-			</p> -->
 			<p class ="level-item has-text-centered">
 					<h1 class="title"> DePaul's Deluxe Rentals</h1>
 			</p>
 			<p class="level-item has-text-centered">
-				<button class="button is-link">Home</button>
+				<button class="button is-link" th:onclick= "|window.location.href='/homeLoggedIn'|">Home</button>
 			</p>
 			<p class="level-item has-text-centered">
-				<button class="button is-link">My Account</button>
-			</p>
-			<p class="level-item has-text-centered">
-				<button class="button is-link">Logout</button>
+				<button class="button is-link" th:onclick= "|window.location.href='/home'|">Logout</button>
+
 			</p>
 		</nav>	
         
@@ -35,146 +30,32 @@
 		<section class="hero is-light"> <!-- is-link makes the color a purpleish color-->
 			<div class="hero-body">
 				<p class="title">Upcoming Reservations:</p>
-				<button class="button is-primary">Create Reservation</button>
-				<p class="subtitle"> </p>
-				<!-- table info: https://bulma.io/documentation/elements/table/ -->
-				<!-- Manually Entered Example: -->
-				<table class="table">
-					<thread>
-						<tr>
-							<th><title="Reservation">Reservation</th>
-							<th><title="Start Date">Start Date</th>
-							<th><title="End Date">End Date</th>
-							<th><title="Type">Type</th>
-						</tr>
-					</thread>
-					<tbody>
-						<tr>
-							<td>29403</td>
-							<td>13 05 2022</td>
-							<td>24 05 2022</td>
-							<td>Economy</td>
-						</tr>
-						<tr>
-							<td>29446</td>
-							<td>25 05 2022</td>
-							<td>05 06 2022</td>
-							<td>Luxury</td>
-						</tr>
-						<tr>
-							<td>30001</td>
-							<td>01 07 2022</td>
-							<td>04 07 2022</td>
-							<td>Economy</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</section>
-		
-		
-		<!-- 2 Current Reservations -->
-		<section class="hero"> <!-- -->
-			<div class="hero-body">
-				<p class="title">Active Rentals: </p>
-				
-				<p class="subtitle"> </p>
-				<!-- table info: https://bulma.io/documentation/elements/table/ -->
-				<!-- Manually Entered Example: -->
-				<table class="table">
-					<thread>
-						<tr>
-							<th><title="Reservation">Reservation</th>
-							<th><title="Start Date">Start Date</th>
-							<th><title="End Date">End Date</th>
-							<th><title="Type">Type</th>
-						</tr>
-					</thread>
-					<tbody>
-						<tr>
-							<td>29403</td>
-							<td>13 05 2022</td>
-							<td>24 05 2022</td>
-							<td>Economy</td>
-						</tr>
-						<tr>
-							<td>29446</td>
-							<td>25 05 2022</td>
-							<td>05 06 2022</td>
-							<td>Luxury</td>
-						</tr>
-						<tr>
-							<td>30001</td>
-							<td>01 07 2022</td>
-							<td>04 07 2022</td>
-							<td>Economy</td>
-						</tr>
-					</tbody>
-				</table>
+				<button class="button is-link" th:onclick= "|window.location.href='/ReservationSearch'|">Create Reservation</button>
+				<p class="subtitle"><br></p>
 
-			</div>
-		</section>
-		
-		<!-- 3 Past Reservations --> 
-		<section class="hero is-light"> <!-- -->
-			<div class="hero-body">
-				<p class="title">Past Reservations:</p>
-				
-				<p class="subtitle"> </p>
-				<!-- table info: https://bulma.io/documentation/elements/table/ -->
-				<!-- Manually Entered Example: -->
 				<table class="table">
 					<thread>
 						<tr>
-							<th><title="Reservation">Reservation</th>
-							<th><title="Start Date">Start Date</th>
-							<th><title="End Date">End Date</th>
-							<th><title="Type">Type</th>
-							<th><title="Cost">Cost</title></th>
+							<th><abbr title="Reservation">Reservation</abbr></th>
+							<th><abbr title="Start Date">Start Date</abbr></th>
+							<th><abbr title="End Date">End Date</abbr></th>
+							<th><abbr title="Reservation Creation Date">Reserved On</abbr></th>
 						</tr>
 					</thread>
 					<tbody>
-						<tr>
-							<td>29403</td>
-							<td>13 05 2022</td>
-							<td>24 05 2022</td>
-							<td>Economy</td>
-							<td>$405.89</td>
-						</tr>
-						<tr>
-							<td>29446</td>
-							<td>25 05 2022</td>
-							<td>05 06 2022</td>
-							<td>Luxury</td>
-							<td>$960.50</td>
-						</tr>
-						<tr>
-							<td>30001</td>
-							<td>01 07 2022</td>
-							<td>04 07 2022</td>
-							<td>Economy</td>
-							<td>$100.00</td>
-						</tr>
+					<tr th:each="reservation : ${reservations}">
+						<td th:text="${reservation.getReservationId()}"/>
+						<td th:text="${reservation.getStartDate()}"/>
+						<td th:text="${reservation.getEndDate()}"/>
+						<td th:text="${reservation.getReservationDate()}"/>
+					</tr>
 					</tbody>
 				</table>
-
 			</div>
 		</section>
 		
-		<!-- 4 Log In / Create Account -->
-		<footer class="footer">
-		  <nav class = "level">
-			<p class="level-item has-text-centered">
-				<button class="button is-link">Home</button>
-			</p>
-			<p class="level-item has-text-centered">
-				<button class="button is-link">My Account</button>
-			</p>
-			<p class="level-item has-text-centered">
-				<button class="button is-link">Log Out</button>
-			</p>
-		</nav>	
-		</footer>
+
+
     </div>
         <script src="script.js" async defer></script>
     </body>

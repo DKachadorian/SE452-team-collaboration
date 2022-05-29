@@ -32,36 +32,161 @@ function validateReservation(){
         return true;
 }
 
-function validateReturnForm(){
-    var dateCurr = document.forms["formReturn"]["dateCurr"].value;
-    //var mileage = document.forms["formReturn"]["mileage"].value;
-   // var tank = document.forms["formReturn"]["tank"].value;
+function calculateReturnForm(){
+    var dateCurr = document.forms["returnCarForm"]["dateCurr"].value;
+    var mileage = document.forms["formReturn"]["mileage"].value;
+    var tank = document.forms["formReturn"]["tank"].value;
 
     if(dateCurr==null||dateCurr=="")
     {
         document.getElementsByClassName("errorMessageFirstSection")[0].style.visibility = "visible";
-        document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='white'>"+ "Date must be filled in."+ "</font>";
+        document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='red'>"+ "Date must be filled in."+ "</font>";
         return false;
     }
-  /*  else if(mileage==null||mileage=="")
+    else if(mileage==null||mileage=="")
     {
         document.getElementsByClassName("errorMessageFirstSection")[0].style.visibility = "visible";
-        document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='white'>"+ "Mileage must be filled in."+ "</font>";
+        document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='red'>"+ "Mileage must be filled in."+ "</font>";
         return false;
     }
+    else if(parseInt(mileage)>0)
+        {
+            document.getElementsByClassName("errorMessageFirstSection")[0].style.visibility = "visible";
+            document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='red'>"+ "Mileage must be over 0."+ "</font>";
+            return false;
+        }
     else if(tank==null||tank=="")
     {
          document.getElementsByClassName("errorMessageFirstSection")[0].style.visibility = "visible";
-         document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='white'>"+ "Tank level must be filled in."+ "</font>";
+         document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='red'>"+ "Tank level must be filled in."+ "</font>";
          return false;
-    } */
+    }
+    else if(parseInt(tank)>100 || parseInt(tank)<0)
+    {
+            document.getElementsByClassName("errorMessageFirstSection")[0].style.visibility = "visible";
+             document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='red'>"+ "Tank level must be between 0 and 100."+ "</font>";
+    }
     else
         return true;
 }
 
+function hideCarSeat(){
+    document.getElementsByClassName("carSeat")[0].style.visibility = "hidden";
+}
+function hideSunRoof(){
+    document.getElementsByClassName("sunRoof")[0].style.visibility = "hidden";
+}
+/*
+// Initialize all input of type date
+var calendars = bulmaCalendar.attach('[type="date"]', options);
+
+// Loop on each calendar initialized
+for(var i = 0; i < calendars.length; i++) {
+	// Add listener to select event
+	calendars[i].on('select', date => {
+		console.log(date);
+	});
+} */
+/* function onClickDealership(){
+    document.forms["reservationSearchResults"]["id"].value = document.forms["reservationSearchResults"]["rowId"].value;
+    return true;
+} */
+
+ function onClickDealership(){
+                var radios = document.getElementsByName("select");
+                for( var i = 0; i < radios.length; i++ )
+                {
+                    radios[i].onclick = function()
+                    {
+                        // remove class from the other rows
+
+                        var el = document.getElementById("first-tr");
+
+                        // go to the nex sibing
+                        while(el = el.nextSibling)
+                        {
+                            if(el.tagName === "TR")
+                            {
+                                // remove the selected class
+                                el.classList.remove("selected");
+                            }
+                        }
+
+                     // radio  -      td      -          tr
+                        this.parentElement.parentElement.classList.toggle("selected");
+
+                    };
+                }
+                /* for( var i = 0; i < radios.length; i++ )
+                {
+                    var el = document.getElementById("first-tr");
+                    // go to the nex sibing
+                    while(el = el.nextSibling)
+                    {
+                        if(el.tagName === "TR")
+                        {
+                            document.forms["reservationSearchResults"]["id"].value = el.value;
+                            return true;
+                        }
+                    }
+                }  */
+                return true;
+}
+
+function createReservationDealerships(){
+    var tank = document.forms["reservationSearchResults"]["id"].value;
+
+        if(tank==null||tank=="")
+        {
+            document.getElementsByClassName("errorMessageNoDealership")[0].style.visibility = "visible";
+            document.getElementsByClassName("errorMessageNoDealership")[0].innerHTML = "<font color='red'>"+ "Enter a Dealership from the list to continue"+ "</font>";
+            return false;
+        }
+    return true;
+}
+
+function reservationSearchCar(){
+    var tank = document.forms["reservationSearchCar"]["id"].value;
+
+        if(tank==null||tank=="")
+        {
+            document.getElementsByClassName("errorMessageNoCar")[0].style.visibility = "visible";
+            document.getElementsByClassName("errorMessageNoCar")[0].innerHTML = "<font color='red'>"+ "Enter a Car from the list to continue"+ "</font>";
+            return false;
+        }
+    return true;
+}
+
+function createReservationValidate() {
+              var x = document.forms["reservationSearch"]["startDate"].value;
+              var y = document.forms["reservationSearch"]["endDate"].value;
+              var z = document.forms["reservationSearch"]["optionalCriteria"].value;
+              var w = document.forms["reservationSearch"]["requiredCriteria"].value;
+              var a = document.forms["reservationSearch"]["states"].value;
+              var carVal = document.forms["reservationSearch"]["carSearch"].value;
+
+              if (x == "" || y == "" || x == null || y == null ){
+                document.getElementsByClassName("errorMessageReservationSearch")[0].style.visibility = "visible";
+                document.getElementsByClassName("errorMessageReservationSearch")[0].innerHTML = "<font color='red'>"+ "Must select reservation start and end dates."+ "</font>";
+                return false;
+              }
+
+              if (z == "" || z == null || w == "" || w == null ){
+                document.getElementsByClassName("errorMessageReservationSearch")[0].style.visibility = "visible";
+                document.getElementsByClassName("errorMessageReservationSearch")[0].innerHTML = "<font color='red'>"+ "Must select car preferences for your reservation."+ "</font>";
+                return false;
+              }
+
+              if (a == "" || a == null){
+                document.getElementsByClassName("errorMessageReservationSearch")[0].style.visibility = "visible";
+                document.getElementsByClassName("errorMessageReservationSearch")[0].innerHTML = "<font color='red'>"+ "Must select a location for your reservation"+ "</font>";
+                return false;
+              }
+    return true;
+}
+
 
 function validateAccount() {
-
 
     var username = document.forms["accountForm"]["username"].value;
     var password = document.forms["accountForm"]["password"].value;

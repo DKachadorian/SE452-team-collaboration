@@ -1,5 +1,6 @@
 package edu.depaul.cdm.se452.se452project.services;
 
+import edu.depaul.cdm.se452.se452project.dto.LoginFields;
 import edu.depaul.cdm.se452.se452project.dto.ReservationSearch;
 import edu.depaul.cdm.se452.se452project.entities.Reservation;
 import edu.depaul.cdm.se452.se452project.repositories.ReservationRepository;
@@ -25,13 +26,25 @@ public class ReservationSearchService {
     public boolean validateReservation(ReservationSearch reservationSearch) {
 
         try {
-            Optional.of(reservationRepository.findReservationById(reservationSearch.getId()))
-                    .orElseThrow(RuntimeException::new);
+            reservationSearch.setReservation(Optional.of(reservationRepository.findReservationById(reservationSearch.getId()))
+                    .orElseThrow(RuntimeException::new));
         } catch (RuntimeException e) {
             logger.error("Reservation not found in DB: " + reservationSearch.getId() );
             return false;
         }
         return true;
+    }
+
+    public Reservation fetchReservation(Long id) {
+
+        try {
+            Reservation r = (Optional.of(reservationRepository.findReservationById(id))
+                    .orElseThrow(RuntimeException::new));
+            return r;
+        } catch (RuntimeException e) {
+            logger.error("Reservation not found in DB: " + id );
+            return null;
+        }
     }
 
     public List<Reservation> FindAllReservations(){
@@ -45,4 +58,18 @@ public class ReservationSearchService {
         }
         return reservations;
     }
+
+    /*
+    public List<Reservation> FindCustomerReservations(Long id){
+        List<Reservation> reservations;
+        try {
+            reservations = Optional.of(reservationRepository.FindCustReservations(id))
+                    .orElseThrow(RuntimeException::new);
+        } catch (RuntimeException e) {
+            logger.error("No Reservations");
+            return null;
+        }
+        return reservations;
+    }
+    */
 }

@@ -17,44 +17,45 @@
             <div class="first-section">
                 <h1 class="title"> DePaul's Deluxe Rentals</h1>
             </div>
-        </section>        
-       
-         <!--Car Return Search Bar --> 
+        </section>
+
+         <!--Car Return Search Bar -->
         <section class="hero">
 			<div class="hero-body" >
 				<p class="title"> Car Return</p>
+				<p class="subtitle" id="reservationId" th:text="*{id.getId()}"></p>
 				<!-- CODE INSERT TABLE: RESERVATION ID, CUSTOMER NAME -->
-			</div> 
+			</div>
 		</section>
 
     <!--Basic Return Info -->
 		<section class="hero">
 			<div class="hero-body" >
-				<form class="form" id="formReturn" action="" th:action= "@{/returnCarFormVerification}" th:object="${rcf}" onsubmit = "return validateReturnForm()" method="post" >
+				<form class="form" id="returnCarForm" action="" th:action= "@{/returnCarFormCalculate}" th:object="${rcf}" onsubmit = "return calculateReturnForm()" method="post" >
 				<nav class="level-left">
 				  <div class="level-item has-text-centered">
 					<div>
 					  <p class="heading">Return Date</p>
-						<input class="input is-normal" type="text" id="dateCurr" th:field="*{dateCurr}" placeholder="yyyy-dd-mm"> <!-- CODE: Auto Pop. current date -->
+						<input class="input is-normal" type="text" id="dateCurr" th:field="*{dateCurr}"> <!-- CODE: Auto Pop. current date -->
 					</div>
 				  </div>
 				  <div class="level-item has-text-centered">
 					<div>
 					  <p class="heading">Mileage</p>
-						<input class="input" type="text"  placeholder="Total Mileage">
+						<input class="input" type="text" id="mileage" th:field="*{mileage}" placeholder="Total Mileage">
 					</div>
 				  </div>
 				  <div class="level-item has-text-centered">
 					<div>
 					  <p class="heading">Gas Tank Level</p>
-						<input class="input"  type="text"  placeholder="Tank Level (Percentage)">
+						<input class="input"  type="text" id="tank" th:field="*{tank}" placeholder="Tank Level (Percentage)">
 					</div>
 				  </div>
 				  <div class="level-item has-text-centered">
 					<div>
 					  <p class="heading">Addons</p> <!-- CODE: Only IF car has these -->
-					  <label class="checkbox"><input type="checkbox">Car Sear Returned</label> <!-- CODE: Only IF car had this -->
-					  <label class="checkbox"><input type="checkbox">Sunroof Intact</label> <!-- CODE: Only IF car had this -->
+					  <label class="checkbox"><input id="carSeat" th:field="*{carSeat}" type="checkbox">Car Sear Returned </label> <!-- CODE: Only IF car had this -->
+					  <label class="checkbox"><input id="sunroof" th:field="*{sunRoof}" type="checkbox">Sunroof Intact</label> <!-- CODE: Only IF car had this -->
 					</div>
 				  </div>
 				</nav>
@@ -66,27 +67,27 @@
 				  <div class="level-item has-text-centered">
 					<div>
 					  <p class="heading">Exterior Damage</p>
-					  <label class="checkbox"><input type="checkbox">Front</label> 
-					  <label class="checkbox"><input type="checkbox">Right</label> 
-					  <label class="checkbox"><input type="checkbox">Left</label> 
-					  <label class="checkbox"><input type="checkbox">Back</label>
-					  <textarea class="textarea" placeholder="Details of Damages"></textarea>
+					  <label class="checkbox"><input id="exteriorDamageFront" th:field="*{exteriorDamageFront}" type="checkbox">Front</label>
+					  <label class="checkbox"><input id="exteriorDamageRight" th:field="*{exteriorDamageRight}" type="checkbox">Right</label>
+					  <label class="checkbox"><input id="exteriorDamageLeft" th:field="*{exteriorDamageLeft}" type="checkbox">Left</label>
+					  <label class="checkbox"><input id="exteriorDamageBack" th:field="*{exteriorDamageBack}" type="checkbox">Back</label>
+					  <textarea class="textarea" placeholder="Details of Any Damages"></textarea>
 					</div>
 				  </div>
 				  <div class="level-item has-text-centered">
 					<div>
 					  <p class="heading">Interior Damage</p>
-					  <label class="checkbox"><input type="checkbox">Driver</label>
-					  <label class="checkbox"><input type="checkbox">Passenger</label>
-					  <label class="checkbox"><input type="checkbox">Backseat</label>
-					  <label class="checkbox"><input type="checkbox">Trunk</label>
-					  <textarea class="textarea" placeholder="Details of Damages"></textarea>
+					  <label class="checkbox"><input id="interiorDamageDriver" th:field="*{interiorDamageDriver}" type="checkbox">Driver</label>
+					  <label class="checkbox"><input id="interiorDamagePassenger" th:field="*{interiorDamagePassenger}" type="checkbox">Passenger</label>
+					  <label class="checkbox"><input id="interiorDamageBack" th:field="*{interiorDamageBack}" type="checkbox">Backseat</label>
+					  <label class="checkbox"><input id="interiorDamageTrunk" th:field="*{interiorDamageTrunk}" type="checkbox">Trunk</label>
+					  <textarea class="textarea" placeholder="Details of Any Damages"></textarea>
 					</div>
 				  </div>
 				</nav>
 					<div>
 						<p><br></p>
-				<button class="button">Complete Return</button>
+						<button class="button is-link">Process Return</button>
 					</div>
 		</form>
 			</div>
