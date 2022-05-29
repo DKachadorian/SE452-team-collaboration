@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+
+<!-- title -->
+<nav class = "level">
+    <!--	<p class="level-item has-text-centered">	LOGO IMAGE????
+                <img src=" alt="" style="height: 30px;">
+            </p> -->
+    <p class ="level-item has-text-centered">
+    <h1 class="title"> DePaul's Deluxe Rentals</h1>
+    </p>
+    <p class="level-item has-text-centered">
+        <button class="button is-link">Home</button>
+    </p>
+    <p class="level-item has-text-centered">
+        <button class="button is-link">Logout</button>
+    </p>
+</nav>
+
+    <div class= "has-text-centered">
+    <div>
+        <h1 class="has-text-weight-bold">We have several convenient locations across the U.S.</h1><br>         
+        <td>
+            <h2 class="has-text-weight-bold">Alaska</h2>
+            <tr th:each="dealership : ${dealerships}">                     
+            <h2 block th:if='${dealership.state.equals("Alaska")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>                   
+        </td>
+    </div>
+    <br>
+
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Arkansas</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Arkansas")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Arizona</h2>
+            <tr th:each="dealership : ${dealerships}">                      
+            <h2 block th:if='${dealership.state.equals("Arizona")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>                    
+        </td>       
+    </div>    
+    <br>
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">California</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("California")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Connecticut</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Connecticut")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Delaware</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Delaware")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Florida</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Florida")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+    
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Georgia</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Georgia")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Idaho</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Idaho")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Illinois</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Illinois")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Indiana</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Indiana")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Iowa</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Iowa")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>    
+
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Maryland</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Maryland")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Montana</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Montana")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Nebraska</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Nebraska")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Oklahoma</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Oklahoma")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Pennsylavania</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Pennsylvania")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Texas</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Texas")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Vermont</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Vermont")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Virginia</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Virginia")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+
+    <div>
+        <td>
+            <h2 class="has-text-weight-bold">Wyoming</h2>
+            <tr th:each="dealership : ${dealerships}">   
+            <h2 block th:if='${dealership.state.equals("Wyoming")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
+        </td>
+    </div>
+    <br>
+
+    </div> 
+</div>       
+   
+
+
+<script src="script.js" async defer></script>
+</body>
+</html>

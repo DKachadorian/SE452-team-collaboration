@@ -21,4 +21,5 @@ public class DealershipService {
         return dealershipRepository.getById(dealershipId).getCars();
     }
 
+
 }
