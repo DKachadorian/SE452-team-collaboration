@@ -28,6 +28,7 @@ public class LoginService {
                     .orElseThrow(RuntimeException::new);
         } catch (Exception e) {
             logger.error("Credentials not found in DB");
+
             return false;
         }
         return true;

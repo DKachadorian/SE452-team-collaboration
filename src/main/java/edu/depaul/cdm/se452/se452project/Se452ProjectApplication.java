@@ -21,10 +21,8 @@ public class Se452ProjectApplication {
 		logger.info("End of Se452ProjectApplication");
 	}
 
-
-
 	@Bean
 	public void helloWorld(){
-		System.out.println("Hello World");
+		System.out.println("Hello World!");
 	}
 }
