@@ -15,8 +15,7 @@ public class LoginController {
 
     @Autowired
     public LoginController(LoginService loginService) {
-        this.loginService = loginService;
-    }
+        this.loginService = loginService; }
 
     @ModelAttribute
     public void generateModel(Model model) {
@@ -30,10 +29,13 @@ public class LoginController {
 
     @PostMapping(value="/loginVerification")
     public String loginVerification(@ModelAttribute(value="loginFields") LoginFields loginFields) {
-        if(loginService.validateLoginCredentials(loginFields)) {
-            return "homeLoggedIn";
+        if(loginService.validateLoginCredentialsEmp(loginFields)) {
+            return "homeLoggedInEmp"; //Check if employee has logged in
         }
-        return "home";
+        else if(loginService.validateLoginCredentials(loginFields)) {
+            return "homeLoggedIn"; // check if customer has logged in
+        }
+        return "home"; // no success logging in
     }
 
     @GetMapping(value="/logout")

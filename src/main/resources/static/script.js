@@ -20,6 +20,45 @@ function validateLogin() {
 
 }
 
+function validateReservation(){
+    var sf = document.forms["returnCar"]["id"].value;
+
+    if(sf == null || sf == ""){
+        document.getElementsByClassName( "errorMessageEmptySearch" )[0].style.visibility = "visible";
+        document.getElementsByClassName( "errorMessageEmptySearch" )[0].innerHTML = "<font color='white'>"+ "Enter a reservation number to initiate car return."+ "</font>";
+        return false;
+    }
+    else
+        return true;
+}
+
+function validateReturnForm(){
+    var dateCurr = document.forms["formReturn"]["dateCurr"].value;
+    //var mileage = document.forms["formReturn"]["mileage"].value;
+   // var tank = document.forms["formReturn"]["tank"].value;
+
+    if(dateCurr==null||dateCurr=="")
+    {
+        document.getElementsByClassName("errorMessageFirstSection")[0].style.visibility = "visible";
+        document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='white'>"+ "Date must be filled in."+ "</font>";
+        return false;
+    }
+  /*  else if(mileage==null||mileage=="")
+    {
+        document.getElementsByClassName("errorMessageFirstSection")[0].style.visibility = "visible";
+        document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='white'>"+ "Mileage must be filled in."+ "</font>";
+        return false;
+    }
+    else if(tank==null||tank=="")
+    {
+         document.getElementsByClassName("errorMessageFirstSection")[0].style.visibility = "visible";
+         document.getElementsByClassName("errorMessageFirstSection")[0].innerHTML = "<font color='white'>"+ "Tank level must be filled in."+ "</font>";
+         return false;
+    } */
+    else
+        return true;
+}
+
 
 function validateAccount() {
 
