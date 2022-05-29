@@ -16,8 +16,8 @@ public class Payment {
 
     @Id
     @GeneratedValue
-    @Column(name = "PaymentId")
-    private Long paymentId;
+    @Column(name = "AccountId")
+    private Long accountId;
 
     @Column(name = "CardType")
     private String cardType;

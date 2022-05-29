@@ -47,10 +47,10 @@ public class ReservationSearchService {
         }
     }
 
-    public List<Reservation> FindAllReservations(){
+    public List<Reservation> findAllReservations(Long customerId){
         List<Reservation> reservations;
         try {
-            reservations = Optional.of(reservationRepository.FindAllReservations())
+            reservations = Optional.of(reservationRepository.findCustomerReservations(customerId))
                     .orElseThrow(RuntimeException::new);
         } catch (RuntimeException e) {
             logger.error("No Reservations");

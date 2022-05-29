@@ -22,10 +22,10 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
     void removeReservationById(Long reservationId);
 
     @Query(value = "SELECT * FROM Reservation ORDER BY startDate DESC", nativeQuery = true)
-    List<Reservation> FindAllReservations();
+    List<Reservation> findAllReservations();
 
-    @Query(value = "SELECT * FROM Reservation WHERE reservationId = ?1 ORDER BY startDate DESC", nativeQuery = true)
-    List<Reservation> FindCustReservations(Long reservationId);
+    @Query(value = "SELECT * FROM Reservation WHERE customerId = ?1 ORDER BY startDate DESC", nativeQuery = true)
+    List<Reservation> findCustomerReservations(Long customerId);
 
     @Modifying
     @Query(value = "INSERT INTO RESERVATION(ReservationDate, DaysReserved, ReturnToOrigin, StartDate, EndDate, CustomerId, CarId) VALUES(?1 , ?2 , true, ?3, ?4, ?5, ?6)", nativeQuery = true)

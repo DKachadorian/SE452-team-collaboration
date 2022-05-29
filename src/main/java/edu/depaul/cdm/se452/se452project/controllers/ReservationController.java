@@ -1,14 +1,14 @@
 package edu.depaul.cdm.se452.se452project.controllers;
 
+import edu.depaul.cdm.se452.se452project.dto.CustomerId;
 import edu.depaul.cdm.se452.se452project.dto.RegistrationFields;
+import edu.depaul.cdm.se452.se452project.dto.ReservationDTO;
 import edu.depaul.cdm.se452.se452project.entities.Car;
 import edu.depaul.cdm.se452.se452project.entities.Dealership;
-import edu.depaul.cdm.se452.se452project.entities.Reservation;
 import edu.depaul.cdm.se452.se452project.services.ReservationCreationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +30,10 @@ public class ReservationController {
         model.addAttribute("rf", new RegistrationFields());
     }
 
-    @GetMapping(value = "/ReservationSearch")
-    public String reservationPage(){
-        return "ReservationSearch";
+    @GetMapping(value = "/reservationSearch")
+    public String reservationPage(@ModelAttribute("cuid") CustomerId customerId, Model model){
+        model.addAttribute("cuid", customerId);
+        return "reservationSearch";
     }
 
 
@@ -43,21 +44,25 @@ public class ReservationController {
 
             List<Dealership> dl = registrationFields.getDealershipList();
             model.addAttribute("dealerships", dl);
-            return "ReservationSearchResults"; //go to return car form if reservation is found
+            model.addAttribute("todo", registrationFields);
+            model.addAttribute("reservationDTO", new ReservationDTO());
+            return "reservationSearchResults"; //go to return car form if reservation is found
         }
         else {
-            return "ReservationSearch"; // otherwise stay on form // NOTE: -- display error message??? How???
+            return "reservationSearch"; // otherwise stay on form // NOTE: -- display error message??? How???
         }
     }
 
 
     @PostMapping(value = "/reservationSearchCar")
-    public String createReservationDealerships(@SessionAttribute("rf") RegistrationFields registrationFields, Model model, @ModelAttribute("rf") RegistrationFields rf){
+    public String createReservationDealerships(@ModelAttribute("rf") RegistrationFields registrationFields,
+                                               @ModelAttribute("reservationDTO") ReservationDTO reservationDTO, Model model){
 
-        registrationFields.setSelectedDealershipId(rf.getSelectedDealershipId());
+        registrationFields.setSelectedDealershipId(reservationDTO.getSelectedDealershipId());
         reservationCreationService.FindCars(registrationFields);
         List<Car> vroom = registrationFields.getCarList();
         model.addAttribute("cars", vroom);
+        model.addAttribute("todo", registrationFields);
 
         return "reservationSearchCar";
 

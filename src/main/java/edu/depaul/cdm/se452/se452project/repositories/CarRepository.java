@@ -8,14 +8,12 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface CarRepository extends JpaRepository<Car, Long> {
 
-   // @Query(value="SELECT carManufacturer FROM Car GROUP BY carManufacturer",nativeQuery = true)
-   // List<Car> findDistinctByCarManufacturer();
-}
+    @Query(value = "SELECT * FROM Car WHERE dealershipId = ?1 AND carAvailable = TRUE AND carClass = ?2 AND carManufacturer = ?3", nativeQuery = true)
+    List<Car> findCarByAllRequirements(long dealership, String carClass, String carManufacturer);
 
-/*
-These are the distinct car manufacturers
-[Acura, Aston Martin, Audi, BMW, Bentley, Buick, Cadillac, Chevrolet, Chrysler, Citroën, Daewoo, Dodge, Eagle, Fairthorpe, Ferrari, Ford, 
-GMC, Geo, Hillman, Holden, Honda, Hummer, Hyundai, Infiniti, Isuzu, Jaguar, Jeep, Kia, Lamborghini, Land Rover, Lexus, Lincoln, Lotus, MINI, 
-Maserati, Maybach, Mazda, Mercedes-Benz, Mercury, Mitsubishi, Morgan, Nissan, Oldsmobile, 
-Peugeot, Plymouth, Pontiac, Porsche, Ram, Rolls-Royce, Saab, Saturn, Scion, Smart, Spyker, Subaru, Suzuki, Tesla, Toyota, Volkswagen, Volvo]'
-*/
+    @Query(value = "SELECT * FROM Car WHERE dealershipId = ?1 AND carAvailable = TRUE AND carClass = ?2", nativeQuery = true)
+    List<Car> findCarBySomeRequirements(long dealership, String carClass);
+
+    @Query(value = "SELECT * FROM Car WHERE carId = ?1", nativeQuery = true)
+    List<Car> findCarListById(long id);
+}

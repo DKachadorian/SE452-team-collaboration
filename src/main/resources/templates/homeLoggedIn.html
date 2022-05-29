@@ -12,11 +12,7 @@
     </head>
     <body>
 
-        <!-- title -->
         <nav class = "level">
-	<!--	<p class="level-item has-text-centered">	LOGO IMAGE????
-				<img src=" alt="" style="height: 30px;">
-			</p> -->
 			<p class ="level-item has-text-centered">
 					<h1 class="title"> DePaul's Deluxe Rentals</h1>
 			</p>
@@ -27,46 +23,42 @@
 				<button class="button is-link" th:onclick= "|window.location.href='/logout'|">Logout</button>
 			</p>
 		</nav>	
-        
-        <!-- Body --> 
-		<!-- 1 Create Reservation --> 		
-		<section class="hero is-link"> <!-- is-link makes the color a purpleish color-->
-			<div class="hero-body">
-				<p class="title">Reservations</p>
-				<p class="subtitle">Find a flexible car rental that fits your needs!</p>
-				<button class="button is-primary">Create Reservation</button>
-			</div>
+
+		<section class="hero is-link">
+			<form th:action="@{/reservationSearch}" th:object="${customerId}" method="get" >
+				<div class="hero-body">
+					<input type="hidden" th:field="*{customerId}" />
+					<p class="title">Reservations</p>
+					<p class="subtitle">Find a flexible car rental that fits your needs!</p>
+					<button class="button is-primary">Create Reservation</button>
+				</div>
+			</form>
 		</section>
-		
-		<!-- 1.5 View Reservation --> 		
-		<section class="hero is-light"> <!-- is-link makes the color a purpleish color-->
-			<div class="hero-body">
-				<p class="title">Reservation History</p>
-				<p class="subtitle">View all past, present and upcoming reservations</p>
-				<button class="button is-primary">View Reservation</button>
-			</div>
+
+		<section class="hero is-light">
+			<form th:action="@{/reservationListEmp}" th:object="${customerId}" method="get" >
+				<div class="hero-body">
+					<input type="hidden" th:field="*{customerId}" />
+					<p class="title">Reservation History</p>
+					<p class="subtitle">View all past, present and upcoming reservations</p>
+					<button class="button is-primary">View Reservation</button>
+				</div>
+			</form>
 		</section>
-		
-		<!-- 2 View Dealerships -->
-		<section class="hero"> <!-- -->
+
+		<section class="hero">
 			<div class="hero-body">
 				<p class="title">Dealerships</p>
-				<!-- <figure class="image is-4by3">	Dealership Img????
-				<img src=" alt="">
-				</figure> -->
 				<p class="subtitle">View all our locations, nationwide!</p>
-				<button class="button is-primary">View Dealerships</button>
+				<button class="button is-primary" th:onclick= "|window.location.href='/viewDealerships'|">View Dealerships</button>
 			</div>
 		</section>
-		<!-- 3 View Cars --> 
-		<section class="hero"> <!-- -->
+
+		<section class="hero">
 			<div class="hero-body">
 				<p class="title">Cars</p>
-				<!-- <figure class="image is-4by3">	Car Img????
-				<img src=" alt="">
-				</figure> -->
 				<p class="subtitle">See our wide selection of luxurious cars available for rent.</p>
-				<button class="button is-primary">View Cars</button>
+				<button class="button is-primary" th:onclick= "|window.location.href='/viewCars'|">View Cars</button>
 			</div>
 		</section>
     </div>

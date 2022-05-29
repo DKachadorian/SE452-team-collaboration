@@ -33,7 +33,7 @@ public class CustomerRegistrationService {
         Payment payment = paymentCreation(customerRegistration, customer);
 
         Optional.of(customer).map(Customer::getCustomerId).orElseThrow(() -> new RuntimeException("Customer creation failed."));
-        Optional.of(payment).map(Payment::getPaymentId).orElseThrow(() -> new RuntimeException("Payment creation failed."));
+        Optional.of(payment).map(Payment::getAccountId).orElseThrow(() -> new RuntimeException("Payment creation failed."));
 
     }
 

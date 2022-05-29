@@ -8,17 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @SessionAttributes("rcf")
 @Controller
-public class returnCarController {
+public class ReturnCarController {
 
     ReservationSearchService reservationSearchService;
     ReturnCarService returnCarService;
 
     @Autowired
-    public returnCarController(ReservationSearchService reservationSearchService, ReturnCarService returnCarService) {
+    public ReturnCarController(ReservationSearchService reservationSearchService, ReturnCarService returnCarService) {
         this.reservationSearchService = reservationSearchService; this.returnCarService = returnCarService;}
 
     @ModelAttribute

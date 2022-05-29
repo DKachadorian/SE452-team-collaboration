@@ -47,4 +47,8 @@ public class LoginService {
         }
         return true;
     }
+
+    public Long retrieveCustomerId(LoginFields loginFields) {
+        return customerRepository.findUserByLogin(loginFields.getUsername(), loginFields.getPassword()).getCustomerId();
+    }
 }

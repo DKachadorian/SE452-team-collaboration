@@ -10,6 +10,4 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     @Query(value = "SELECT * FROM Customer WHERE username = ?1 AND password = ?2", nativeQuery = true)
     Customer findUserByLogin(String username, String password);
-    //customerRepository.findUserByLogin(loginFields.getUsername(), loginFields.getPassword()))
-
 }

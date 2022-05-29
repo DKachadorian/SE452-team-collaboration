@@ -28,7 +28,7 @@ CREATE TABLE Customer (
 );
 
 CREATE TABLE Payment (
-    PaymentId BIGINT AUTO_INCREMENT NOT NULL,
+    AccountId BIGINT AUTO_INCREMENT NOT NULL,
     CardType VARCHAR(200),
     CardNumber BIGINT,
     ExpirationDate DATE,
@@ -36,7 +36,7 @@ CREATE TABLE Payment (
     Currency VARCHAR(20),
     CardHolderName VARCHAR(100),
     CustomerId BIGINT,
-    PRIMARY KEY(PaymentId),
+    PRIMARY KEY(AccountId),
     FOREIGN KEY(CustomerId) REFERENCES Customer(CustomerId) ON DELETE CASCADE
 );
 

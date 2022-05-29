@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.List;
 
@@ -24,9 +25,9 @@ public class ReservationListCustController {
 
 
     @GetMapping(value = "/reservationList")
-    public String viewReservations(Model model) {
+    public String viewReservations(@ModelAttribute("cuid") Long customerId, Model model) {
 
-        List<Reservation> reservationList = reservationSearchService.FindAllReservations();
+        List<Reservation> reservationList = reservationSearchService.findAllReservations(customerId);
         model.addAttribute("reservations", reservationList);
 
         return "reservationList";
