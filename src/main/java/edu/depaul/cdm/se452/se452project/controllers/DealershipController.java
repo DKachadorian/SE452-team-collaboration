@@ -22,7 +22,7 @@ public class DealershipController {
     @GetMapping(value="/viewDealerships")
     public String viewDealers(Model model) {
 
-        List<Dealership> dealerList = dealershipRepository.findAll();
+        List<Dealership> dealerList = dealershipRepository.findAllOrdered();
         model.addAttribute("dealerships",dealerList);
 
         return "viewDealerships";

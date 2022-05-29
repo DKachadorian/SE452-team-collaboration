@@ -27,207 +27,29 @@
     </p>
 </nav>
 
-    <div class= "has-text-centered">
-    <div>
-        <h1 class="has-text-weight-bold">We have several convenient locations across the U.S.</h1><br>         
-        <td>
-            <h2 class="has-text-weight-bold">Alaska</h2>
+<section class="hero is-light">
+    <div class="hero-body">
+        <p class="title">View our Dealership Locations:</p>
+        <p class="subtitle">We have convenient rental locations in many states throughout the United States!<br></p>
+
+        <table class="table">
+            <thread>
+                <tr>
+                    <th title="State">State</th>
+                    <th title="ZipCode">Zip Code</th>
+                    <th title="Address">Address</th>
+                </tr>
+            </thread>
+            <tbody>
             <tr th:each="dealership : ${dealerships}">
-            <h2 block th:if='${dealership.state.equals("Alaska")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>                   
-        </td>
+                <td th:text="${dealership.getState()}"/>
+                <td th:text="${dealership.getZipCode()}"/>
+                <td th:text="${dealership.getAddress()}"/>
+            </tr>
+            </tbody>
+        </table>
     </div>
-    <br>
-
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Arkansas</h2>
-            <tr th:each="dealership : ${dealerships}">
-            <h2 block th:if='${dealership.state.equals("Arkansas")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Arizona</h2>
-            <tr th:each="dealership : ${dealerships}">                      
-            <h2 block th:if='${dealership.state.equals("Arizona")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>                    
-        </td>       
-    </div>    
-    <br>
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">California</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("California")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Connecticut</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Connecticut")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Delaware</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Delaware")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Florida</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Florida")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-    
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Georgia</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Georgia")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Idaho</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Idaho")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Illinois</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Illinois")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Indiana</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Indiana")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Iowa</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Iowa")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>    
-
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Maryland</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Maryland")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Montana</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Montana")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Nebraska</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Nebraska")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Oklahoma</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Oklahoma")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Pennsylavania</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Pennsylvania")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Texas</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Texas")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Vermont</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Vermont")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Virginia</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Virginia")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-
-    <div>
-        <td>
-            <h2 class="has-text-weight-bold">Wyoming</h2>
-            <tr th:each="dealership : ${dealerships}">   
-            <h2 block th:if='${dealership.state.equals("Wyoming")}'><td th:text="${dealership.address +','+ ' ' + dealership.city}"></td></h2>
-        </td>
-    </div>
-    <br>
-
-    </div> 
-</div>       
+</section>
    
 
 

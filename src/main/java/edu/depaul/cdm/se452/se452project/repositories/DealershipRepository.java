@@ -18,4 +18,7 @@ public interface DealershipRepository extends JpaRepository<Dealership, Long> {
 
     @Query(value = "SELECT * FROM Dealership WHERE dealershipId = ?1", nativeQuery = true)
     List<Dealership> findDealershipsListById(long id);
+
+    @Query(value = "SELECT * FROM Dealership ORDER BY state ASC", nativeQuery = true)
+    List<Dealership> findAllOrdered();
 }
