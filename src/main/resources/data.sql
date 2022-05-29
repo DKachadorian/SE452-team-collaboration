@@ -115,9 +115,9 @@ INSERT INTO Car(CarId, CarVinId, CarManufacturer, CarModel, CarClass, CarPrice, 
 VALUES(27, 'n84rt24', 'Subaru', 'F150', 'ECONOMYPLUS', 295, 'Y', 'Y', 'Y', 999);
 
 INSERT INTO Reservation(ReservationId, ReservationDate, DaysReserved, ReturnToOrigin, StartDate, EndDate, CustomerId, CarId)
-VALUES(11, '2021-04-22', 3, true, '2022-05-11', '2021-06-06', 100, 20);
+VALUES(11, '2021-04-22', 3, true, '2022-05-11', '2022-06-06', 100, 20);
 INSERT INTO Reservation(ReservationId, ReservationDate, DaysReserved, ReturnToOrigin, StartDate, EndDate, CustomerId, CarId)
-VALUES(12, '2021-04-22', 3, true, '2022-05-30', '2021-06-06', 100, 21);
+VALUES(12, '2021-04-22', 3, true, '2022-05-30', '2022-06-06', 100, 21);
 INSERT INTO Reservation(ReservationId, ReservationDate, DaysReserved, ReturnToOrigin, StartDate, EndDate, CustomerId, CarId)
 VALUES(13, '2022-04-22', 3, true, '2022-06-01', '2022-06-07', 101, 22);
 INSERT INTO Reservation(ReservationId, ReservationDate, DaysReserved, ReturnToOrigin, StartDate, EndDate, CustomerId, CarId)
