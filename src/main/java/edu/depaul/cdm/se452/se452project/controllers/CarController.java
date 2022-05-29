@@ -23,8 +23,12 @@ public class CarController {
     public String viewCars(Model model) {
 
         List<Car> carList = carRepository.findAll();
-        model.addAttribute("cars", carList);
+        List<Car> carListAvailable = carRepository.findAllAvailable();
+        List<String> i = carRepository.findUniqueModels();
 
+        model.addAttribute("cars", carList);
+        model.addAttribute("numCars", carListAvailable.size());
+        model.addAttribute("numModels", i.size());
         return "viewCars";
     }
 
@@ -37,5 +41,6 @@ public class CarController {
 
         return "viewCarBrands";
     }
+
 
 }

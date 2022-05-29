@@ -26,7 +26,11 @@
 <section class="hero is-light">
     <div class="hero-body">
         <p class="title">View our Cars:</p>
-        <p class="subtitle"> </p>
+        <p class="subtitle"> <br></p>
+        <p class="subtitle">Different models our dealerships carry: </p>
+        <p class="subtitle" id="typeCars" th:text="${numModels}"> <br></p>
+        <p class="subtitle">Total cars available for rent, country wide, right now: </p>
+        <p class="subtitle" id="availableCars" th:text="${numCars}"> <br></p>
 
         <table class="table">
             <thread>

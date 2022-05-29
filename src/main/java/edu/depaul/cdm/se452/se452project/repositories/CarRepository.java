@@ -16,4 +16,10 @@ public interface CarRepository extends JpaRepository<Car, Long> {
 
     @Query(value = "SELECT * FROM Car WHERE carId = ?1", nativeQuery = true)
     List<Car> findCarListById(long id);
+
+    @Query(value = "SELECT * FROM Car WHERE carAvailable = TRUE", nativeQuery = true)
+    List<Car> findAllAvailable();
+
+    @Query(value = "SELECT DISTINCT carModel FROM Car", nativeQuery = true)
+    List<String> findUniqueModels();
 }
