@@ -25,7 +25,7 @@ public class ReservationListCustController {
 
 
     @GetMapping(value = "/reservationList")
-    public String viewReservations(@ModelAttribute("cuid") Long customerId, Model model) {
+    public String viewReservations(@ModelAttribute("customerId") Long customerId, Model model) {
 
         List<Reservation> reservationList = reservationSearchService.findAllReservations(customerId);
         model.addAttribute("reservations", reservationList);

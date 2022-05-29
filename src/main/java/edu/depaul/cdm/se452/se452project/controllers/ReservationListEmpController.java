@@ -25,9 +25,9 @@ public class ReservationListEmpController {
 
 
     @GetMapping(value = "/reservationListEmp")
-    public String reservationListEmp(@ModelAttribute(value="customerId") CustomerId customerId, Model model) {
+    public String reservationListEmp(Model model) {
 
-        List<Reservation> reservationList = reservationSearchService.findAllReservations(customerId.getCustomerId());
+        List<Reservation> reservationList = reservationSearchService.findAllReservationsEmp();
         model.addAttribute("reservations", reservationList);
 
         return "reservationListEmp";

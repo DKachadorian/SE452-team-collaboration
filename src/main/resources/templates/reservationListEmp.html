@@ -43,6 +43,8 @@
 							<th><abbr title="Start Date">Start Date</abbr></th>
 							<th><abbr title="End Date">End Date</abbr></th>
 							<th><abbr title="Reservation Creation Date">Reserved On</abbr></th>
+							<th><abbr title="Customer ID">Customer ID</abbr></th>
+							<th><abbr title="Car ID">Car ID</abbr></th>
 						</tr>
 					</thread>
 					<tbody>
@@ -51,6 +53,8 @@
 							<td th:text="${reservation.getStartDate()}"/>
 							<td th:text="${reservation.getEndDate()}"/>
 							<td th:text="${reservation.getReservationDate()}"/>
+							<td th:text="${reservation.getCustomer().getCustomerId}"/>
+							<td th:text="${reservation.getCar().getCarId}"/>
 						</tr>
 					</tbody>
 				</table>

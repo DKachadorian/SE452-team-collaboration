@@ -59,11 +59,10 @@ public class ReservationSearchService {
         return reservations;
     }
 
-    /*
-    public List<Reservation> FindCustomerReservations(Long id){
+    public List<Reservation> findAllReservationsEmp(){
         List<Reservation> reservations;
         try {
-            reservations = Optional.of(reservationRepository.FindCustReservations(id))
+            reservations = Optional.of(reservationRepository.findAllReservations())
                     .orElseThrow(RuntimeException::new);
         } catch (RuntimeException e) {
             logger.error("No Reservations");
@@ -71,5 +70,6 @@ public class ReservationSearchService {
         }
         return reservations;
     }
-    */
+
+
 }

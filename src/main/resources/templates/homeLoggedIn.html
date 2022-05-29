@@ -36,7 +36,7 @@
 		</section>
 
 		<section class="hero is-light">
-			<form th:action="@{/reservationListEmp}" th:object="${customerId}" method="get" >
+			<form th:action="@{/reservationList}" th:object="${customerId}" method="get" >
 				<div class="hero-body">
 					<input type="hidden" th:field="*{customerId}" />
 					<p class="title">Reservation History</p>
