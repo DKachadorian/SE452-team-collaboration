@@ -1,6 +1,7 @@
 package edu.depaul.cdm.se452.se452project.controllers;
 
 import edu.depaul.cdm.se452.se452project.dto.ReservationSearch;
+import edu.depaul.cdm.se452.se452project.dto.ReturnCarFees;
 import edu.depaul.cdm.se452.se452project.dto.ReturnCarForm;
 import edu.depaul.cdm.se452.se452project.services.ReservationSearchService;
 import edu.depaul.cdm.se452.se452project.services.ReturnCarService;
@@ -8,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.context.request.WebRequest;
 
-@SessionAttributes("rcf")
+@SessionAttributes({"rcf", "fees", "id"})
 @Controller
 public class ReturnCarController {
 
@@ -22,8 +25,9 @@ public class ReturnCarController {
 
     @ModelAttribute
     public void generateModel(Model model) {
-        model.addAttribute("reservationSearch", new ReservationSearch());
+        model.addAttribute("id", new ReservationSearch());
         model.addAttribute("rcf", new ReturnCarForm());
+        model.addAttribute("fees", new ReturnCarFees());
     }
 
     @GetMapping(value = "/returnCar")
@@ -36,6 +40,10 @@ public class ReturnCarController {
 
         if(reservationSearchService.validateReservation(reservationSearch)) {
             returnCarService.setupReturn(returnCarForm, reservationSearch);
+            System.out.println("====1Sunroof: " + returnCarForm.getSunRoof());
+            System.out.println("====1CarSeat: " + returnCarForm.getCarSeat());
+            System.out.println("====1Gas Tank: " + returnCarForm.getTank());
+            System.out.println("====1Damage Inside Back: " + returnCarForm.getInteriorDamageBack());
             return "returnCarForm"; //go to return car form if reservation is found
         }
         else {
@@ -49,24 +57,24 @@ public class ReturnCarController {
     }
 
     @PostMapping(value="/returnCarFormCalculate")
-    public String calculateReturnForm(@SessionAttribute("rcf") ReturnCarForm returnCarForm) {
-        if(returnCarService.validateReturn(returnCarForm)){
-            System.out.println("FEEEEEEEES " + returnCarForm.getTotalFee());
+    public String calculateReturnForm(@ModelAttribute("rcf") ReturnCarForm returnCarForm, @ModelAttribute("fees") ReturnCarFees returnCarFees, @SessionAttribute("id") ReservationSearch reservationSearch) {
+        System.out.println("====2Sunroof: " + returnCarForm.getSunRoof());
+        System.out.println("====2CarSeat: " + returnCarForm.getCarSeat());
+        System.out.println("====2Gas Tank: " + returnCarForm.getTank());
+        System.out.println("====2Damage Inside Back: " + returnCarForm.getInteriorDamageBack());
+        if(returnCarService.validateReturn(returnCarForm, returnCarFees, reservationSearch)){
+            System.out.println("FEEEEEEEES " + returnCarFees.getTotalFee());
           return "returnCarResults";
         }
         return "returnCarForm";
     }
 
-    /*
-    @PostMapping(value="/returnCarFormVerification")
-    public String validateReturnForm(@SessionAttribute("rcf") ReturnCarForm returnCarForm) {
-        System.out.println("FEEEEEEEES After Load22    " + returnCarForm.getTotalFee());
-        return "homeLoggedInEmp"; //Return Complete
-    } */
 
     @PostMapping(value="/returnCarComplete")
-    public String returnCarComplete(@SessionAttribute("rcf") ReturnCarForm returnCarForm){
-        System.out.println("FEEEEEEEES After Load    " + returnCarForm.getTotalFee());// <----------------- VALUES ARE NULL???
+    public String returnCarComplete(@SessionAttribute("fees") ReturnCarFees returnCarFees, WebRequest request, SessionStatus status){
+        System.out.println("FEEEEEEEES After Load    " + returnCarFees.getTotalFee());// <----------------- VALUES ARE NULL???
+        status.setComplete();
+        request.removeAttribute("rcf", WebRequest.SCOPE_SESSION);
         return "homeLoggedInEmp"; //Return Complete
     }
 }

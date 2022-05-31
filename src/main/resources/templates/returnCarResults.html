@@ -21,25 +21,24 @@
 
 <!--Car Return Resylts -->
 <section class="hero">
-   <form class="form" id="returnCarResults" action="" th:action= "@{/returnCarComplete}" th:object="${rcf}"  method="post" > <!--  -->
+   <form class="form" id="returnCarResults" action="" th:action= "@{/returnCarComplete}" th:object="${fees}"  method="post" > <!--  -->
     <div class="hero-body" >
         <p class="title"> Car Return</p>
         <!-- <p class="subtitle" id="reservationId" th:object="${rcf}" th:text="*{rentalId}"></p>  or th:value="${rcf.rentalId}"? -->
-        <p class="subtitle" id="rid" th:text="${rentalId}"></p>
+        <p class="subtitle" id="rid" th:field="*{rentalId}"></p>
         <p class="subtitle" >Rental Cost: </p>
-        <input class="input is-normal" type="text" id="rf2" th:field="*{dateCurr}">
-        <p class="h2" id="rf" th:text="*{rentalFee}"></p>
+        <p class="h2" id="rf" th:field="*{rentalFee}"></p>
         <p class="subtitle"  >Late Fee: </p>
-        <p class="h2" id="lf" th:field="#{lateFee}"></p>
+        <p class="h2" id="lf" th:field="*{lateFee}"></p>
         <p class="subtitle" >Gas Fill-Up Fee: </p>
-        <p class="h2" id="gf" th:field="${gasFee}"></p>
+        <p class="h2" id="gf" th:field="*{gasFee}"></p>
         <p class="subtitle" >Damaged Extras Fee: </p>
-        <p class="subtitle" id="ef" th:value="*{extrasFee}"></p>
+        <p class="subtitle" id="ef" th:field="*{extrasFee}"></p>
         <p class="subtitle" >Car Damages Fee: </p>
-        <p class="subtitle" id="df" th:object="${rcf}" th:field="*{damageFee}"><br></p>
+        <p class="subtitle" id="df" th:field="*{damageFee}"><br></p>
         <p class="subtitle" >Total Cost Fee: </p>
         <p class="subtitle" id="tf"  th:field="*{totalFee}"></p>
-                <button class="button is-primary" >Confirm Return</button>
+                <button class="button is-primary" th:onclick= "|window.location.href='/homeLoggedInEmp'|">Confirm Return</button>
             </div>
         </form> <!-- -->
 </section>

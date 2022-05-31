@@ -1,6 +1,7 @@
 package edu.depaul.cdm.se452.se452project.services;
 
 import edu.depaul.cdm.se452.se452project.dto.ReservationSearch;
+import edu.depaul.cdm.se452.se452project.dto.ReturnCarFees;
 import edu.depaul.cdm.se452.se452project.dto.ReturnCarForm;
 import edu.depaul.cdm.se452.se452project.entities.Car;
 import edu.depaul.cdm.se452.se452project.entities.Customer;
@@ -40,13 +41,7 @@ public class ReturnCarService {
     }
 
     public void setupReturn(ReturnCarForm rcf, ReservationSearch rs){
-        // Current Date
-        rcf.setDateCurr(getCurrDateStr());
-        // Rental ID
-        rcf.setRentalId(rs.getId());
-        // Determine which add-ons
-
-        rcf.setReservation(reservationSearchService.fetchReservation(rcf.getRentalId()));
+        setupReservationAndCar(rcf, rs.getId()); // get reservation and res ID saved
         Car c = rcf.getReservation().getCar();
         try{
             ScriptEngine ee = new ScriptEngineManager().getEngineByName("Javascript");
@@ -59,25 +54,37 @@ public class ReturnCarService {
         {
             System.out.println("BEEP BOOP NO FILE");
         }
-        // Init values
-        rcf.setTotalFee(0.0);
-        rcf.setRentalFee(0.0);
-        rcf.setGasFee(0.0);
-        rcf.setExtrasFee(0.0);
-        rcf.setLateFee(0.0);
-        rcf.setDamageFee(0.0);
-        rcf.setSunRoof(false);
-        rcf.setCarSeat(false);
-        rcf.setExteriorDamageBack(false);
-        rcf.setExteriorDamageFront(false);
-        rcf.setExteriorDamageRight(false);
-        rcf.setExteriorDamageLeft(false);
-        rcf.setInteriorDamageBack(false);
-        rcf.setInteriorDamageDriver(false);
-        rcf.setInteriorDamageTrunk(false);
-        rcf.setInteriorDamagePassenger(false);
 
+        //Set t/f values if any are null
+        if(rcf.getSunRoof()==null)
+            rcf.setSunRoof(true);
+        if(rcf.getCarSeat()==null)
+            rcf.setCarSeat(true);
+        if(rcf.getExteriorDamageBack()==null)
+            rcf.setExteriorDamageBack(false);
+        if(rcf.getExteriorDamageFront()==null)
+            rcf.setExteriorDamageFront(false);
+        if(rcf.getExteriorDamageRight()==null)
+            rcf.setExteriorDamageRight(false);
+        if(rcf.getExteriorDamageLeft()==null)
+            rcf.setExteriorDamageLeft(false);
+        if(rcf.getInteriorDamageTrunk()==null)
+            rcf.setInteriorDamageTrunk(false);
+        if(rcf.getInteriorDamagePassenger()==null)
+            rcf.setInteriorDamagePassenger(false);
+        if(rcf.getInteriorDamageBack()==null)
+            rcf.setInteriorDamageBack(false);
+        if(rcf.getInteriorDamagePassenger()==null)
+            rcf.setInteriorDamageDriver(false);
     }
+
+    public void setupReservationAndCar(ReturnCarForm rcf, long id){
+        // Current Date
+        rcf.setDateCurr(getCurrDateStr());
+        // Rental ID
+        rcf.setRentalId(id);
+        rcf.setReservation(reservationSearchService.fetchReservation(rcf.getRentalId()));
+        }
 
     public String getCurrDateStr(){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
@@ -87,8 +94,20 @@ public class ReturnCarService {
         return dtf.format(now).toString();
     }
 
-    public boolean validateReturn(ReturnCarForm rcf){
-        rcf.setTotalFee(CalculateFees(rcf));
+    public boolean validateReturn(ReturnCarForm rcf, ReturnCarFees fees, ReservationSearch rs){
+        setupReservationAndCar(rcf, rs.getId());
+        fees.setTotalFee(CalculateFees(rcf));
+        fees.setGasFee(rcf.getGasFee());
+        fees.setExtrasFee(rcf.getExtrasFee());
+        fees.setLateFee(rcf.getLateFee());
+        fees.setDamageFee(rcf.getDamageFee());
+        fees.setRentalFee(rcf.getRentalFee());
+        fees.setRentalId(rcf.getRentalId());
+        System.out.println("2Rental Fee: " + fees.getRentalFee());
+        System.out.println("2Gas Fee: " + fees.getGasFee());
+        System.out.println("2Extras Fee: " + fees.getExtrasFee());
+        System.out.println("2Damages Fee: " + fees.getDamageFee());
+        System.out.println("2Total Fee: " + fees.getTotalFee());
         ResetCar(rcf);
         return true;
     }
@@ -97,6 +116,14 @@ public class ReturnCarService {
     public double CalculateFees(ReturnCarForm rcf){
         // Pull Reservation
         Long id = rcf.getRentalId();
+
+        // Init values
+        rcf.setTotalFee(0.0);
+        rcf.setRentalFee(0.0);
+        rcf.setGasFee(0.0);
+        rcf.setExtrasFee(0.0);
+        rcf.setLateFee(0.0);
+        rcf.setDamageFee(0.0);
 
         Reservation r = rcf.getReservation();
         double fee = 0; // init fees
@@ -126,7 +153,9 @@ public class ReturnCarService {
         if(rcf.getTank()<0)
             rcf.setTank(0); // if tank less than 0, set to 0
 
-        rcf.setGasFee(50.00 - (((rcf.getTank())/100)*50));
+        double gasfee = rcf.getTank()/100.0;
+        double gas100 = gasfee*50.0;
+        rcf.setGasFee(50.00 - gas100);
 
         // missing extra(s) fee - sunroof is 200, carseat is 70
         //rcf.setExtrasFee(0.0);
@@ -141,7 +170,7 @@ public class ReturnCarService {
         //rcf.setDamageFee(0.0);
         if(rcf.getInteriorDamageBack()){rcf.setDamageFee(rcf.getDamageFee() + 100.00);}
         if(rcf.getInteriorDamageDriver()){rcf.setDamageFee(rcf.getDamageFee() + 100.00);}
-        if(rcf.getInteriorDamageDriver()){rcf.setDamageFee(rcf.getDamageFee() + 100.00);}
+        if(rcf.getInteriorDamageTrunk()){rcf.setDamageFee(rcf.getDamageFee() + 100.00);}
         if(rcf.getInteriorDamagePassenger()){rcf.setDamageFee(rcf.getDamageFee() + 100.00);}
 
         // exterior damage(s) fee
@@ -150,8 +179,6 @@ public class ReturnCarService {
         if(rcf.getExteriorDamageLeft()){rcf.setDamageFee(rcf.getDamageFee() + 100.00);}
         if(rcf.getExteriorDamageRight()){rcf.setDamageFee(rcf.getDamageFee() + 100.00);}
 
-        // mileage fee (+50 per 100m)
-        ////--- ???? nothing done for now
 
         // car rank (will determine fee per day)
         double daily = 0;
@@ -182,12 +209,19 @@ public class ReturnCarService {
 
             TimeUnit time = TimeUnit.DAYS;
             days = time.convert(diff, TimeUnit.MILLISECONDS);
+            System.out.println("days reserved: +" + days);
         }catch(Exception e){System.out.println("Parse issue");}
 
         rcf.setRentalFee(daily*days);
 
         fee = rcf.getExtrasFee() + rcf.getDamageFee() + rcf.getGasFee() + rcf.getLateFee() + rcf.getRentalFee();
         rcf.setTotalFee(fee);
+
+
+        System.out.println("Gas Fee: " + rcf.getGasFee());
+        System.out.println("Extras Fee: " + rcf.getExtrasFee());
+        System.out.println("Damages Fee: " + rcf.getDamageFee());
+        System.out.println("Total Fee: " + rcf.getTotalFee());
         System.out.println("Rental Fee: " + rcf.getRentalFee());
         System.out.println("Gas Fee: " + rcf.getGasFee());
         System.out.println("Extras Fee: " + rcf.getExtrasFee());
