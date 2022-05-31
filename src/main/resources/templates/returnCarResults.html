@@ -21,26 +21,72 @@
 
 <!--Car Return Resylts -->
 <section class="hero">
-   <form class="form" id="returnCarResults" action="" th:action= "@{/returnCarComplete}" th:object="${fees}"  method="post" > <!--  -->
+  <!-- <form class="form" id="returnCarResults" action="" th:action= "@{/returnCarComplete}" th:object="${fees}"  method="post" >   -->
     <div class="hero-body" >
         <p class="title"> Car Return</p>
         <!-- <p class="subtitle" id="reservationId" th:object="${rcf}" th:text="*{rentalId}"></p>  or th:value="${rcf.rentalId}"? -->
-        <p class="subtitle" id="rid" th:field="*{rentalId}"></p>
-        <p class="subtitle" >Rental Cost: </p>
-        <p class="h2" id="rf" th:field="*{rentalFee}"></p>
-        <p class="subtitle"  >Late Fee: </p>
-        <p class="h2" id="lf" th:field="*{lateFee}"></p>
-        <p class="subtitle" >Gas Fill-Up Fee: </p>
-        <p class="h2" id="gf" th:field="*{gasFee}"></p>
-        <p class="subtitle" >Damaged Extras Fee: </p>
-        <p class="subtitle" id="ef" th:field="*{extrasFee}"></p>
-        <p class="subtitle" >Car Damages Fee: </p>
-        <p class="subtitle" id="df" th:field="*{damageFee}"><br></p>
-        <p class="subtitle" >Total Cost Fee: </p>
-        <p class="subtitle" id="tf"  th:field="*{totalFee}"></p>
-                <button class="button is-primary" th:onclick= "|window.location.href='/homeLoggedInEmp'|">Confirm Return</button>
-            </div>
-        </form> <!-- -->
+        <nav class ="level-left">
+            <p class="level-item">
+                <a class="subtitle" >Rental ID:</a>
+            </p>
+            <p class="level-item">
+                <a class="subtitle" id="rid" th:text="*{fees.getRentalId()}"></a>
+            </p>
+        </nav>
+        <p><br></p>
+        <nav class ="level-left">
+            <p class="level-item">
+                <a class="subtitle" ><strong>Rental Cost: </strong></a>
+            </p>
+            <p class="level-item">
+                <a class="subtitle" id="rf" th:text="*{fees.getRentalFee()}"></a>
+            </p>
+        </nav>
+            <nav class ="level-left">
+                <p class="level-item">
+                    <a class="subtitle"  ><strong>Late Fee: </strong></a>
+                </p>
+                <p class="level-item">
+                    <a class="subtitle" id="lf" th:text="*{fees.getLateFee()}"></a>
+                </p>
+            </nav>
+        <nav class ="level-left">
+                <p class="level-item">
+                    <a class="subtitle" ><strong>Gas Fill-Up Fee: </strong></a>
+                </p>
+                <p class="level-item">
+                    <a class="subtitle" id="gf" th:text="*{fees.getGasFee()}"></a>
+                </p>
+            </nav>
+        <nav class ="level-left">
+            <p class="level-item">
+                <a class="subtitle" ><strong>Damaged Extras Fee:</strong> </a>
+            </p>
+            <p class="level-item">
+                <a class="subtitle" id="ef" th:text="*{fees.getExtrasFee()}"></a>
+            </p>
+        </nav>
+        <nav class ="level-left">
+            <p class="level-item">
+                <a class="subtitle" ><strong>Car Damages Fee:</strong> </a>
+            </p>
+            <p class="level-item">
+                <a class="subtitle" id="df" th:text="*{fees.getDamageFee()}"></a>
+            </p>
+        </nav>
+        <p><br></p>
+        <nav class ="level-left">
+            <p class="level-item">
+                <a class="subtitle" ><strong>Total Cost Fee: </strong></a>
+            </p>
+            <p class="level-item">
+                 <a class="subtitle" id="tf"  th:text="*{fees.getTotalFee()}"></a>
+            </p>
+        </nav>
+        <p><br></p>
+                 <button class="button is-primary" th:onclick= "|window.location.href='/homeLoggedInEmp'|">Confirm Return</button>
+             </div>
+    <!--  </form>  -->
 </section>
 </body>
 </html>

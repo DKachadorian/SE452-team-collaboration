@@ -72,7 +72,7 @@ public class ReturnCarController {
 
     @PostMapping(value="/returnCarComplete")
     public String returnCarComplete(@SessionAttribute("fees") ReturnCarFees returnCarFees, WebRequest request, SessionStatus status){
-        System.out.println("FEEEEEEEES After Load    " + returnCarFees.getTotalFee());// <----------------- VALUES ARE NULL???
+        System.out.println("FEEEEEEEES After Load    " + returnCarFees.getTotalFee());
         status.setComplete();
         request.removeAttribute("rcf", WebRequest.SCOPE_SESSION);
         return "homeLoggedInEmp"; //Return Complete
