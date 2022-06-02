@@ -156,4 +156,21 @@ public class ReservationCreationService {
         rs.setSelectedDealershipId(rs.getSelectedDealership().getDealershipId());
     } */
 
+    public void copyDTO(RegistrationFields a, RegistrationFields b){
+        b.setCustomerId(a.getCustomerId());
+        b.setStartD(a.getStartD());
+        b.setEndD(a.getEndD());
+        b.setStartDate(a.getStartDate());
+        b.setEndDate(a.getEndDate());
+        b.setOptionalCriteria(a.getOptionalCriteria());
+        b.setRequiredCriteria(a.getRequiredCriteria());
+        b.setStates(a.getStates());
+        //searchCity;
+        b.setDealershipList(a.getDealershipList());
+        b.setSelectedDealershipId(a.getSelectedDealershipId());
+        b.setSelectedCarId(a.getSelectedCarId());
+        b.setCarList(a.getCarList());
+
+    }
+
 }

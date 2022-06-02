@@ -40,10 +40,6 @@ public class ReturnCarController {
 
         if(reservationSearchService.validateReservation(reservationSearch)) {
             returnCarService.setupReturn(returnCarForm, reservationSearch);
-            System.out.println("====1Sunroof: " + returnCarForm.getSunRoof());
-            System.out.println("====1CarSeat: " + returnCarForm.getCarSeat());
-            System.out.println("====1Gas Tank: " + returnCarForm.getTank());
-            System.out.println("====1Damage Inside Back: " + returnCarForm.getInteriorDamageBack());
             return "returnCarForm"; //go to return car form if reservation is found
         }
         else {
@@ -58,12 +54,7 @@ public class ReturnCarController {
 
     @PostMapping(value="/returnCarFormCalculate")
     public String calculateReturnForm(@ModelAttribute("rcf") ReturnCarForm returnCarForm, @ModelAttribute("fees") ReturnCarFees returnCarFees, @SessionAttribute("id") ReservationSearch reservationSearch) {
-        System.out.println("====2Sunroof: " + returnCarForm.getSunRoof());
-        System.out.println("====2CarSeat: " + returnCarForm.getCarSeat());
-        System.out.println("====2Gas Tank: " + returnCarForm.getTank());
-        System.out.println("====2Damage Inside Back: " + returnCarForm.getInteriorDamageBack());
         if(returnCarService.validateReturn(returnCarForm, returnCarFees, reservationSearch)){
-            System.out.println("FEEEEEEEES " + returnCarFees.getTotalFee());
           return "returnCarResults";
         }
         return "returnCarForm";
@@ -72,7 +63,6 @@ public class ReturnCarController {
 
     @PostMapping(value="/returnCarComplete")
     public String returnCarComplete(@SessionAttribute("fees") ReturnCarFees returnCarFees, WebRequest request, SessionStatus status){
-        System.out.println("FEEEEEEEES After Load    " + returnCarFees.getTotalFee());
         status.setComplete();
         request.removeAttribute("rcf", WebRequest.SCOPE_SESSION);
         return "homeLoggedInEmp"; //Return Complete

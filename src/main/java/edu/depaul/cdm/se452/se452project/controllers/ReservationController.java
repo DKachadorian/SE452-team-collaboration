@@ -14,7 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-@SessionAttributes("rf")
+@SessionAttributes({"rf", "customerId", "todo", "finalres"})
 @Controller
 public class ReservationController {
 
@@ -28,24 +28,27 @@ public class ReservationController {
     @ModelAttribute
     public void generateModel(Model model) {
         model.addAttribute("rf", new RegistrationFields());
+        model.addAttribute("customerId", new CustomerId());
+        model.addAttribute("todo", new RegistrationFields());
+        model.addAttribute("finalres", new RegistrationFields());
     }
 
     @GetMapping(value = "/reservationSearch")
-    public String reservationPage(@ModelAttribute("cuid") CustomerId customerId, Model model){
-        model.addAttribute("cuid", customerId);
+    public String reservationPage(@ModelAttribute("customerId") CustomerId customerId, Model model){
         return "reservationSearch";
     }
 
 
     @PostMapping(value = "/createReservationValidate")
-    public String createReservationValidate(@ModelAttribute("rf") RegistrationFields registrationFields, Model model){
+    public String createReservationValidate(@ModelAttribute("rf") RegistrationFields registrationFields, @SessionAttribute("customerId") CustomerId customerId, Model model){
 
         if(reservationCreationService.validateSearch(registrationFields)) {
-
+            registrationFields.setCustomerId(customerId.getCustomerId());
             List<Dealership> dl = registrationFields.getDealershipList();
             model.addAttribute("dealerships", dl);
             model.addAttribute("todo", registrationFields);
             model.addAttribute("reservationDTO", new ReservationDTO());
+
             return "reservationSearchResults"; //go to return car form if reservation is found
         }
         else {
@@ -55,43 +58,43 @@ public class ReservationController {
 
 
     @PostMapping(value = "/reservationSearchCar")
-    public String createReservationDealerships(@ModelAttribute("rf") RegistrationFields registrationFields,
-                                               @ModelAttribute("reservationDTO") ReservationDTO reservationDTO, Model model){
-
+    public String createReservationDealerships(@SessionAttribute("rf") RegistrationFields registrationFields,
+                                               @ModelAttribute("reservationDTO") ReservationDTO reservationDTO,
+                                               @ModelAttribute("todo") RegistrationFields registrationFields2, Model model){
         registrationFields.setSelectedDealershipId(reservationDTO.getSelectedDealershipId());
         reservationCreationService.FindCars(registrationFields);
         List<Car> vroom = registrationFields.getCarList();
         model.addAttribute("cars", vroom);
-        model.addAttribute("todo", registrationFields);
-
+        reservationCreationService.copyDTO(registrationFields, registrationFields2);
+        model.addAttribute("reservationDTOCar", new ReservationDTO());
         return "reservationSearchCar";
 
     }
 
     @PostMapping(value = "/reservationSearchComplete")
-    public String confirmReservation(@SessionAttribute("rf") RegistrationFields registrationFields, Model model, @ModelAttribute("rf") RegistrationFields rf){
-        registrationFields.setSelectedCarId(rf.getSelectedCarId());
-        System.out.println("================" + registrationFields.getSelectedCarId()); //TESTING
-        System.out.println("================" + registrationFields.getSelectedDealershipId()); //TESTING
-        registrationFields.setSelectedCarId(24l); // TESTING ONLY HARD CODING VALUE <-------------------------------
-        registrationFields.setSelectedDealershipId(999l); // TESTING ONLY HARD CODING VALUE <-----------------------------
-        System.out.println("=================" +registrationFields.getSelectedDealershipId()); //TESTING
-        System.out.println("=================" +registrationFields.getSelectedCarId()); //TESTING
+    public String confirmReservation(@SessionAttribute("todo") RegistrationFields registrationFields,
+                                     @ModelAttribute("reservationDTOCar") ReservationDTO reservationDTO,
+                                     @ModelAttribute("finalres") RegistrationFields registrationFields2,Model model){
+        registrationFields.setSelectedCarId(reservationDTO.getSelectedCarId());
+
+        reservationCreationService.copyDTO(registrationFields, registrationFields2);
         List<Dealership> dl = reservationCreationService.getDealershipDisplay(registrationFields);
         List<Car> cl = reservationCreationService.getCarDisplay(registrationFields);
         model.addAttribute("finalDealerships", dl);
         model.addAttribute("finalCars", cl);
-        reservationCreationService.createReservation(registrationFields);
-        return "reservationSearchComplete"; //TEMPTEMPTEMPTEMPTEMP
+        reservationCreationService.createReservation(registrationFields2);
+        return "reservationSearchComplete";
 
     }
 
     @PostMapping(value = "/ReservationConfirmed")
-     public String confirmed()
+     public String confirmed(@SessionAttribute("finalres") RegistrationFields registrationFields, Model model)
     {
-        //Session.setComplete(); // Do we need to close session????
-       return "homeLoggedIn";
+            // Logout on confirmation due to loss of customer ID on return to home screen [KNOWN BUG]
+            return "home";
+
     }
+
 
     //To-DO
     // Dealership Selection saves the id (maybe just have a field to type the ID)

@@ -14,7 +14,7 @@ import java.util.List;
 @ToString
 public class RegistrationFields {
 
-   
+    private Long customerId;
     private String startD;
     private String endD;
     private Date startDate;

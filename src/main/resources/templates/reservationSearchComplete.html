@@ -26,7 +26,7 @@
 
 <section class="hero is-light"> <!-- is-link makes the color a purpleish color-->
   <div class="hero-body">
-    <form class="form" id="reservationSearchComplete" action="" th:action="@{/ReservationConfirmed}" th:object="${rf}" onsubmit="return reservationSearchComplete()" method="post">
+    <form class="form" id="reservationSearchComplete" action="" th:action="@{/ReservationConfirmed}" th:object="${finalres}" onsubmit="return reservationSearchComplete()" method="post">
       <p class="title">Confirm Reservation:</p>
       <!-- <button class="button is-link" th:onclick= "|window.location.href='/home'|">Create Reservation</button> (ADD??) -->
       <p class="subtitle"><br></p>
