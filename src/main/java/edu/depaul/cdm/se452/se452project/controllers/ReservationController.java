@@ -48,7 +48,7 @@ public class ReservationController {
             model.addAttribute("dealerships", dl);
             model.addAttribute("todo", registrationFields);
             model.addAttribute("reservationDTO", new ReservationDTO());
-
+            //System.out.println("============== customer ID: " + registrationFields.getCustomerId());
             return "reservationSearchResults"; //go to return car form if reservation is found
         }
         else {

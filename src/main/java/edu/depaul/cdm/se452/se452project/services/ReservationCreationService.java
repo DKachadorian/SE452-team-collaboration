@@ -147,9 +147,7 @@ public class ReservationCreationService {
             days = time.convert(diff, TimeUnit.MILLISECONDS);
         }catch(Exception e){System.out.println("Parse issue");}
 
-        Long customerId = 101l; // TEMP TEMP TEMP TEMP TEMP <------------------------------------------------------
-
-        reservationRepository.addReservation(current, days, rs.getStartDate(), rs.getEndDate(), customerId, rs.getSelectedCarId());
+        reservationRepository.addReservation(current, days, rs.getStartDate(), rs.getEndDate(), rs.getCustomerId(), rs.getSelectedCarId());
         carRepository.makeUnavailable(rs.getSelectedCarId());
     }
 
