@@ -1,39 +1,41 @@
 package edu.depaul.cdm.se452.se452project.controllers;
 
+import edu.depaul.cdm.se452.se452project.dto.CustomerRegistration;
+import edu.depaul.cdm.se452.se452project.dto.LoginFields;
 import edu.depaul.cdm.se452.se452project.entities.Customer;
 import edu.depaul.cdm.se452.se452project.repositories.CustomerRepository;
+import edu.depaul.cdm.se452.se452project.services.CustomerRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@Controller
 public class CustomerController {
 
-        CustomerRepository customerRepository;
+        CustomerRegistrationService customerRegistrationService;
 
-        public CustomerController(@Autowired CustomerRepository customerRepository) {
-            this.customerRepository = customerRepository;
+        public CustomerController(@Autowired CustomerRegistrationService customerRegistrationService) {
+            this.customerRegistrationService = customerRegistrationService;
         }
 
-        @GetMapping(value ="/allCustomers", produces = MediaType.APPLICATION_JSON_VALUE)
-        public List<Customer> getAllCustomers() {
-            return customerRepository.findAll();
+        @ModelAttribute
+        public void generateModel(Model model) {
+            model.addAttribute("customerRegistration", new CustomerRegistration());
         }
 
-        @GetMapping(value ="/singleCustomer", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-        public Optional<Customer> getSingleCustomer(@RequestBody Long customerId) {
-            return customerRepository.findById(customerId);
+        @GetMapping("/accountCreate")
+        public String accountCreate(){
+            return "accountCreate";
         }
-
-        @DeleteMapping(value ="/deleteCustomer", consumes = MediaType.APPLICATION_JSON_VALUE)
-        public void deleteCustomer(@RequestBody Long customerId) {
-            customerRepository.deleteById(customerId);
+    
+        @PostMapping("/accountVerification")
+        public String accountVerification(@ModelAttribute(value="customerRegistration") CustomerRegistration customerRegistration){
+            customerRegistrationService.persistData(customerRegistration);
+            return "home";
         }
-
 }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+
+<nav class = "level">
+    <p class ="level-item has-text-centered">
+    <h1 class="title"> DePaul's Deluxe Rentals</h1>
+    </p>
+    <p class="level-item has-text-centered">
+        <button class="button is-link" th:onclick= "|window.location.href='/home'|">Home</button>
+    </p>
+    <p class="level-item has-text-centered">
+        <button class="button is-link" th:onclick= "|window.location.href='/home'|">Logout</button>
+    </p>
+</nav>
+
+<section class="hero is-light">
+    <div class="hero-body">
+        <p class="title">View our Cars:</p>
+        <p class="subtitle"> <br></p>
+        <p class="subtitle">Different models our dealerships carry: </p>
+        <p class="subtitle" id="typeCars" th:text="${numModels}"> <br></p>
+        <p class="subtitle">Total cars available for rent, country wide, right now: </p>
+        <p class="subtitle" id="availableCars" th:text="${numCars}"> <br></p>
+
+        <table class="table">
+            <thread>
+                <tr>
+                    <th title="Manufacturer">Manufacturer</th>
+                    <th title="Model">Model</th>
+                    <th title="Class">Class</th>
+                    <th title="Price Per Day">Price per Day</th>
+                    <th title="Availability">Availability</th>
+                </tr>
+            </thread>
+            <tbody>
+            <tr th:each="car : ${cars}">
+                <td th:text="${car.getCarManufacturer()}"/>
+                <td th:text="${car.getCarModel()}"/>
+                <td th:text="${car.getCarClass()}"/>
+                <td th:text="${car.getCarPrice()}"/>
+                <td th:text="${car.getCarAvailable()}"/>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<script src="script.js" async defer></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <script src="script.js" async defer> </script>
+    </head>
+    <body>
+
+        <!-- title -->
+        <nav class = "level">
+            <!--	<p class="level-item has-text-centered">	LOGO IMAGE????
+                        <img src=" alt="" style="height: 30px;">
+                    </p> -->
+            <p class ="level-item has-text-centered">
+            <h1 class="title"> DePaul's Deluxe Rentals</h1>
+            </p>
+            <p class="level-item has-text-centered">
+                <button class="button is-link" th:onclick= "|window.location.href='/homeLoggedInEmp'|">Back</button>
+            </p>
+        </nav>
+       
+         <!--Car Return Search Bar --> 
+        <section class="hero is-link">
+			<div class="hero-body" >
+                <form class="form" id="returnCar" action="" th:action = "@{/returnCarSearch}" th:object="${id}" onsubmit="return validateReservation()" method="post">
+				<p class="title"> Car Return</p>
+				<nav class="level">
+                    <div class="level-left">
+                    <div class="level-item">
+                    <p class="subtitle is-5"> <strong>Reservation Id: </strong></p>
+                    </div>
+                    <div class="level-item">
+                      <div class="field has-addons">
+                        <p class="control">
+                          <input class="input" id="id" type="text" th:field="*{id}" placeholder="Reservation Id">
+                        </p>
+                        <p class="control">
+                            <button class="button" >Search</button>
+                        </p>
+                      </div>
+                  </div>
+                  </div>
+              </nav>
+                <p class = "errorMessageEmptySearch top-arrow" > </p>
+                <p class = "errorMessageNoMatch top-arrow" > </p>
+                </form>
+            </div>
+
+		</section>
+        <script src="script.js" async defer></script>
+    </body>
+</html>

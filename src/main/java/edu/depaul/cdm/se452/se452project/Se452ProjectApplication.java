@@ -1,18 +1,16 @@
 package edu.depaul.cdm.se452.se452project;
 
-import edu.depaul.cdm.se452.se452project.entities.Customer;
-import edu.depaul.cdm.se452.se452project.repositories.CustomerRepository;
-import edu.depaul.cdm.se452.se452project.services.TableConstraintService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-@EntityScan(basePackages = {"edu.depaul.cdm.se452.se452project.entities", "edu.depaul.cdm.se452.se452project.configurations"})
+@ConfigurationPropertiesScan(basePackages = {"edu.depaul.cdm.se452.se452project.configurations"})
+@EntityScan(basePackages = {"edu.depaul.cdm.se452.se452project.entities"})
 public class Se452ProjectApplication {
 
 	public static final Logger logger = LoggerFactory.getLogger(Se452ProjectApplication.class);
@@ -25,6 +23,6 @@ public class Se452ProjectApplication {
 
 	@Bean
 	public void helloWorld(){
-		System.out.println("Hello World");
+		System.out.println("Hello World!");
 	}
 }

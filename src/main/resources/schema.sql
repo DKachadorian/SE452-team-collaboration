@@ -4,7 +4,8 @@ DROP TABLE IF EXISTS Dealership, Customer, Payment, Employee, Car, Reservation, 
 CREATE TABLE Dealership (
     DealershipId BIGINT AUTO_INCREMENT NOT NULL,
     Address VARCHAR(200),
-    State VARCHAR(30),
+    City VARCHAR(50),
+    State VARCHAR(30),    
     ZipCode VARCHAR(100),
     PRIMARY KEY(DealershipId)
 );
@@ -15,11 +16,13 @@ CREATE TABLE Customer (
     LastName VARCHAR(50),
     DateOfBirth DATE,
     Address VARCHAR(100),
-    PhoneNumber VARCHAR(12),
-    DriversLicenseId BIGINT,
+    PhoneNumber VARCHAR(20),
+    DriversLicenseId VARCHAR(20),
     InsuranceCarrier VARCHAR(50),
     Username VARCHAR(30),
     Password VARCHAR(50),
+    ZipCode VARCHAR(5),
+    State VARCHAR(30),
     Email VARCHAR(50),
     PRIMARY KEY(CustomerId)
 );
@@ -31,6 +34,7 @@ CREATE TABLE Payment (
     ExpirationDate DATE,
     CVV VARCHAR(10),
     Currency VARCHAR(20),
+    CardHolderName VARCHAR(100),
     CustomerId BIGINT,
     PRIMARY KEY(AccountId),
     FOREIGN KEY(CustomerId) REFERENCES Customer(CustomerId) ON DELETE CASCADE
@@ -41,6 +45,8 @@ CREATE TABLE Employee (
     FirstName VARCHAR(50),
     LastName VARCHAR(50),
     JobTitle VARCHAR(100),
+    Username VARCHAR(30),
+    Password VARCHAR(50),
     DealershipId BIGINT,
     PRIMARY KEY(EmployeeId),
     FOREIGN KEY(DealershipId) REFERENCES Dealership(DealershipId) ON DELETE CASCADE

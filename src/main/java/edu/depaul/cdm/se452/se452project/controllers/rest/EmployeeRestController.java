@@ -1,4 +1,4 @@
-package edu.depaul.cdm.se452.se452project.controllers;
+package edu.depaul.cdm.se452.se452project.controllers.rest;
 
 import edu.depaul.cdm.se452.se452project.entities.Employee;
 import edu.depaul.cdm.se452.se452project.repositories.EmployeeRepository;
@@ -13,11 +13,11 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class EmployeeController {
+public class EmployeeRestController {
 
     EmployeeRepository employeeRepository;
 
-    public EmployeeController(@Autowired EmployeeRepository employeeRepository) {
+    public EmployeeRestController(@Autowired EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
 

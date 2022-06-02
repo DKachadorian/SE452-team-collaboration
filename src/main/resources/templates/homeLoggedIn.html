@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+		<script src="script.js" async defer></script>
+    </head>
+    <body>
+
+        <nav class = "level">
+			<p class ="level-item has-text-centered">
+					<h1 class="title"> DePaul's Deluxe Rentals</h1>
+			</p>
+
+			<p class="level-item has-text-centered">
+				<button class="button is-link" th:onclick= "|window.location.href='/logout'|">Logout</button>
+			</p>
+		</nav>	
+
+		<section class="hero is-link">
+			<form th:action="@{/reservationSearch}" th:object="${customerId}" method="get" >
+				<div class="hero-body">
+					<input type="hidden" th:field="*{customerId}" />
+					<p class="title">Reservations</p>
+					<p class="subtitle">Find a flexible car rental that fits your needs!</p>
+					<button class="button is-primary">Create Reservation</button>
+				</div>
+			</form>
+		</section>
+
+		<section class="hero is-light">
+			<form th:action="@{/reservationList}" th:object="${customerId}" method="get" >
+				<div class="hero-body">
+					<input type="hidden" th:field="*{customerId}" />
+					<p class="title">Reservation History</p>
+					<p class="subtitle">View all past, present and upcoming reservations</p>
+					<button class="button is-primary">View Reservation</button>
+				</div>
+			</form>
+		</section>
+
+		<section class="hero">
+			<div class="hero-body">
+				<p class="title">Dealerships</p>
+				<p class="subtitle">View all our locations, nationwide!</p>
+				<button class="button is-primary" th:onclick= "|window.location.href='/viewDealerships'|">View Dealerships</button>
+			</div>
+		</section>
+
+		<section class="hero">
+			<div class="hero-body">
+				<p class="title">Cars</p>
+				<p class="subtitle">See our wide selection of luxurious cars available for rent.</p>
+				<button class="button is-primary" th:onclick= "|window.location.href='/viewCars'|">View Cars</button>
+			</div>
+		</section>
+    </div>
+    </body>
+</html>

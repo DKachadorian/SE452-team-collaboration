@@ -1,6 +1,5 @@
 package edu.depaul.cdm.se452.se452project.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -46,6 +45,12 @@ public class Customer {
 
     @Column(name="Password")
     private String password;
+
+    @Column(name="ZipCode")
+    private String zipCode;
+
+    @Column(name="State")
+    private String state;
 
     @Column(name="Email")
     private String email;

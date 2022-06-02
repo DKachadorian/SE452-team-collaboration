@@ -34,6 +34,9 @@ public class Payment {
     @Column(name = "Currency")
     private String currency;
 
+    @Column(name = "CardHolderName")
+    private String cardHolderName;
+
     @JsonIgnore
     @OneToOne
     @JoinColumn(name = "CustomerId")
