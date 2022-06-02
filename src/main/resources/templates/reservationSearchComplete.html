@@ -26,15 +26,14 @@
 
 <section class="hero is-light"> <!-- is-link makes the color a purpleish color-->
   <div class="hero-body">
-    <form class="form" id="reservationSearchComplete" action="" th:action="@{/ReservationConfirmed}" th:object="${finalres}" onsubmit="return reservationSearchComplete()" method="post">
-      <p class="title">Confirm Reservation:</p>
+      <p class="title">Reservation Created!</p>
       <!-- <button class="button is-link" th:onclick= "|window.location.href='/home'|">Create Reservation</button> (ADD??) -->
       <p class="subtitle"><br></p>
-
       <p class="subtitle" >Start Date: </p>
-      <p class="h2" id="rf" th:field="*{startD}"></p>
+      <p class="h2" id="rf" th:text="*{finalres.getStartD()}"></p>
       <p class="subtitle"  >End Date: </p>
-      <p class="h2" id="lf" th:field="*{endD}"></p>
+      <p class="h2" id="lf" th:text="*{finalres.getEndD()}"></p>
+      <form class="form" id="reservationSearchComplete" action="" th:action="@{/ReservationConfirmed}" th:object="${finalres}" onsubmit="return reservationSearchComplete()" method="post">
       <p class="subtitle" >Rental Dealership: </p>
       <table class="table">
         <thread>
@@ -75,7 +74,7 @@
       </table>
      <!--  <p class="subtitle" >Starting Cost (*excluding fees from damages): </p>
       <p class="subtitle" id="tf"  th:field="*{totalFee}"></p> -->
-      <button class="button is-primary" >Confirm Reservation</button>
+      <button class="button is-primary" >Confirm</button>
 
     </form>
   </div>

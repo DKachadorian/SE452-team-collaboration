@@ -150,6 +150,7 @@ public class ReservationCreationService {
         Long customerId = 101l; // TEMP TEMP TEMP TEMP TEMP <------------------------------------------------------
 
         reservationRepository.addReservation(current, days, rs.getStartDate(), rs.getEndDate(), customerId, rs.getSelectedCarId());
+        carRepository.makeUnavailable(rs.getSelectedCarId());
     }
 
    /* public void getId(RegistrationFields rs){
